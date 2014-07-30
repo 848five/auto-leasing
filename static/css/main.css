@@ -3,7 +3,8 @@
   padding: 0;
   outline: none;
   border: 0;
-  font-family: "Raleway"; }
+  font-family: "Raleway";
+  font-weight: 100; }
 
 body {
   padding: 50px; }
