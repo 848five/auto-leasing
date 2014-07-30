@@ -2,11 +2,11 @@
   margin: 0;
   padding: 0;
   outline: none;
-  border: 0; }
+  border: 0;
+  font-family: "Raleway"; }
 
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
+  padding: 50px; }
 
 a {
   color: #00B7FF; }
