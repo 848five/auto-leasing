@@ -3,14 +3,25 @@
 <head>
 	<title>{% block site-title %}{% endblock %}</title>
 
-	<link href='http://fonts.googleapis.com/css?family=Raleway:400,100,200,300,500' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" type="text/css" href="css/main.css">
+	{% block scripts %}
+		<script type="text/javascript" src="//use.typekit.net/xzk8ysq.js"></script>
+		<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+	{% endblock %}
+
+	{%block styles %}
+		<link href='http://fonts.googleapis.com/css?family=Raleway:400,100,200,300,500' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" type="text/css" href="css/main.css">
+	{% endblock %}
 </head>
 <body>
 
-{% block content %}
-base content
-{% endblock %}
+{% include 'nav.html' %}
+
+<section class="content-container">
+	{% block content %}
+		base content
+	{% endblock %}
+</section>
 
 </body>
 </html>

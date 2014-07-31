@@ -6,8 +6,76 @@
   font-family: "Raleway";
   font-weight: 100; }
 
+@font-face {
+  font-family: 'Mono Social Icons Font';
+  src: url("../css/fonts/MonoSocialIconsFont-1.10.eot");
+  src: url("../css/fonts/MonoSocialIconsFont-1.10.eot?#iefix") format("embedded-opentype"), url("../css/fonts/MonoSocialIconsFont-1.10.woff") format("woff"), url("../css/fonts/MonoSocialIconsFont-1.10.ttf") format("truetype"), url("../css/fonts/MonoSocialIconsFont-1.10.svg#MonoSocialIconsFont") format("svg");
+  src: url("../css/fonts/MonoSocialIconsFont-1.10.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
 body {
-  padding: 50px; }
-
-a {
-  color: #00B7FF; }
+  background-color: #ffffff; }
+  body .nav-bar {
+    display: block;
+    width: 100%;
+    height: 60px;
+    border-bottom: 1px #eae9e9 solid; }
+    body .nav-bar nav {
+      position: relative;
+      display: block;
+      max-width: 1000px;
+      min-width: 768px;
+      margin: 0 auto;
+      text-align: center;
+      line-height: 50px;
+      padding: 5px; }
+      body .nav-bar nav h1 {
+        text-indent: -9999px;
+        background: url(../images/site/logo-transparent.png) no-repeat top center;
+        background-size: 150px auto;
+        font-size: 40px;
+        margin-top: 5px; }
+      body .nav-bar nav h2 {
+        display: none; }
+      body .nav-bar nav ul {
+        list-style-type: none; }
+      body .nav-bar nav .menu {
+        float: left;
+        width: 110px;
+        height: 30px;
+        background-color: red;
+        color: #ffffff;
+        text-align: right;
+        padding: 5px;
+        padding-right: 15px;
+        margin-top: 5px;
+        font-size: 23px;
+        line-height: 30px;
+        cursor: pointer;
+        -webkit-transition: all 0.3s linear;
+        transition: all 0.3s linear; }
+        body .nav-bar nav .menu:before {
+          content: '\2630';
+          padding-right: 15px; }
+        body .nav-bar nav .menu:hover {
+          box-shadow: 0px 0px 15px gray; }
+      body .nav-bar nav .social-bar {
+        float: right; }
+        body .nav-bar nav .social-bar li {
+          display: inline-block;
+          margin-right: 5px;
+          font-family: "Mono Social Icons Font";
+          font-size: 40px;
+          background-color: darkgray;
+          color: white;
+          margin-top: -10px;
+          cursor: pointer;
+          -webkit-transition: all 0.3s linear;
+          transition: all 0.3s linear; }
+          body .nav-bar nav .social-bar li:hover {
+            color: red; }
+  body .content-container {
+    position: relative;
+    display: block;
+    max-width: 1000px;
+    margin: 0 auto; }
