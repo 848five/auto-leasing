@@ -1,7 +1,7 @@
 function loadCarousel() {
 
 	carousel = new IScroll('#scroller', { scrollX: true, scrollY: false, mouseWheel: true, snap: true});
-	carousel.on('scrollEnd',function(){
+	carousel.on('scrollStart',function(){
 		updatePages();
 	});
 	document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
