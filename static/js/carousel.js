@@ -1,16 +1,17 @@
 function loadCarousel() {
 
 	carousel = new IScroll('#scroller', { scrollX: true, scrollY: false, mouseWheel: true, snap: true});
+	carousel.on('scrollEnd',function(){
+		updatePages();
+	});
 	document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
 
 	document.querySelector('.js-carousel-left').onclick = function() {
 		carousel.prev();
-		updatePages();
 
 	}
 	document.querySelector('.js-carousel-right').onclick = function() {
 		carousel.next();
-		updatePages();
 	}
 
 }
@@ -32,6 +33,13 @@ function updatePages() {
 		} else {
 			document.querySelector('.js-carousel-left').style.opacity = 1;
 		}
+		if (carousel.currentPage.pageX == carousel.pages.length -1) {
+			document.querySelector('.js-carousel-right').style.opacity = 0.1;
+		} else {
+			document.querySelector('.js-carousel-right').style.opacity = 1;
+		}
+
+
 	};
 
 

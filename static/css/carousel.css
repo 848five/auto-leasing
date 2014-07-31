@@ -47,9 +47,18 @@
     font-size: 80px;
     position: absolute;
     top: 40%;
-    cursor: pointer; }
+    cursor: pointer;
+    z-index: 1; }
     .carousel-container .carousel-btn:hover {
       opacity: 0.5; }
+  .carousel-container span.label {
+    position: absolute;
+    z-index: 1;
+    right: 20px;
+    padding: 5px;
+    background-color: red;
+    margin-top: -10px;
+    color: white; }
   .carousel-container .js-carousel-left {
     left: 20px;
     opacity: 0.1; }

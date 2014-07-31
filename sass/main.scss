@@ -61,17 +61,24 @@ body {
 				float: right;
 				li {
 					display: inline-block;
+					width: 40px;
 					margin-right: 5px;
-					font-family: "Mono Social Icons Font";
-					font-size: 40px;
 					background-color: darkgray;
-					color: white;
 					margin-top: -10px;
 					cursor: pointer;
-					@include animate();
-					&:hover {
-						color: red;
-					}
+					a {
+							display: block;
+							width: 100%;
+							height: 100%;
+							font-family: "Mono Social Icons Font";
+							font-size: 40px;
+							color: white;
+							text-decoration: none;
+							@include animate();
+							&:hover {
+								color: red;
+							}
+						}
 				}
 			}
 		}

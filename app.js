@@ -48,7 +48,7 @@ if (app.get('env') === 'development') {
     });
 }
 
-app.listen(80);
+app.listen(8080);
 
 // production error handler
 // no stacktraces leaked to user

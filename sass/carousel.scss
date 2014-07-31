@@ -41,10 +41,21 @@
 		position: absolute;
 		top: 40%;
 		cursor: pointer;
+		z-index: 1;
 
 		&:hover {
 			opacity: 0.5;
 		}
+	}
+
+	span.label {
+		position: absolute;
+		z-index: 1;
+		right: 20px;
+		padding: 5px;
+		background-color: red;
+		margin-top: -10px;
+		color: white;
 	}
 	.js-carousel-left {
 		left: 20px;
