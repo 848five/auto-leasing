@@ -1,13 +1,13 @@
 {% extends 'templates/base.html' %}
 {% block site-title %} Auto Leasing {% endblock %}
 
+{% block ga-tracking %} 'homepage' {% endblock %}
 {% block scripts %}
 {% parent %}
 	<script type="text/javascript" src="js/iscroll.js"></script>
 	<script type="text/javascript" src="js/carousel.js"></script>
 	<script type="text/javascript" src="js/main.js"></script>
 
-	{% block ga-tracking %} 'homepage' {% endblock %}
 {% endblock %}
 
 {% block styles %}
