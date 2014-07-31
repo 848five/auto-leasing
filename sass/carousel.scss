@@ -1,0 +1,95 @@
+@import "mixins";
+#dotty {
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	border-radius: 10px;
+	background: #777;
+}
+#indicator {
+	ul {
+		list-style-type: none;
+		width: 55px;
+		margin: -50px auto;
+		li {
+				position: relative;
+				width: 5px;
+				height: 5px;
+				margin: 10px auto;
+				border: 1px red solid;
+				display: inline-block;
+				border-radius: 50%;
+
+				&.active {
+					background-color: red;
+				}
+		}
+	}
+
+
+}
+.carousel-container {
+	width: 100%;
+	position: relative;
+
+	.carousel-btn {
+		font-family: "sneakers-pro",sans-serif;
+		@include animate();
+		color: red;
+		color: red;
+		font-size: 80px;
+		position: absolute;
+		top: 40%;
+		cursor: pointer;
+
+		&:hover {
+			opacity: 0.5;
+		}
+	}
+	.js-carousel-left {
+		left: 20px;
+		opacity: 0.1;
+	}
+	.js-carousel-right {
+		right: 20px;
+	}
+
+#carousel {
+	display: block;
+	width: 750px;
+	height: 400px;
+	border: 1px #eae9e9 solid;
+	margin: 60px auto;
+	padding: 10px;
+	position: relative;
+
+	#scroller {
+		display: block;
+		width: 750px;
+		height: 400px;
+		overflow: hidden;
+		position:relative;
+	
+
+		ul {
+			display: block;
+			position: absolute;
+			list-style-type: none;
+			width: 3750px;
+			height: 400px;
+
+			li {
+				display: block;
+				width: 750px;
+				float: left;
+
+				img {
+					width: 100%;
+				}
+			}
+		}
+	}
+
+	
+} 
+}
