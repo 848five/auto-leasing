@@ -18,6 +18,8 @@ app.set('view engine', 'html');
 
 if (app.get('env') != 'development') {
 app.use( require('express-force-domain')('http://www.blissautoleasing.com') );
+} else {
+    
 }
 app.use(favicon());
 app.use(logger('dev'));
@@ -51,8 +53,7 @@ if (app.get('env') === 'development') {
     });
 }
 
-app.listen(80);
-
+app.listen(8080);
 // production error handler
 // no stacktraces leaked to user
 app.use(function(err, req, res, next) {
