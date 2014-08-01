@@ -7,7 +7,7 @@ router.get('/', function(req, res) {
 	var collections = "cars";
 	var db = require("mongojs").connect(dbURL);
 
-  res.render('index', db.specials.find());
+  res.render('index', "");
 });
 
 module.exports = router;
