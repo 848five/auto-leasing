@@ -2,25 +2,10 @@
 <html>
 <head>
 	<title>{% block site-title %}{% endblock %}</title>
-    {% block meta-tags %}
-		<meta charset="UTF-8">
-		<meta name="description" content="bliss auto leasing. Feel the BLISS, when you get the car you want - for a better deal! Lexus, BMW, Mercedes, Audi, Toyota, Ford, Kia, Chevy, Volkswagen, and more!">
-		<meta name="keywords" content="bliss, auto, leasing, Lexus, BMW, Mercedes, Audi, Toyota, Ford, Kia, Chevy, Volkswagen">
-		<meta name="author" content="Bliss Auto Team">
-		<link rel="canonical" href="http://www.BlissAutoLeasing.com" />
-
-		<meta property="og:title" content="bliss auto leasing" />
-		<meta property="og:type" content="website" />
-		<meta property="og:image" content="https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xaf1/t1.0-1/1798673_762291327142418_7160190693688266387_n.jpg" />
-		<meta property="og:url" content="http://www.blissautoleasing.com/" />
-		<meta property="og:description" content="bliss auto leasing. Feel the BLISS, when you get the car you want - for a better deal! Lexus, BMW, Mercedes, Audi, Toyota, Ford, Kia, Chevy, Volkswagen, and more!" />
-
-		<link rel="alternate" href="http://www.blissautoleasing.com" hreflang="en" />
-    {% endblock %}
+    {% block meta-tags %}{% include 'meta.html' %}{% endblock %}
 
 	{% block scripts %}
 		<script type="text/javascript" src="//use.typekit.net/xzk8ysq.js"></script>
-		<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 	{% endblock %}
 
 	{%block styles %}
@@ -33,10 +18,11 @@
 {% include 'nav.html' %}
 
 <section class="content-container">
-	{% block content %}
-		base content
-	{% endblock %}
+	{% block content %}{% endblock %}
+
 </section>
+
+{% block footer %}{% include 'footer.html' %}{% endblock %}
 
 </body>
 </html>

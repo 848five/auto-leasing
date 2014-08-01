@@ -16,8 +16,9 @@ app.engine('html',swig.renderFile);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'html');
 
+if (app.get('env') != 'development') {
 app.use( require('express-force-domain')('http://www.blissautoleasing.com') );
-
+}
 app.use(favicon());
 app.use(logger('dev'));
 app.use(bodyParser.json());
@@ -50,7 +51,7 @@ if (app.get('env') === 'development') {
     });
 }
 
-app.listen(80);
+app.listen(8080);
 
 // production error handler
 // no stacktraces leaked to user
