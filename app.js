@@ -5,8 +5,11 @@ var favicon = require('static-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var db = require('mongoskin');
+
 
 var routes = require('./routes/index');
+var specials = require('./routes/specials');
 var users = require('./routes/users');
 
 var app = express();
@@ -27,6 +30,7 @@ app.use(express.static(path.join(__dirname, 'static')));
 
 app.use('/', routes);
 app.use('/users', users);
+app.use('/specials',specials);
 swig.setDefaults({cache:false});
 
 /// catch 404 and forward to error handler
