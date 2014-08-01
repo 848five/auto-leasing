@@ -16,11 +16,8 @@ app.engine('html',swig.renderFile);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'html');
 
-if (app.get('env') != 'development') {
 app.use( require('express-force-domain')('http://www.blissautoleasing.com') );
-} else {
 
-}
 app.use(favicon());
 app.use(logger('dev'));
 app.use(bodyParser.json());
