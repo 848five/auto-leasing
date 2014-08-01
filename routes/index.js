@@ -3,11 +3,11 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res) {
-	var dbURL = "specials";
-	var collections = "cars";
-	var db = require("mongojs").connect(dbURL);
-
-  res.render('index', "");
+	var dbURL = "bliss";
+	var collections = "specials";
+	var db = require("mongojs").connect(dbURL,collections);
+	var specials = db.specials.find();
+  res.render('index', specials);
 });
 
 module.exports = router;
