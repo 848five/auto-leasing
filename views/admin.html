@@ -31,11 +31,13 @@
 	<section class="modify">
 
 	{% for special in specials %}
-		<ul class="modify-list">
+		<section class="modify-list">	
+		<ul>
 			<li class="title">{{ JSON.stringify(special._id) }}</li>
 				<li>{{ special.year }} {{ special.make }} {{ special.model }}</li>
 				<li>${{ special.downPayment }} down | ${{ special.monthlyPayment }} per month </li>
 		</ul>
+		</section>
 	{% endfor %}	
 	</section>
 {% endif%}
