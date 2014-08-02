@@ -9,8 +9,8 @@ router.get('/', function(req,res) {
 });
 
 
-router.post('/create/:collection?',function(req,res) {
-	switch(req.params.collection) {
+router.post('/create/:dbcol?',function(req,res) {
+	switch(req.params.dbcol) {
     case 'specials':
     	var year = req.body.year;
         db.open(function(err) {
