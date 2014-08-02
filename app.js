@@ -8,6 +8,8 @@ var bodyParser = require('body-parser');
 var db = require('mongoskin');
 
 
+var mongodb = require('mongodb');
+var db = new mongodb.Db('bliss', new mongodb.Server('127.0.0.1', 27017), {safe:true});
 var routes = require('./routes/index');
 var specials = require('./routes/specials');
 var users = require('./routes/users');
