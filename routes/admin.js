@@ -8,6 +8,9 @@ router.get('/', function(req,res) {
          res.render('admin',"");
 });
 
+router.post('/admin-panel/create/specials', function(req,res) {
+	console.log('creating!');
+});
 
 router.post('/', function(req,res) {
 	var user = req.body.user;
@@ -39,7 +42,5 @@ router.post('/', function(req,res) {
 
 });
 
-router.post('/admin-panel/create/specials', function(req,res) {
-	console.log('creating!');
-});
+
 module.exports = router;
