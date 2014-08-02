@@ -19,7 +19,7 @@ router.post('/create/:collection?',function(req,res) {
 					  collection.save({year:year} , function(err, result) {
          console.log('special saved');
          console.log(user);
-         			var specials = db.collection('specials').find();
+         			var specials = collection('specials').find();
 					res.render('admin',{auth: user,msg: 'record added.',specials:specials});
       });
 					
