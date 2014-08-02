@@ -10,12 +10,12 @@ router.get('/', function(req,res) {
 });
 
 function loadSpecials() {
-	var db = new mongodb.Db('bliss', new mongodb.Server('127.0.0.1', 27017), {safe:true});
-	db.open(function(err) {
-			db.collection('specials',function(err,collection) {
+	var sdb = new mongodb.Db('bliss', new mongodb.Server('127.0.0.1', 27017), {safe:true});
+	sdb.open(function(err) {
+			sdb.collection('specials',function(err,collection) {
 				   collection.find({}).toArray(function(err,list) {
 					specialsList = list;
-					db.close();
+					sdb.close();
 				});				
 			});
 		});
