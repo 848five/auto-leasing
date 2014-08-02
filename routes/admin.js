@@ -10,7 +10,9 @@ router.get('/', function(req,res) {
 
 
 router.post('/:id?', function(req,res) {
-	console.log(id);
+	if (id) {
+		console.log(id);
+	}
 	var user = req.body.user;
 	var pass = req.body.password;
 	var error = "";
