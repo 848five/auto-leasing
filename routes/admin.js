@@ -9,17 +9,19 @@ router.get('/', function(req,res) {
 });
 
 
-router.post('/create/:dbcol?',function(req,res) {
-	switch(req.params.dbcol) {
+router.post('/create/:collection?',function(req,res) {
+	switch(req.params.collection) {
     case 'specials':
     	var year = req.body.year;
         db.open(function(err) {
         	if (!err) {
-        		console.log('saving');
-				db.collection('specials').save({year:year});
-					console.log('special saved');
+				db.collection('specials',function(err,collection) {
+					  collection.save({year:year} , function(err, result) {
+         console.log('special saved');
 					res.render('admin',{auth: user});
-				
+      });
+					
+				});
 			} else {
 				console.log('error:' + err);
 				res.render('admin',{error: err});
