@@ -10,9 +10,12 @@ var db = require('mongoskin');
 
 var mongodb = require('mongodb');
 var db = new mongodb.Db('bliss', new mongodb.Server('127.0.0.1', 27017), {safe:true});
+
+
+//Route Files
 var routes = require('./routes/index');
 var specials = require('./routes/specials');
-var users = require('./routes/users');
+var admin = require('./routes/admin');
 
 var app = express();
 
@@ -30,8 +33,10 @@ app.use(bodyParser.urlencoded());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'static')));
 
+
+//Routes
 app.use('/', routes);
-app.use('/users', users);
+app.use('/admin-panel', admin);
 app.use('/specials',specials);
 swig.setDefaults({cache:false});
 
