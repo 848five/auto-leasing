@@ -20,8 +20,8 @@ router.post('/', function(req,res) {
 		db.open(function(err) {
 			db.collection('admin',function(err,collection) {
 				collection.find({user:user,password:pass}).toArray(function(err,user) {
-							console.log(user.length);
-							if (user === []) {
+
+							if (user.length == 0) {
 								error = "invalid login, try again.";
 								res.render('admin',{msg: error});
 							} else {
