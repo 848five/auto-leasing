@@ -135,13 +135,23 @@ body {
     padding: 5px;
     margin: 10px; }
     body.admin .modify-list ul {
-      list-style-type: none; }
+      list-style-type: none;
+      display: inline-block; }
     body.admin .modify-list li.title {
       font-weight: 500; }
     body.admin .modify-list span {
       width: 30px;
-      height: 100%;
-      color: #ffffff; }
+      height: 60px;
+      color: #ffffff;
+      display: inline-block;
+      text-align: center;
+      float: right;
+      line-height: 60px;
+      font-size: 30px; }
+      body.admin .modify-list span.remove {
+        background-color: red; }
+      body.admin .modify-list span.edit {
+        background-color: #a5a5a5; }
   body.admin form {
     position: relative;
     width: 400px;
