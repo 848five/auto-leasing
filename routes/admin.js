@@ -1,4 +1,5 @@
 var express = require('express');
+var md5 = require('MD5');
 var router = express.Router();
 
 var mongodb = require('mongodb');
@@ -19,8 +20,8 @@ router.post('/', function(req,res) {
 	} else {
 		db.open(function(err) {
 			db.collection('admin',function(err,collection) {
-				collection.find({user:user,password:pass}).toArray(function(err,user) {
-
+				collection.find({user:user,password:md5(pass)}).toArray(function(err,user) {
+					console.log(md5(pass));
 							if (user.length == 0) {
 								error = "invalid login, try again.";
 								res.render('admin',{msg: error});
