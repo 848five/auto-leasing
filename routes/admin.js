@@ -9,7 +9,7 @@ router.get('/', function(req,res) {
 });
 
 
-router.post('/:id', function(req,res) {
+router.post('/:id?', function(req,res) {
 	console.log(id);
 	var user = req.body.user;
 	var pass = req.body.password;
