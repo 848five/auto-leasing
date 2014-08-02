@@ -21,7 +21,7 @@ router.post('/create/:collection?',function(req,res) {
 			        db.close();
      			});
 
-				res.redirect('/',{auth: user,msg: 'record added.'});
+				res.redirect('admin',{auth: user,msg: 'record added.'});
          			
 					
 				});
