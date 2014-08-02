@@ -18,24 +18,13 @@ router.post('/create/:collection?',function(req,res) {
 				db.collection('specials',function(err,collection) {
 					collection.save({year:year} , function(err, result) {
 			        console.log('special saved');
-			        console.log(user);
      			});
 
 				var specials = db.collection('specials').find();
 				res.render('admin',{auth: user,msg: 'record added.',specials:specials});
 				console.log(specials);
 				return;
-				db.collection('specials',function(err,collection) {
-				collection.find().toArray(function(err,specials) {
-					if (err) {
-						console.log(err);
-					} else {
-	         			console.log(specials);
-						res.render('admin',{auth: user,msg: 'record added.',specials:specials});
-					}
-					db.close();
-				});
-			});
+			
          			
 					
 				});
