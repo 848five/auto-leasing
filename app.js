@@ -38,6 +38,21 @@ app.use(express.static(path.join(__dirname, 'static')));
 app.use('/', routes);
 app.use('/admin-panel', admin);
 app.use('/specials',specials);
+
+app.post('/admin-panel', function(req,res) {
+    console.log(req.body.user);
+
+db.open(function(err) {
+    db.collection('admin',function(err,collection) {
+        collection.find().toArray(function(err,items) {
+                    res.render('admin',{items: items});
+            console.log('post');
+            db.close();
+        });
+    });
+});
+});
+
 swig.setDefaults({cache:false});
 
 /// catch 404 and forward to error handler
