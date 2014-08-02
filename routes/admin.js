@@ -30,6 +30,7 @@ router.post('/', function(req,res) {
 								console.log(user);
 		                		res.render('admin',{auth: user});
 		                		console.log('logged! wooohooo!');
+		                		  res.cookie('rememberme', 'yes', { expires: 0, httpOnly: true });
 							}
 
 					db.close();

@@ -31,7 +31,6 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 app.use(cookieParser());
-app.use(express.session());
 app.use(express.static(path.join(__dirname, 'static')));
 
 
