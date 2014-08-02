@@ -6,11 +6,6 @@ var specialsList;
 var mongodb = require('mongodb');
 
 
-router.get('/', function(req,res) {
-		 loadSpecials(function() {
-         	res.render('admin',specialsList);
-		 });
-});
 
 function loadSpecials(callback) {
 	var db = new mongodb.Db('bliss', new mongodb.Server('127.0.0.1', 27017), {safe:true});
@@ -27,6 +22,11 @@ function loadSpecials(callback) {
 	}
 }
 
+router.get('/', function(req,res) {
+		 loadSpecials(function() {
+         	res.render('admin',specialsList);
+		 });
+});
 
 router.post('/create/:collection?',function(req,res) {
 	switch(req.params.collection) {
