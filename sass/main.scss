@@ -161,6 +161,8 @@ body {
 		.modify-list {
 			list-style-type: none;
 			border: 1px #d5d5d5 dashed;
+			padding: 5px;
+			margin: 10px;
 			li {
 				&.title {
 					font-weight: 500;
