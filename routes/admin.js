@@ -23,17 +23,13 @@ router.post('/create/:collection?',function(req,res) {
 			});
 		});
 
-		db.open(function(err) {
-			db.collection('specials',function(err,collection) {
+				db.collection('specials',function(err,collection) {
 					collection.find({}).toArray(function(err,modList) {
 						console.log(modList);
 					res.render('admin',{auth: user,msg: 'record added.',specials:modList});
 					db.close();
 					});
 				});
-		});
-
-				
 		
         break;
     default:
