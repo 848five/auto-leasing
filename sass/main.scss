@@ -84,7 +84,8 @@ body {
 		}
 		
 	}
-	
+
+
 	.content-container {
 		position: relative;
 		display: block;
@@ -92,26 +93,30 @@ body {
 		height: auto;
 		margin: 0 auto;
 
+		&.admin {
+			.menu, .social-bar {
+				display: none;
+			}
 		form {
-			width: 400px;
-			border: 1px #d5d5d5 solid;
-			margin: 100px auto;
-			height: 170px;
-			border-radius: 3px;
-			display: block;
+				width: 400px;
+				border: 1px #d5d5d5 solid;
+				margin: 100px auto;
+				height: 170px;
+				border-radius: 3px;
+				display: block;
 
-			input {
-				width: 100%;
-				height: 50px;
-				line-height: 20px;
-				font-size: 18px;
-				text-align: center;
-				
-				&:nth-child(0) {
-					border-bottom: 1px #d5d5d5 dashed;
+				input {
+					width: 100%;
+					height: 50px;
+					line-height: 20px;
+					font-size: 18px;
+					text-align: center;
+					
 				}
 			}
 		}
+	
+
 	}
 
 	footer {

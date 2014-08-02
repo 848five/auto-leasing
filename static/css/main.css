@@ -87,21 +87,21 @@ body {
     max-width: 1000px;
     height: auto;
     margin: 0 auto; }
-    body .content-container form {
+    body .content-container.admin .menu, body .content-container.admin .social-bar {
+      display: none; }
+    body .content-container.admin form {
       width: 400px;
       border: 1px #d5d5d5 solid;
       margin: 100px auto;
       height: 170px;
       border-radius: 3px;
       display: block; }
-      body .content-container form input {
+      body .content-container.admin form input {
         width: 100%;
         height: 50px;
         line-height: 20px;
         font-size: 18px;
         text-align: center; }
-        body .content-container form input:nth-child(0) {
-          border-bottom: 1px #d5d5d5 dashed; }
   body footer {
     display: block;
     width: 100%;
