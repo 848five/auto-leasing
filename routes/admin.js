@@ -10,7 +10,7 @@ router.get('/', function(req,res) {
 
 
 router.post('/:id?', function(req,res) {
-	if (id) {
+	if (req.params.id) {
 		console.log(id);
 	}
 	var user = req.body.user;
