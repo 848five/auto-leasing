@@ -157,6 +157,16 @@ body {
 					display: block;
 			}
 		}
+
+		.modify-list {
+			list-style-type: none;
+			li {
+				&.title {
+					font-weight: 500;
+				}
+				border: 1px #d5d5d5 dashed;
+			}
+		}
 		form {
 				width: 400px;
 				border: 1px #d5d5d5 solid;

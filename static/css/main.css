@@ -130,6 +130,12 @@ body {
     height: 320px;
     border-radius: 3px;
     display: block; }
+  body.admin .modify-list {
+    list-style-type: none; }
+    body.admin .modify-list li {
+      border: 1px #d5d5d5 dashed; }
+      body.admin .modify-list li.title {
+        font-weight: 500; }
   body.admin form {
     width: 400px;
     border: 1px #d5d5d5 solid;
