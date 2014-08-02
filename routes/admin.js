@@ -14,27 +14,34 @@ router.post('/create/:collection?',function(req,res) {
     case 'specials':
     	var year = req.body.year;
         db.open(function(err) {
-			db.collection('specials',function(err,collection) {
-				collection.save({year:year} , function(err, result) {
-		        console.log('special saved');
-		        console.log(user);
-     			db.close();
- 				});
-			});
-		});
+        	if (!err) {
+				db.collection('specials',function(err,collection) {
+					collection.save({year:year} , function(err, result) {
+			        console.log('special saved');
+			        console.log(user);
+         			db.close();
+     			});
 
 				db.collection('specials',function(err,collection) {
-					collection.find({}).toArray(function(err,modList) {
-						console.log(modList);
-					res.render('admin',{auth: user,msg: 'record added.',specials:modList});
+				collection.find({}).toArray(function(err,user) {
+					var specials = db.collection('specials').find();
+         			console.log(specials);
+					res.render('admin',{auth: user,msg: 'record added.',specials:specials});
 					db.close();
-					});
 				});
-		
+			});
+         			
+					
+				});
+			} else {
+				console.log('error:' + err);
+				res.render('admin',{error: err});
+			}
+		});
         break;
     default:
         res.send('default');
-	
+}
 });
 
 
