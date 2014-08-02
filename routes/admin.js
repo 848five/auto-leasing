@@ -74,7 +74,7 @@ router.post('/', function(req,res) {
 								error = "invalid login, try again.";
 								res.render('admin',{msg: error});
 							} else {
-		                		res.render('admin',{auth: user,specials:specialsList});
+		                		res.render('admin',{auth: user});
 		                		//res.cookie('', 'yes', { expires: 0, httpOnly: true });
 							}
 
