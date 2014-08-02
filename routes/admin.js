@@ -34,12 +34,15 @@ router.post('/create/:collection?',function(req,res) {
         db.open(function(err) {
         	if (!err) {
 				db.collection('specials',function(err,collection) {
-					collection.save({year:year,make:make,model:model,downPayment:downPayment,monthlyPayment:monthlyPayment} , function(err, result) {
-			        	console.log('special saved');
-			        	db.close();
-     				});
+					if (year) {
+						collection.save({year:year,make:make,model:model,downPayment:downPayment,monthlyPayment:monthlyPayment} , function(err, result) {
+				        	console.log('special saved');
+				        	db.close();
+	     				});
+					}
      				loadSpecials();
-					res.redirect('/admin-panel',{auth: user,msg: 'record added.',specials:specialsList});	
+     				year = null;
+					res.render('admin',{auth: user,msg: 'record added.',specials:specialsList});	
 
 				});
 			} else {
