@@ -9,10 +9,13 @@ router.get('/', function(req,res) {
 });
 
 
-router.post('/:year?', function(req,res) {
-	if (req.params.id) {
-		console.log(id);
-	}
+router.post('/create/:collection?',function(req,res) {
+	res.send(req.params.collection);
+});
+
+
+
+router.post('/', function(req,res) {
 	var user = req.body.user;
 	var pass = req.body.password;
 	var error = "";
@@ -38,8 +41,6 @@ router.post('/:year?', function(req,res) {
 			});
 		});
 	}
- 
-
 });
 
 
