@@ -6,17 +6,12 @@ var specialsList;
 var mongodb = require('mongodb');
 
 router.get('/', function(req,res) {
-		 loadSpecials(function() {
-         	res.render('admin',specialsList);
-		 });
+         res.render('admin',"");
 });
-
 
 function loadSpecials() {
 	var db = new mongodb.Db('bliss', new mongodb.Server('127.0.0.1', 27017), {safe:true});
 	db.open(function(err) {
-		if (err)
-        throw (err);
 			db.collection('specials',function(err,collection) {
 				   collection.find({}).toArray(function(err,list) {
 					specialsList = list;
@@ -25,7 +20,6 @@ function loadSpecials() {
 			});
 		});
 }
-
 
 
 router.post('/create/:collection?',function(req,res) {
