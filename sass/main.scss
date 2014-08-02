@@ -146,6 +146,17 @@ body {
 		.button {
 			cursor: pointer;
 		}
+
+		section.create {
+			form {
+					width: 230px;
+					border: 1px #d5d5d5 solid;
+					margin: 100px auto;
+					height: 320px;
+					border-radius: 3px;
+					display: block;
+			}
+		}
 		form {
 				width: 400px;
 				border: 1px #d5d5d5 solid;
@@ -154,14 +165,7 @@ body {
 				border-radius: 3px;
 				display: block;
 
-				&.create {
-					width: 230px;
-					border: 1px #d5d5d5 solid;
-					margin: 100px auto;
-					height: 320px;
-					border-radius: 3px;
-					display: block;
-				}
+
 
 				input {
 					width: 100%;
