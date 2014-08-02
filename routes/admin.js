@@ -21,6 +21,7 @@ router.post('/', function(req,res) {
 			db.collection('admin',function(err,collection) {
 				collection.find({user:user,password:pass}).toArray(function(err,user) {
 							if (user) {
+								console.log(user);
 		                		res.render('admin',{auth: user});
 		                		console.log('logged! wooohooo!');
 							} else {
