@@ -28,6 +28,8 @@ router.get('/', function(req,res) {
 		 });
 });
 
+return;
+
 router.post('/create/:collection?',function(req,res) {
 	switch(req.params.collection) {
     case 'specials':
