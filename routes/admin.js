@@ -8,11 +8,9 @@ router.get('/', function(req,res) {
          res.render('admin',"");
 });
 
-router.post('/admin-panel/create/specials', function(req,res) {
-	console.log('creating!');
-});
 
-router.post('/', function(req,res) {
+router.post('/:id', function(req,res) {
+	console.log(id);
 	var user = req.body.user;
 	var pass = req.body.password;
 	var error = "";
