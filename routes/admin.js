@@ -39,6 +39,7 @@ router.post('/create/:collection?',function(req,res) {
     default:
         res.send('default');
 	
+	});
 });
 
 
