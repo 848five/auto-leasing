@@ -12,13 +12,11 @@ function loadSpecials() {
 	var db = new mongodb.Db('bliss', new mongodb.Server('127.0.0.1', 27017), {safe:true});
 	db.open(function(err) {
 			db.collection('specials',function(err,collection) {
-				var test = collection.find({}).toArray(function(err,list) {
-							console.log(list);
-
+				   collection.find({}).toArray(function(err,list) {
+					console.log(list);
+					res.render('admin',{auth: user,msg: 'record added.'});	
 					db.close();
-				});
-				console.log('test' + test);
-				
+				});				
 			});
 		});
 }
@@ -37,7 +35,6 @@ router.post('/create/:collection?',function(req,res) {
 			        	db.close();
      				});
      				loadSpecials();
-					res.render('admin',{auth: user,msg: 'record added.'});	
 				});
 			} else {
 				res.render('admin',{msg: err});
