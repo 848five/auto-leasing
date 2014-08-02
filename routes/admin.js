@@ -56,7 +56,6 @@ router.post('/create/:collection?',function(req,res) {
 
 
 router.post('/', function(req,res) {
-	loadSpecials();
 	user = req.body.user;
 	var pass = req.body.password;
 	var error = "";
@@ -69,16 +68,17 @@ router.post('/', function(req,res) {
 		db.open(function(err) {
 			db.collection('admin',function(err,collection) {
 				collection.find({user:user,password:md5(pass)}).toArray(function(err,user) {
+				db.close();
 					console.log(md5(pass));
 							if (user.length == 0) {
 								error = "invalid login, try again.";
 								res.render('admin',{msg: error});
 							} else {
+								loadSpecials();
 		                		res.render('admin',{auth: user,specials:specialsList});
 		                		//res.cookie('', 'yes', { expires: 0, httpOnly: true });
 							}
 
-					db.close();
 				});
 			});
 		});
