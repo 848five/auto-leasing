@@ -14,11 +14,8 @@ var db = new mongodb.Db('bliss', new mongodb.Server('127.0.0.1', 27017), {safe:t
 
 //Route Files
 var routes = require('./routes/index');
-var specials = require('./routes/specials');
-
 var admin = require('./routes/admin');
 var create = require('./routes/create');
-var createSpecials = require('./routes/createSpecials');
 
 var app = express();
 
@@ -41,9 +38,6 @@ app.use(express.static(path.join(__dirname, 'static')));
 //Routes
 app.use('/', routes);
 app.use('/admin-panel', admin);
-app.use('/admin-panel/create', create);
-app.use('/admin-panel/create/:collection?', createSpecials);
-app.use('/specials',specials);
 
 
 
