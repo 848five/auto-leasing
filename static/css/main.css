@@ -119,7 +119,7 @@ body {
         body footer .footer-list .footer-list-item a {
           color: #fff;
           text-decoration: none; }
-  body.admin .menu, body.admin .social-bar {
+  body.admin .menu, body.admin .social-bar, body.admin footer {
     display: none; }
   body.admin form {
     width: 400px;
