@@ -14,7 +14,7 @@ db.open(function(err) {
 	db.collection('admin',function(err,collection) {
 		collection.find().toArray(function(err,items) {
                 	res.render('admin',{items: items});
-			console.log(items);
+			console.log('post');
 			db.close();
 		});
 	});
