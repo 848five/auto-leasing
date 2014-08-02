@@ -138,6 +138,10 @@ body {
       list-style-type: none; }
     body.admin .modify-list li.title {
       font-weight: 500; }
+    body.admin .modify-list span {
+      width: 30px;
+      height: 100%;
+      color: #ffffff; }
   body.admin form {
     position: relative;
     width: 400px;

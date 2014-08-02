@@ -163,13 +163,19 @@ body {
 			padding: 5px;
 			margin: 10px;
 			ul {
-				
+
 			list-style-type: none;
 			}
 			li {
 				&.title {
 					font-weight: 500;
 				}
+			}
+
+			span {
+				width: 30px;
+				height: 100%;
+				color: #ffffff;
 			}
 		}
 		form {
