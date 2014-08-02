@@ -14,14 +14,20 @@ router.post('/', function(req,res) {
 	var error = "";
 
 	if (user == "" || pass == "") {
-		error = "Invalid login, try again.";
+		error = "enter a username and password.";
 		res.render('admin',{msg: error});
 	} else {
 		db.open(function(err) {
 			db.collection('admin',function(err,collection) {
-				collection.find().toArray(function(err,items) {
-		                	res.render('admin',{items: items});
-					console.log('post');
+				collection.find({user:user,password:pass}).toArray(function(err,user) {
+							if (user) {
+		                		res.render('admin',{auth: user});
+		                		console.log('logged! wooohooo!');
+							} else {
+								error = "invalid login, try again.";
+								res.render('admin',{msg: error});
+							}
+
 					db.close();
 				});
 			});
