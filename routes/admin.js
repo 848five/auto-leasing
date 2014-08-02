@@ -13,7 +13,7 @@ router.post('/', function(req,res) {
 	var pass = req.body.password;
 	var error = "";
 
-	if (user == "" || pass = "") {
+	if (user == "" || pass == "") {
 		error = "Invalid login, try again.";
 		res.render('admin',{msg: error});
 	} else {
