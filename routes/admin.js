@@ -21,11 +21,7 @@ router.post('/create/:collection?',function(req,res) {
 			        db.close();
      			});
 
-				var list = db.collection('specials').find();
-				res.render('admin',{auth: user,msg: 'record added.',specials:list});
-				console.log(list);
-				return;
-			
+				res.redirect('/',{auth: user,msg: 'record added.'});
          			
 					
 				});
