@@ -28,6 +28,8 @@ router.get('/', function(req,res) {
 		 });
 });
 
+module.exports = router;
+
 return;
 
 router.post('/create/:collection?',function(req,res) {
