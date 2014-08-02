@@ -24,8 +24,12 @@ router.post('/create/:collection?',function(req,res) {
 
 				db.collection('specials',function(err,collection) {
 				collection.find().toArray(function(err,specials) {
-         			console.log(specials);
-					res.render('admin',{auth: user,msg: 'record added.',specials:specials});
+					if (err) {
+						console.log(err);
+					} else {
+	         			console.log(specials);
+						res.render('admin',{auth: user,msg: 'record added.',specials:specials});
+					}
 					db.close();
 				});
 			});
