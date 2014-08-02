@@ -31,8 +31,12 @@
 
 	{% for special in specials %}
 		<ul class="modify-list">
-			<li class="title">Current Special: {{ special._id.ObjectId.toString() }}</li>
+			{% for id in special._id %}
+			<li class="title">Current Special: {{ id }}</li>
+			{% endfor %}
 				<li>{{ special.year }}</li>
+			}
+			}
 		</ul>
 	{% endfor %}	
 	</section>
