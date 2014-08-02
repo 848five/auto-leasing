@@ -20,7 +20,7 @@ function loadSpecials() {
 				console.log('test' + test);
 				
 			});
-		}
+		});
 }
 
 
