@@ -10,8 +10,6 @@ var mongodb = require('mongodb');
 function loadSpecials() {
 	var db = new mongodb.Db('bliss', new mongodb.Server('127.0.0.1', 27017), {safe:true});
 	db.open(function(err) {
-		if (err)
-        throw (err);
 			db.collection('specials',function(err,collection) {
 				   collection.find({}).toArray(function(err,list) {
 					specialsList = list;
