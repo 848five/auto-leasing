@@ -39,7 +39,7 @@ router.post('/create/:collection?',function(req,res) {
 			        	db.close();
      				});
      				loadSpecials();
-					res.render('admin',{auth: user,msg: 'record added.',specials:specialsList});	
+					res.redirect('/admin-panel',{auth: user,msg: 'record added.',specials:specialsList});	
 
 				});
 			} else {
