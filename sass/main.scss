@@ -154,6 +154,15 @@ body {
 				border-radius: 3px;
 				display: block;
 
+				&.create {
+					width: 230px;
+					border: 1px #d5d5d5 solid;
+					margin: 100px auto;
+					height: 320px;
+					border-radius: 3px;
+					display: block;
+				}
+
 				input {
 					width: 100%;
 					height: 50px;
