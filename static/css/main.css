@@ -136,3 +136,7 @@ body {
       line-height: 20px;
       font-size: 18px;
       text-align: center; }
+    body.admin form p {
+      color: red;
+      text-align: center;
+      padding-top: 70px; }
