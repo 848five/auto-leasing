@@ -34,14 +34,14 @@ router.post('/create/:collection?',function(req,res) {
         db.open(function(err) {
         	if (!err) {
 				db.collection('specials',function(err,collection) {
-					if (year) {
+					if (year != "") {
 						collection.save({year:year,make:make,model:model,downPayment:downPayment,monthlyPayment:monthlyPayment} , function(err, result) {
 				        	console.log('special saved');
 				        	db.close();
 	     				});
 					}
      				loadSpecials();
-     				year = null;
+     				year = "";
 					res.render('admin',{auth: user,msg: 'record added.',specials:specialsList});	
 
 				});
