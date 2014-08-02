@@ -121,6 +121,8 @@ body {
           text-decoration: none; }
   body.admin .menu, body.admin .social-bar, body.admin footer {
     display: none; }
+  body.admin .button {
+    cursor: pointer; }
   body.admin form {
     width: 400px;
     border: 1px #d5d5d5 solid;

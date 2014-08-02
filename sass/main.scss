@@ -140,9 +140,12 @@ body {
 
 
 	&.admin {
-			.menu, .social-bar, footer {
-				display: none;
-			}
+		.menu, .social-bar, footer {
+			display: none;
+		}
+		.button {
+			cursor: pointer;
+		}
 		form {
 				width: 400px;
 				border: 1px #d5d5d5 solid;

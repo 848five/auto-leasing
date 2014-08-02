@@ -9,16 +9,25 @@ router.get('/', function(req,res) {
 
 
 router.post('/', function(req,res) {
-	console.log(req.body.user);
+	var user = req.body.user;
+	var pass = req.body.password;
+	var error = "";
 
-db.open(function(err) {
-	db.collection('admin',function(err,collection) {
-		collection.find().toArray(function(err,items) {
-                	res.render('admin',{items: items});
-			console.log('post');
-			db.close();
+	if (user == "" || pass = "") {
+		error = "Invalid login, try again.";
+		res.render('admin',{msg: error});
+	} else {
+		db.open(function(err) {
+			db.collection('admin',function(err,collection) {
+				collection.find().toArray(function(err,items) {
+		                	res.render('admin',{items: items});
+					console.log('post');
+					db.close();
+				});
+			});
 		});
-	});
-});
+	}
+ 
+
 });
 module.exports = router;

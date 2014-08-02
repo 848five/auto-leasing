@@ -4,6 +4,12 @@
 <form method="POST" action="/admin-panel">
 	<input type="text" placeholder="username" name="user" />
 	<input type="password" placeholder="password" name="password" />
-	<input type="submit" name="submit" value="login" />
+	<input class="button" type="submit" name="submit" value="login" />
+	{% if msg %}
+		<p>{{msg}}</p>
+	{% endif %}
 </form>
+
+
+
 {% endblock %}
