@@ -22,7 +22,9 @@ function loadSpecials(callback) {
 				});				
 			});
 		});
-	callback();
+	if (callback) {
+		callback();
+	}
 }
 
 
