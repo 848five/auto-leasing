@@ -160,11 +160,11 @@ body {
 
 		.modify-list {
 			list-style-type: none;
+			border: 1px #d5d5d5 dashed;
 			li {
 				&.title {
 					font-weight: 500;
 				}
-				border: 1px #d5d5d5 dashed;
 			}
 		}
 		form {

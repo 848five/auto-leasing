@@ -31,8 +31,9 @@
 
 	{% for special in specials %}
 		<ul class="modify-list">
-			<li class="title">Current Special: {{ JSON.stringify(special._id) }}</li>
-				<li>{{ special.year }}</li>
+			<li class="title">{{ JSON.stringify(special._id) }}</li>
+				<li>{{ special.year }} {{ special.make }} {{ special.model }}</li>
+				<li>${{ special.downPayment }} down | ${{ special.monthlyPayment }} per month </li>
 		</ul>
 	{% endfor %}	
 	</section>
