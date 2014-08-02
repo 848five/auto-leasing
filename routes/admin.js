@@ -13,8 +13,7 @@ function loadSpecials() {
 	db.open(function(err) {
 			db.collection('specials',function(err,collection) {
 				   collection.find({}).toArray(function(err,list) {
-					console.log(list);
-					res.render('admin',{auth: user,msg: 'record added.'});	
+					return list;
 					db.close();
 				});				
 			});
@@ -34,7 +33,9 @@ router.post('/create/:collection?',function(req,res) {
 			        	console.log('special saved');
 			        	db.close();
      				});
-     				loadSpecials();
+     				var list = loadSpecials();
+					res.render('admin',{auth: user,msg: 'record added.',specials:list});	
+
 				});
 			} else {
 				res.render('admin',{msg: err});
