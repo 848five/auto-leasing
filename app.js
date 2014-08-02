@@ -36,10 +36,9 @@ app.use(express.static(path.join(__dirname, 'static')));
 
 
 //Routes
-
 app.use('/', routes);
 app.use('/admin-panel', admin);
-app.use('/admin-panel/create/:collection?', admin);
+app.use('/admin-panel/create/:collection?', create);
 app.use('/specials',specials);
 
 
