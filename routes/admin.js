@@ -9,7 +9,6 @@ router.get('/', function(req,res) {
 });
 
 function loadSpecials() {
-			db.open(function(err) {
 			db.collection('specials',function(err,collection) {
 				collection.find({}).toArray(function(err,list) {
 							console.log(list);
@@ -17,7 +16,6 @@ function loadSpecials() {
 					db.close();
 				});
 			});
-		});
 }
 
 
