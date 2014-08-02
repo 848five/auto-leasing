@@ -24,8 +24,9 @@ router.post('/create/:collection?',function(req,res) {
 				});
 
 				db.collection('admin',function(err,collection) {
-					collection.find({}).toArray(function(err,specials) {
-					res.render('admin',{auth: user,msg: 'record added.',specials:specials});
+					collection.find({}).toArray(function(err,modList) {
+						console.log(modList);
+					res.render('admin',{auth: user,msg: 'record added.',specials:modList});
 					db.close();
 					});
 				});
