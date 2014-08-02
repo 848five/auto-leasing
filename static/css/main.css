@@ -138,6 +138,7 @@ body {
     body.admin .modify-list li.title {
       font-weight: 500; }
   body.admin form {
+    position: relative;
     width: 400px;
     border: 1px #d5d5d5 solid;
     margin: 100px auto;
@@ -154,3 +155,11 @@ body {
       color: red;
       text-align: center;
       padding-top: 70px; }
+    body.admin form span {
+      position: absolute;
+      z-index: 1;
+      right: 20px;
+      padding: 5px;
+      background-color: red;
+      margin-top: -10px;
+      color: white; }
