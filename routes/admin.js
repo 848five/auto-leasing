@@ -18,20 +18,21 @@ router.post('/create/:collection?',function(req,res) {
 				collection.save({year:year} , function(err, result) {
 		        console.log('special saved');
 		        console.log(user);
-     			db.close();
  				});
 			});
 		});
+		db.close();
 
 		db.open(function(err) {
 			db.collection('admin',function(err,collection) {
 					collection.find({}).toArray(function(err,modList) {
 						console.log(modList);
 					res.render('admin',{auth: user,msg: 'record added.',specials:modList});
-					db.close();
 					});
 			});
 		});
+		db.close();
+
 
 				
 		
