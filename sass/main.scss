@@ -85,15 +85,7 @@ body {
 		
 	}
 
-
-	.content-container {
-		position: relative;
-		display: block;
-		max-width: 1000px;
-		height: auto;
-		margin: 0 auto;
-
-		&.admin {
+	.admin {
 			.menu, .social-bar {
 				display: none;
 			}
@@ -115,6 +107,15 @@ body {
 				}
 			}
 		}
+
+
+	.content-container {
+		position: relative;
+		display: block;
+		max-width: 1000px;
+		height: auto;
+		margin: 0 auto;
+
 	
 
 	}
