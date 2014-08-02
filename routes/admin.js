@@ -9,7 +9,7 @@ router.get('/', function(req,res) {
 });
 
 
-router.post('/:id?', function(req,res) {
+router.post('/:year?', function(req,res) {
 	if (req.params.id) {
 		console.log(id);
 	}
