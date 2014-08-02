@@ -13,7 +13,6 @@ router.post('/', function(req,res) {
 	var user = req.body.user;
 	var pass = req.body.password;
 	var error = "";
-	console.log(req.sessionID);
 
 	if (user == "" || pass == "") {
 		error = "enter a username and password.";
@@ -27,10 +26,8 @@ router.post('/', function(req,res) {
 								error = "invalid login, try again.";
 								res.render('admin',{msg: error});
 							} else {
-								console.log(user);
 		                		res.render('admin',{auth: user});
-		                		console.log('logged! wooohooo!');
-		                		  res.cookie('rememberme', 'yes', { expires: 0, httpOnly: true });
+		                		//res.cookie('', 'yes', { expires: 0, httpOnly: true });
 							}
 
 					db.close();
