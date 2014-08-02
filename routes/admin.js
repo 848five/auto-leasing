@@ -17,17 +17,14 @@ router.post('/create/:collection?',function(req,res) {
         	if (!err) {
 				db.collection('specials',function(err,collection) {
 					collection.save({year:year} , function(err, result) {
-			        console.log('special saved');
-			        db.close();
-     			});
+			        	console.log('special saved');
+			        	db.close();
+     				});
 
-				res.redirect('/admin-panel',{auth: user,msg: 'record added.'});
-         			
-					
+					res.render('admin',{auth: user,msg: 'record added.'});	
 				});
 			} else {
-				console.log('error:' + err);
-				res.render('admin',{error: err});
+				res.render('admin',{msg: err});
 			}
 		});
         break;
