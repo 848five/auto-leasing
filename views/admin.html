@@ -29,12 +29,12 @@
 	</section>
 	<section class="modify">
 
+	{% for special in specials %}
 		<ul class="modify-list">
-			<li class="title">Current Specials</li>
-			{% for special in specials %}
+			<li class="title">Current Special: {{ special._id }}</li>
 				<li>{{ special.year }}</li>
-			{% endfor %}	
 		</ul>
+	{% endfor %}	
 	</section>
 {% endif%}
 
