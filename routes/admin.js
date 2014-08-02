@@ -26,11 +26,8 @@ router.post('/create/:collection?',function(req,res) {
 			}
 		});
         break;
-    case n:
-        code block
-        break;
     default:
-        default code block
+        res.send('default');
 }
 });
 
