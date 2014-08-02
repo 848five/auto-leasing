@@ -38,4 +38,8 @@ router.post('/', function(req,res) {
  
 
 });
+
+router.post('/admin-panel/create/specials', function(req,res) {
+	console.log('creating!');
+});
 module.exports = router;
