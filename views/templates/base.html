@@ -13,11 +13,11 @@
 		<link rel="stylesheet" type="text/css" href="css/main.css">
 	{% endblock %}
 </head>
-<body>
+<body class="{%block superclass %}{% endblock %}">
 
 {% include 'nav.html' %}
 
-<section class="content-container {%block superclass %}{% endblock %}">
+<section class="content-container">
 	{% block content %}{% endblock %}
 
 </section>
