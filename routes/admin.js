@@ -5,13 +5,14 @@ var user;
 var specialsList;
 var mongodb = require('mongodb');
 
-loadSpecials();
+
 router.get('/', function(req,res) {
-		 
-         res.render('admin',specialsList);
+		 loadSpecials(function() {
+         	res.render('admin',specialsList);
+		 });
 });
 
-function loadSpecials() {
+function loadSpecials(callback) {
 	var db = new mongodb.Db('bliss', new mongodb.Server('127.0.0.1', 27017), {safe:true});
 	db.open(function(err) {
 			db.collection('specials',function(err,collection) {
@@ -21,6 +22,7 @@ function loadSpecials() {
 				});				
 			});
 		});
+	callback();
 }
 
 
