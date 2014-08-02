@@ -10,6 +10,8 @@ router.get('/', function(req,res) {
 
 function loadSpecials() {
 			db.collection('specials',function(err,collection) {
+				var test = collection.find();
+				console.log('test --> ' + test);
 				collection.find({}).toArray(function(err,list) {
 							console.log(list);
 
