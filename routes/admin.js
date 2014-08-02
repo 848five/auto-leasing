@@ -34,6 +34,7 @@ router.post('/create/:collection?',function(req,res) {
 			        	db.close();
      				});
      				var list = loadSpecials();
+     				console.log(list);
 					res.render('admin',{auth: user,msg: 'record added.',specials:list});	
 
 				});
