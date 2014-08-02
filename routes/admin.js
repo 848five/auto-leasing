@@ -20,7 +20,8 @@ router.post('/create/:collection?',function(req,res) {
 			        	console.log('special saved');
 			        	db.close();
      				});
-
+					res.send({redirect: '/admin-panel',,{auth: user,msg: 'record added.'}});
+					return;
 					res.render('admin',{auth: user,msg: 'record added.'});	
 				});
 			} else {
