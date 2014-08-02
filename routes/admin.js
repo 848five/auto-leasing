@@ -13,6 +13,7 @@ router.post('/', function(req,res) {
 	var user = req.body.user;
 	var pass = req.body.password;
 	var error = "";
+	console.log(req.sessionID);
 
 	if (user == "" || pass == "") {
 		error = "enter a username and password.";
