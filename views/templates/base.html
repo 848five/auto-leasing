@@ -17,7 +17,7 @@
 
 {% include 'nav.html' %}
 
-<section class="content-container">
+<section class="content-container {%block superclass %}{% endblock %}">
 	{% block content %}{% endblock %}
 
 </section>

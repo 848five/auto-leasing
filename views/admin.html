@@ -1,5 +1,5 @@
 {% extends 'templates/base.html' %}
-
+{% superclass %} admin {% endblock %}
 {% block content %}
 <form method="POST" action="/admin-panel">
 	<input type="text" placeholder="username" name="user" />
