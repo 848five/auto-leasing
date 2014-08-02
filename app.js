@@ -15,7 +15,6 @@ var db = new mongodb.Db('bliss', new mongodb.Server('127.0.0.1', 27017), {safe:t
 //Route Files
 var routes = require('./routes/index');
 var admin = require('./routes/admin');
-var create = require('./routes/create');
 
 var app = express();
 
