@@ -9,7 +9,8 @@ router.get('/', function(req,res) {
 
 
 router.post('/', function(req,res) {
-	console.log(req);
+	console.log(req.body.user);
+	return;
 db.open(function(err) {
 	db.collection('admin',function(err,collection) {
 		collection.find().toArray(function(err,items) {
