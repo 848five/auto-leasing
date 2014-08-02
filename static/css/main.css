@@ -147,7 +147,8 @@ body {
       text-align: center;
       float: right;
       line-height: 60px;
-      font-size: 30px; }
+      font-size: 30px;
+      cursor: pointer; }
       body.admin .modify-list span.remove {
         background-color: red; }
       body.admin .modify-list span.edit {
