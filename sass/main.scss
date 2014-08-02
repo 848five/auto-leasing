@@ -107,7 +107,7 @@ body {
 				font-size: 18px;
 				text-align: center;
 				
-				:nth-child(0) {
+				&:nth-child(0) {
 					border-bottom: 1px #d5d5d5 dashed;
 				}
 			}
