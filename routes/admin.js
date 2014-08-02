@@ -7,7 +7,7 @@ var mongodb = require('mongodb');
 
 
 
-function loadSpecials(callback) {
+function loadSpecials() {
 	var db = new mongodb.Db('bliss', new mongodb.Server('127.0.0.1', 27017), {safe:true});
 	db.open(function(err) {
 		if (err)
@@ -19,9 +19,6 @@ function loadSpecials(callback) {
 				});				
 			});
 		});
-	if (callback) {
-		callback();
-	}
 }
 
 router.get('/', function(req,res) {
@@ -30,9 +27,7 @@ router.get('/', function(req,res) {
 		 });
 });
 
-module.exports = router;
 
-return;
 
 router.post('/create/:collection?',function(req,res) {
 	switch(req.params.collection) {
@@ -63,6 +58,7 @@ router.post('/create/:collection?',function(req,res) {
 
 
 router.post('/', function(req,res) {
+	loadSpecials();
 	user = req.body.user;
 	var pass = req.body.password;
 	var error = "";
@@ -80,7 +76,7 @@ router.post('/', function(req,res) {
 								error = "invalid login, try again.";
 								res.render('admin',{msg: error});
 							} else {
-		                		res.render('admin',{auth: user});
+		                		res.render('admin',{auth: user,specials:specialsList});
 		                		//res.cookie('', 'yes', { expires: 0, httpOnly: true });
 							}
 
