@@ -15,6 +15,7 @@ router.post('/create/:collection?',function(req,res) {
     	var year = req.body.year;
         db.open(function(err) {
         	if (!err) {
+        		console.log('saving');
 				db.collection('specials').save({year:year});
 					console.log('special saved');
 					res.render('admin',{auth: user});
