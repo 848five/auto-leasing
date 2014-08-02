@@ -6,7 +6,8 @@ var specialsList;
 var mongodb = require('mongodb');
 
 router.get('/', function(req,res) {
-         res.render('admin',"");
+		 loadSpecials();
+         res.render('admin',specialsList);
 });
 
 function loadSpecials() {
