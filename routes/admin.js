@@ -1,7 +1,7 @@
 var express = require('express');
 var md5 = require('MD5');
 var router = express.Router();
-
+var user;
 var mongodb = require('mongodb');
 var db = new mongodb.Db('bliss', new mongodb.Server('127.0.0.1', 27017), {safe:true});
 router.get('/', function(req,res) {
@@ -10,13 +10,34 @@ router.get('/', function(req,res) {
 
 
 router.post('/create/:collection?',function(req,res) {
-	res.send(req.params.collection);
+	switch(req.params.collection) {
+    case 'specials':
+    	var year = req.body.year;
+        db.open(function(err) {
+        	if (!err) {
+				db.collection('specials',function(err,collection) {
+					collection.save({year:year});
+					console.log('special saved');
+					res.render('admin',{auth: user});
+				});
+			} else {
+				console.log('error:' + err);
+				res.render('admin',{error: err});
+			}
+		});
+        break;
+    case n:
+        code block
+        break;
+    default:
+        default code block
+}
 });
 
 
 
 router.post('/', function(req,res) {
-	var user = req.body.user;
+	user = req.body.user;
 	var pass = req.body.password;
 	var error = "";
 
