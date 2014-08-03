@@ -38,8 +38,8 @@ app.use(express.static(path.join(__dirname, 'static')));
 
 
 //Routes
-app.get('/dashboard/:category?/:year?/:make?/:model?', function(req,res) {
-    if (model) {
+app.get('/dashboard/:category?/:year?/:make?/:modle?', function(req,res) {
+    if (modle) {
         res.send('model level');
     } else if (make) {
         res.send('make level');
