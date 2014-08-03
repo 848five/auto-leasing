@@ -135,6 +135,7 @@ app.get('/dashboard/:category?/:year?/:make?/:model?', function(req,res) {
             } 
         } else {
             res.send('not authorized');
+            next();
         }
 });
 
