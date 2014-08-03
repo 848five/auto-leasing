@@ -51,9 +51,19 @@ app.get('/dashboard/:category?/:year?/:make?/:modle?', function(req,res) {
     } else if (year) {
         res.send('year level');
     } else if (category) {
-        res.send('category');
-    }
+        var sdb = new mongodb.Db('bliss', new mongodb.Server('127.0.0.1', 27017), {safe:true});
+        sdb.open(function(err) {
+            sdb.collection('specials',function(err,collection) {
+                   collection.find({},{sort:{$natural:-1}}).toArray(function(err,list) {
+                    specialsList = list;
+                    res.send(specialsList);
+                    sdb.close();
+                });             
+            });
+        });
+    } 
 });
+
 
 app.use('/', routes);
 
