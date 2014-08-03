@@ -143,7 +143,6 @@ app.get('/dashboard/:category?/:year?/:make?/:model?', function(req,res,next) {
         }
 });
 
-app.use('/dashboard', admin);
 
 app.use('/', routes);
 
