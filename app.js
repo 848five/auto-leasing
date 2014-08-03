@@ -138,6 +138,7 @@ app.get('/dashboard/:category?/:year?/:make?/:model?', function(req,res) {
         }
 });
 
+app.use('/dashboard', admin);
 
 app.use('/', routes);
 
@@ -145,7 +146,7 @@ app.use('/', routes);
 
 
 
-app.use('/dashboard', admin);
+
 app.use('/dashboard/specials/',createSpecials);
 
 
