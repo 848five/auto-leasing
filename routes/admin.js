@@ -6,7 +6,13 @@ var specialsList;
 var mongodb = require('mongodb');
 
 router.get('/', function(req,res) {
-         res.render('admin',"");
+		 var activeSession = req.cookies.active;
+		 if (activeSession) {
+		 	console.log(activeSession);
+		 	res.redirect('/admin/tools');
+		 } else {
+         	res.render('admin',"");
+		 }
 });
 
 function loadSpecials() {
@@ -20,40 +26,6 @@ function loadSpecials() {
 			});
 		});
 }
-
-
-router.post('/create/:collection?',function(req,res) {
-	switch(req.params.collection) {
-    case 'specials':
-    	var year = req.body.year;
-    	var make = req.body.make;
-    	var model = req.body.model;
-    	var downPayment = req.body.downPayment;
-    	var monthlyPayment = req.body.monthlyPayment;
-    	var db = new mongodb.Db('bliss', new mongodb.Server('127.0.0.1', 27017), {safe:true});
-        db.open(function(err) {
-        	if (!err) {
-				db.collection('specials',function(err,collection) {
-					if (year != "") {
-						collection.save({year:year,make:make,model:model,downPayment:downPayment,monthlyPayment:monthlyPayment} , function(err, result) {
-				        	console.log('special saved');
-				        	db.close();
-	     				});
-					}
-     				loadSpecials();
-     				year = "";
-					res.render('admin',{auth: user,msg: 'record added.',specials:specialsList});	
-
-				});
-			} else {
-				res.render('admin',{msg: err});
-			}
-		});
-        break;
-    default:
-        res.send('default');
-}
-});
 
 
 
