@@ -5,6 +5,26 @@ var router = express.Router();
 
 var db = new mongodb.Db('bliss', new mongodb.Server('127.0.0.1', 27017), {safe:true});
 
+router.post('/:category',function(req,res,next) {
+	var hash = new Date();
+    var activeSession = req.cookies._a;
+    var category = req.params.category;
+
+     if (activeSession == md5(hash.getDay()+'87155')) {
+     	if (category) {
+     		console.log('posted');
+     	}
+ 	 } else {
+        if (category) {
+                var err = new Error('Not Found');
+                err.status = 404;
+                next(err);
+        } else {
+            res.render('admin',"");
+        }
+    }
+});
+
 router.get('/:category?/:year?/:make?/:model?', function(req,res,next) {
     var hash = new Date();
     var activeSession = req.cookies._a;

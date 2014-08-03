@@ -42,6 +42,7 @@ app.use('/dashboard',getRoutes);
 
 //Routes
 
+
 app.use('/dashboard', admin);
 
 app.use('/', routes);
