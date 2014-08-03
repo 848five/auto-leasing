@@ -40,13 +40,13 @@ app.use(express.static(path.join(__dirname, 'static')));
 
 //Routes
 app.get('/dashboard/:category?/:year?/:make?/:model?', function(req,res) {
-     var hash = new Date();
-     var activeSession = req.cookies._a;
+    var hash = new Date();
+    var activeSession = req.cookies._a;
+    var category = req.params.category;
+    var year = req.params.year;
+    var make = req.params.make;
+    var model = req.params.model;
      if (activeSession == md5(hash.getDay()+'87155')) {
-            var category = req.params.category;
-            var year = req.params.year;
-            var make = req.params.make;
-            var model = req.params.model;
 
             if (model) {
                 var db = new mongodb.Db('bliss', new mongodb.Server('127.0.0.1', 27017), {safe:true});
@@ -134,7 +134,11 @@ app.get('/dashboard/:category?/:year?/:make?/:model?', function(req,res) {
                 });
             } 
         } else {
-            res.render('admin',"");
+            if (category || year || make || model) {
+                res.render('error',"");
+            } else {
+                res.render('admin',"");
+            }
         }
 });
 
