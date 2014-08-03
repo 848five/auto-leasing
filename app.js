@@ -135,11 +135,11 @@ app.get('/dashboard/:category?/:year?/:make?/:model?', function(req,res) {
             } 
         } else {
             if (category || year || make || model) {
-                res.render('error',"");
-            } else {
                     var err = new Error('Not Found');
                     err.status = 404;
                     next(err);
+            } else {
+                res.render('admin',"");
             }
         }
 });
