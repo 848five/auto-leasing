@@ -38,13 +38,13 @@ app.use(express.static(path.join(__dirname, 'static')));
 
 
 //Routes
-app.get('/dashboard/:category?/:year?/:make?/:modle?', function(req,res) {
+app.get('/dashboard/:category?/:year?/:make?/:model?', function(req,res) {
     var category = req.params.category;
     var year = req.params.year;
     var make = req.params.make;
-    var modle = req.params.modle;
+    var model = req.params.model;
 
-    if (modle) {
+    if (model) {
         var db = new mongodb.Db('bliss', new mongodb.Server('127.0.0.1', 27017), {safe:true});
         db.open(function(err) {
             db.collection(category,function(err,collection) {
