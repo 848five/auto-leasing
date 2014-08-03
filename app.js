@@ -39,9 +39,14 @@ app.use(express.static(path.join(__dirname, 'static')));
 
 //Routes
 app.get('/dashboard/:category?/:year?/:make?/:modle?', function(req,res) {
+    var category = req.params.category;
+    var year = req.params.year;
+    var make = req.params.make;
+    var modle = req.params.modle;
+
     if (modle) {
         res.send('model level');
-    } else if (make) {
+    } else if ($make) {
         res.send('make level');
     } else if (year) {
         res.send('year level');
