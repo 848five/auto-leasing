@@ -18,7 +18,6 @@ var routes = require('./routes/index');
 
 var admin = require('./routes/dashboard/admin');
 var tools = require('./routes/dashboard/tools');
-var createSpecials = require('./routes/dashboard/createSpecials');
 
 var app = express();
 
@@ -153,7 +152,6 @@ app.use('/', routes);
 
 
 
-app.use('/dashboard/specials/',createSpecials);
 
 
 
