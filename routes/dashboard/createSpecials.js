@@ -6,7 +6,7 @@ var specialsList;
 var mongodb = require('mongodb');
 
 router.get('/', function(req,res) {
-         res.render('create-special',"");
+         res.render('admin',"");
 });
 
 function loadSpecials() {
