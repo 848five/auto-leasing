@@ -49,11 +49,24 @@ app.get('/dashboard/:category?/:year?/:make?/:modle?', function(req,res) {
     } else if (make) {
         res.send('make level');
     } else if (year) {
-        res.send('year level');
+        var db = new mongodb.Db('bliss', new mongodb.Server('127.0.0.1', 27017), {safe:true});
+        db.open(function(err) {
+            db.collection(category,function(err,collection) {
+                   collection.find({year:year},{sort:{$natural:-1}}).toArray(function(err,list) {
+                    categoryList = list;
+                    if (categoryList.length == 0 || category == "admin") {
+                        res.send('nothing found');
+                    } else {
+                        res.send(categoryList);
+                    }
+                    db.close();
+                });             
+            });
+        });
     } else if (category) {
-        var sdb = new mongodb.Db('bliss', new mongodb.Server('127.0.0.1', 27017), {safe:true});
-        sdb.open(function(err) {
-            sdb.collection(category,function(err,collection) {
+        var db = new mongodb.Db('bliss', new mongodb.Server('127.0.0.1', 27017), {safe:true});
+        db.open(function(err) {
+            db.collection(category,function(err,collection) {
                    collection.find({},{sort:{$natural:-1}}).toArray(function(err,list) {
                     categoryList = list;
                     if (categoryList.length == 0 || category == "admin") {
