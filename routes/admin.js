@@ -49,7 +49,7 @@ router.post('/', function(req,res) {
 							} else {
 								loadSpecials();
 		                		res.render('admin',{auth: user,specials:specialsList});
-		                		res.cookie('_a', md5(Date()+'87155'), { expires: 0, httpOnly: true , secure:true});
+		                		res.cookie('_a', md5(Date()+'87155'), { expires: 0, httpOnly: true });
 							}
 
 					db.close();
