@@ -6,17 +6,6 @@ var specialsList;
 var mongodb = require('mongodb');
 
 
-router.get('/dashboard/:category?/:year?/:make?/:model?', function(req,res) {
-	if (model) {
-		res.send('model level');
-	} else if (make) {
-		res.send('make level');
-	} else if (year) {
-		res.send('year level');
-	} else if (category) {
-		res.send('category');
-	}
-});
 
 
 router.get('/', function(req,res) {
