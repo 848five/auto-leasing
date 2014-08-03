@@ -17,7 +17,7 @@ router.post('/:category',function(req,res,next) {
      		 var form = new formidable.IncomingForm(),
 			    files = [],
 			    fields = [];
-			    form.uploadDir = __dirname + '/uploads';
+			    form.uploadDir = '/uploads';
 			    form.on('field', function(field, value) {
 			        fields.push([field, value]);
 			    })
