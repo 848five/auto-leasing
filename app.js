@@ -74,7 +74,7 @@ app.get('/dashboard/:category?/:year?/:make?/:modle?', function(req,res) {
                     } else {
                         res.send(categoryList);
                     }
-                    sdb.close();
+                    db.close();
                 });             
             });
         });
