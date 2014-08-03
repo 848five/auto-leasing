@@ -1,4 +1,5 @@
 var express = require('express');
+var md5 = require('MD5');
 var path = require('path');
 var swig = require('swig');
 var favicon = require('static-favicon');
