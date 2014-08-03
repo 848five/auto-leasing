@@ -16,17 +16,6 @@ router.get('/', function(req,res) {
 		 }
 });
 
-function loadSpecials() {
-	var sdb = new mongodb.Db('bliss', new mongodb.Server('127.0.0.1', 27017), {safe:true});
-	sdb.open(function(err) {
-			sdb.collection('specials',function(err,collection) {
-				   collection.find({},{sort:{$natural:-1}}).toArray(function(err,list) {
-					specialsList = list;
-					sdb.close();
-				});				
-			});
-		});
-}
 
 
 
@@ -50,9 +39,8 @@ router.post('/', function(req,res) {
 							} else {
 								loadSpecials();
 								var hash = new Date();
-
-		                		res.render('admin',{auth: user,specials:specialsList});
 		                		res.cookie('_a', md5(hash.getDay()+'87155'), { expires: 0, httpOnly: true });
+		                		res.redirect('/admin/tools');
 							}
 
 					db.close();
@@ -60,7 +48,6 @@ router.post('/', function(req,res) {
 			});
 		});
 	}
-	console.log('main menu');
 });
 
 
