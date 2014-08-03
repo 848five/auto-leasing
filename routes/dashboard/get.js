@@ -41,7 +41,6 @@ router.get('/:category?/:year?/:make?/:model?', function(req,res,next) {
                     });
                 });
             } else if (make) {
-                
                 db.open(function(err) {
                     db.collection(category,function(err,collection) {
                            if (year == "all") {
@@ -68,7 +67,6 @@ router.get('/:category?/:year?/:make?/:model?', function(req,res,next) {
                     });
                 });
             } else if (year) {
-                
                 db.open(function(err) {
                     db.collection(category,function(err,collection) {
 	                    if (year == "all") {
@@ -95,7 +93,6 @@ router.get('/:category?/:year?/:make?/:model?', function(req,res,next) {
                     });
                 });
             } else if (category) {
-                
                 db.open(function(err) {
                     db.collection(category,function(err,collection) {
                            collection.find({},{sort:{$natural:-1}}).toArray(function(err,list) {

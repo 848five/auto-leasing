@@ -1,0 +1,26 @@
+{% extends 'templates/base.html' %}
+{% block superclass %}admin{% endblock %}
+
+
+{% block content %}
+
+	<section class="create">
+		<form method="POST" action="/admin-panel/create/specials">
+			<span class="label">create new special</span>
+			<input type="text" placeholder="year" name="year" />
+			<input type="text" placeholder="make" name="make" />
+			<input type="text" placeholder="model" name="model" />
+			<input type="text" placeholder="down payment" name="downPayment" />
+			<input type="text" placeholder="monthly payment" name="monthlyPayment" />
+			<input class="button" type="submit" name="submit" value="create" />
+			{% if msg %}
+				<p>{{msg}}</p>
+			{% endif %}
+		</form>
+	</section>
+
+{% endif%}
+
+
+
+{% endblock %}
