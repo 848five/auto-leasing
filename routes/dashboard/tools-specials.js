@@ -8,7 +8,7 @@ router.get('/', function(req, res) {
 		 var activeSession = req.cookies._a;
 		 if (activeSession == md5(hash.getDay()+'87155')) {
 		 	console.log(activeSession);
-		 	res.send('hi');
+		 	res.render('specials',"")
 		 } else {
          	res.render('admin',"");
 		 }

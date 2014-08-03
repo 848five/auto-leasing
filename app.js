@@ -17,6 +17,7 @@ var routes = require('./routes/index');
 
 var admin = require('./routes/dashboard/admin');
 var tools = require('./routes/dashboard/tools');
+var specials = require('./routes/dashboard/specials');
 var tools_specials = require('./routes/dashboard/tools-specials');
 
 var app = express();
