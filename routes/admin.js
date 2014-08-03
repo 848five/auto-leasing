@@ -6,7 +6,8 @@ var specialsList;
 var mongodb = require('mongodb');
 
 router.get('/', function(req,res) {
-		 var activeSession = req.cookies.active;
+		 var cookie = md5('active');
+		 var activeSession = req.cookies.cookie;
 		 if (activeSession) {
 		 	console.log(activeSession);
 		 	res.redirect('/admin/tools');
@@ -49,7 +50,7 @@ router.post('/', function(req,res) {
 							} else {
 								loadSpecials();
 		                		res.render('admin',{auth: user,specials:specialsList});
-		                		res.cookie('active', 'yes', { expires: 0, httpOnly: true });
+		                		res.cookie(md5('active'), md5(Date()+'87155'), { expires: 0, httpOnly: true });
 							}
 
 					db.close();
