@@ -78,7 +78,7 @@ router.post('/', function(req,res) {
 								loadSpecials();
 								req.session.name = "active";
 		                		res.render('admin',{auth: user,specials:specialsList});
-		                		//res.cookie('', 'yes', { expires: 0, httpOnly: true });
+		                		res.cookie('active', 'yes', { expires: 3600*1000, httpOnly: true });
 							}
 
 					db.close();
