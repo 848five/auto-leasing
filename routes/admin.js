@@ -76,7 +76,6 @@ router.post('/', function(req,res) {
 								res.render('admin',{msg: error});
 							} else {
 								loadSpecials();
-								req.session.name = "active";
 		                		res.render('admin',{auth: user,specials:specialsList});
 		                		res.cookie('active', 'yes', { expires: 0, httpOnly: true });
 							}
