@@ -39,7 +39,7 @@ app.use(express.static(path.join(__dirname, 'static')));
 
 
 //Routes
-app.get('/dashboard/:category?/:year?/:make?/:model?', function(req,res) {
+app.get('/dashboard/:category?/:year?/:make?/:model?', function(req,res,next) {
     var hash = new Date();
     var activeSession = req.cookies._a;
     var category = req.params.category;
