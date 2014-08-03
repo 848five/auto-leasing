@@ -13,6 +13,22 @@ router.post('/:category',function(req,res,next) {
      if (activeSession == md5(hash.getDay()+'87155')) {
      	if (category) {
      		console.log('posted');
+     		 var form = new formidable.IncomingForm(),
+			    files = [],
+			    fields = [];
+			    form.uploadDir = __dirname + '/uploads';
+			    form.on('field', function(field, value) {
+			        fields.push([field, value]);
+			    })
+			    form.on('file', function(field, file) {
+			        console.log(file.name);
+			        files.push([field, file]);
+			    })
+			    form.on('end', function() {
+			        console.log('done');
+			        res.redirect('/forms');
+			    });
+			    form.parse(req);
      	}
  	 } else {
         if (category) {
