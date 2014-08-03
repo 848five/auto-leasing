@@ -40,7 +40,6 @@ app.use(express.static(path.join(__dirname, 'static')));
 app.use('/', routes);
 
 app.use('/admin-panel', admin);
-app.use('/admin/tools', tools);
 
 
 

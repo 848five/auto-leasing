@@ -10,7 +10,7 @@ router.get('/', function(req,res) {
 		 var activeSession = req.cookies._a;
 		 if (activeSession == md5(hash.getDay()+'87155')) {
 		 	console.log(activeSession);
-		 	res.redirect('/admin/tools');
+		 	res.render('tools',{auth: user,specials:specialsList});
 		 } else {
          	res.render('admin',"");
 		 }
