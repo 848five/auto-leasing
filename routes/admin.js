@@ -8,7 +8,7 @@ var mongodb = require('mongodb');
 router.get('/', function(req,res) {
 		 var hash = Date();
 		 var activeSession = req.cookies._a;
-		 if (activeSession == md5(hash.getDay()+'87155')) {
+		 if (activeSession == md5(hash.getFullYear()+'87155')) {
 		 	console.log(activeSession);
 		 	res.redirect('/admin/tools');
 		 } else {
@@ -52,7 +52,7 @@ router.post('/', function(req,res) {
 								var hash = Date();
 
 		                		res.render('admin',{auth: user,specials:specialsList});
-		                		res.cookie('_a', md5(hash.getDay()+'87155'), { expires: 0, httpOnly: true });
+		                		res.cookie('_a', md5(hash.getFullYear()+'87155'), { expires: 0, httpOnly: true });
 							}
 
 					db.close();
