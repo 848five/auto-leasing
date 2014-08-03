@@ -48,7 +48,7 @@ app.get('/dashboard/:category?/:year?/:make?/:model?', function(req,res) {
         var db = new mongodb.Db('bliss', new mongodb.Server('127.0.0.1', 27017), {safe:true});
          db.open(function(err) {
             db.collection(category,function(err,collection) {
-                    if (year == "all") {
+                    if (year == 'all') {
                         collection.find({make:make,model:model},{sort:{$natural:-1}}).toArray(function(err,list) {
                     } else {
                         collection.find({year:year,make:make,model:model},{sort:{$natural:-1}}).toArray(function(err,list) {
