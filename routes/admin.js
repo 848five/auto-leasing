@@ -17,8 +17,6 @@ router.get('/', function(req,res) {
 });
 
 
-
-
 router.post('/', function(req,res) {
 	user = req.body.user;
 	var pass = req.body.password;
@@ -40,7 +38,7 @@ router.post('/', function(req,res) {
 								loadSpecials();
 								var hash = new Date();
 		                		res.cookie('_a', md5(hash.getDay()+'87155'), { expires: 0, httpOnly: true });
-		                		res.redirect('/admin/tools');
+		                		res.render('admin',{auth: user,specials:specialsList});
 							}
 
 					db.close();

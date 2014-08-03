@@ -14,7 +14,9 @@ var db = new mongodb.Db('bliss', new mongodb.Server('127.0.0.1', 27017), {safe:t
 
 //Route Files
 var routes = require('./routes/index');
+
 var admin = require('./routes/admin');
+var tools = require('./routes/tools');
 
 var app = express();
 
@@ -30,13 +32,16 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 app.use(cookieParser());
+app.use(session({secret:"feelTheBli55"}));
 app.use(express.static(path.join(__dirname, 'static')));
 
 
 
 //Routes
 app.use('/', routes);
+
 app.use('/admin-panel', admin);
+app.use('/admin/tools', tools);
 
 
 
