@@ -41,7 +41,7 @@ app.use(express.static(path.join(__dirname, 'static')));
 app.use('/', routes);
 
 app.use('/dashboard', admin);
-app.user('/dashboard/specials/',tools_specials);
+app.use('/dashboard/specials/',tools_specials);
 
 
 
