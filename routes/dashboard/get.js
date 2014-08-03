@@ -1,6 +1,7 @@
 var express = require('express');
 var md5 = require('MD5'); 
 var mongodb = require('mongodb');
+var formidable = require('./formidable');
 var router = express.Router();
 
 var db = new mongodb.Db('bliss', new mongodb.Server('127.0.0.1', 27017), {safe:true});
