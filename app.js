@@ -46,7 +46,7 @@ app.get('/dashboard/:category?/:year?/:make?/:modle?', function(req,res) {
 
     if (modle) {
         res.send('model level');
-    } else if ($make) {
+    } else if (make) {
         res.send('make level');
     } else if (year) {
         res.send('year level');
