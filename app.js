@@ -55,8 +55,12 @@ app.get('/dashboard/:category?/:year?/:make?/:modle?', function(req,res) {
         sdb.open(function(err) {
             sdb.collection(category,function(err,collection) {
                    collection.find({},{sort:{$natural:-1}}).toArray(function(err,list) {
-                    specialsList = list;
-                    res.send(specialsList);
+                    categoryList = list;
+                    if (categoryList.length == 0 || category == "admin") {
+                        res.send('nothing found');
+                    } else {
+                        res.send(categoryList);
+                    }
                     sdb.close();
                 });             
             });
