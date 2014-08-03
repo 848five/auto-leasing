@@ -53,7 +53,7 @@ app.get('/dashboard/:category?/:year?/:make?/:modle?', function(req,res) {
     } else if (category) {
         var sdb = new mongodb.Db('bliss', new mongodb.Server('127.0.0.1', 27017), {safe:true});
         sdb.open(function(err) {
-            sdb.collection('specials',function(err,collection) {
+            sdb.collection(category,function(err,collection) {
                    collection.find({},{sort:{$natural:-1}}).toArray(function(err,list) {
                     specialsList = list;
                     res.send(specialsList);
