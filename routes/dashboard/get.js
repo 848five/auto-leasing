@@ -3,6 +3,7 @@ var md5 = require('MD5');
 var mongodb = require('mongodb');
 var router = express.Router();
 
+var db = new mongodb.Db('bliss', new mongodb.Server('127.0.0.1', 27017), {safe:true});
 
 router.get('/:category?/:year?/:make?/:model?', function(req,res,next) {
     var hash = new Date();
@@ -14,7 +15,6 @@ router.get('/:category?/:year?/:make?/:model?', function(req,res,next) {
      if (activeSession == md5(hash.getDay()+'87155')) {
 
             if (model) {
-                var db = new mongodb.Db('bliss', new mongodb.Server('127.0.0.1', 27017), {safe:true});
                 db.open(function(err) {
                     db.collection(category,function(err,collection) {
                            if (year == "all") {
@@ -41,7 +41,7 @@ router.get('/:category?/:year?/:make?/:model?', function(req,res,next) {
                     });
                 });
             } else if (make) {
-                var db = new mongodb.Db('bliss', new mongodb.Server('127.0.0.1', 27017), {safe:true});
+                
                 db.open(function(err) {
                     db.collection(category,function(err,collection) {
                            if (year == "all") {
@@ -68,7 +68,7 @@ router.get('/:category?/:year?/:make?/:model?', function(req,res,next) {
                     });
                 });
             } else if (year) {
-                var db = new mongodb.Db('bliss', new mongodb.Server('127.0.0.1', 27017), {safe:true});
+                
                 db.open(function(err) {
                     db.collection(category,function(err,collection) {
 	                    if (year == "all") {
@@ -95,7 +95,7 @@ router.get('/:category?/:year?/:make?/:model?', function(req,res,next) {
                     });
                 });
             } else if (category) {
-                var db = new mongodb.Db('bliss', new mongodb.Server('127.0.0.1', 27017), {safe:true});
+                
                 db.open(function(err) {
                     db.collection(category,function(err,collection) {
                            collection.find({},{sort:{$natural:-1}}).toArray(function(err,list) {
