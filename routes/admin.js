@@ -77,7 +77,7 @@ router.post('/', function(req,res) {
 							} else {
 								loadSpecials();
 		                		res.render('admin',{auth: user,specials:specialsList});
-		                		res.cookie('active', 'yes', { expires: Date()+3600*1000, httpOnly: true });
+		                		res.cookie('active', 'yes', { expires: 1, httpOnly: true });
 							}
 
 					db.close();
