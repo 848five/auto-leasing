@@ -71,15 +71,26 @@ router.get('/:category?/:year?/:make?/:model?', function(req,res,next) {
                 var db = new mongodb.Db('bliss', new mongodb.Server('127.0.0.1', 27017), {safe:true});
                 db.open(function(err) {
                     db.collection(category,function(err,collection) {
-                           collection.find({year:year},{sort:{$natural:-1}}).toArray(function(err,list) {
-                            categoryList = list;
-                            if (categoryList.length == 0 || category == "admin") {
-                                res.send('nothing found');
-                            } else {
-                                res.send(categoryList);
-                            }
-                            db.close();
-                        });             
+	                    if (year == "all") {
+	                    		collection.find({},{sort:{$natural:-1}}).toArray(function(err,list) {
+	                            categoryList = list;
+	                            if (categoryList.length == 0 || category == "admin") {
+	                                res.send('nothing found');
+	                            } else {
+	                                res.send(categoryList);
+	                            }
+	                            db.close();
+	                    } else {
+	                           collection.find({year:year},{sort:{$natural:-1}}).toArray(function(err,list) {
+	                            categoryList = list;
+	                            if (categoryList.length == 0 || category == "admin") {
+	                                res.send('nothing found');
+	                            } else {
+	                                res.send(categoryList);
+	                            }
+	                            db.close();
+	                        });             
+                		}
                     });
                 });
             } else if (category) {
