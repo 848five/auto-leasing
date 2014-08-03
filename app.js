@@ -137,7 +137,9 @@ app.get('/dashboard/:category?/:year?/:make?/:model?', function(req,res) {
             if (category || year || make || model) {
                 res.render('error',"");
             } else {
-                res.render('admin',"");
+                    var err = new Error('Not Found');
+                    err.status = 404;
+                    next(err);
             }
         }
 });
