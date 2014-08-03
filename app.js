@@ -38,16 +38,50 @@ app.use(express.static(path.join(__dirname, 'static')));
 
 
 //Routes
-app.get('/dashboard/:category?/:year?/:make?/:modle?', function(req,res) {
+app.get('/dashboard/:category?/:year?/:make?/:model?', function(req,res) {
     var category = req.params.category;
     var year = req.params.year;
     var make = req.params.make;
-    var modle = req.params.modle;
+    var model = req.params.model;
 
-    if (modle) {
-        res.send('model level');
+    if (model) {
+        var db = new mongodb.Db('bliss', new mongodb.Server('127.0.0.1', 27017), {safe:true});
+         db.open(function(err) {
+            db.collection(category,function(err,collection) {
+                    if (year == "all") {
+                        collection.find({make:make,model:model},{sort:{$natural:-1}}).toArray(function(err,list) {
+                    } else {
+                        collection.find({year:year,make:make,model:model},{sort:{$natural:-1}}).toArray(function(err,list) {
+                    }
+                    categoryList = list;
+                    if (categoryList.length == 0 || category == "admin") {
+                        res.send('nothing found');
+                    } else {
+                        res.send(categoryList);
+                    }
+                    db.close();
+                });             
+            });
+        });
     } else if (make) {
-        res.send('make level');
+         var db = new mongodb.Db('bliss', new mongodb.Server('127.0.0.1', 27017), {safe:true});
+         db.open(function(err) {
+            db.collection(category,function(err,collection) {
+                    if (year == "all") {
+                        collection.find({make:make},{sort:{$natural:-1}}).toArray(function(err,list) {
+                    } else {
+                        collection.find({year:year,make:make},{sort:{$natural:-1}}).toArray(function(err,list) {
+                    }
+                    categoryList = list;
+                    if (categoryList.length == 0 || category == "admin") {
+                        res.send('nothing found');
+                    } else {
+                        res.send(categoryList);
+                    }
+                    db.close();
+                });             
+            });
+        });
     } else if (year) {
         var db = new mongodb.Db('bliss', new mongodb.Server('127.0.0.1', 27017), {safe:true});
         db.open(function(err) {
