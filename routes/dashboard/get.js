@@ -3,7 +3,7 @@ var md5 = require('MD5');
 var router = express.Router();
 
 
-router.get('/', function(req,res,next) {
+router.get('/:category?/:year?/:make?/:model?', function(req,res,next) {
     var hash = new Date();
     var activeSession = req.cookies._a;
     var category = req.params.category;
