@@ -80,6 +80,7 @@ router.get('/:category?/:year?/:make?/:model?', function(req,res,next) {
 	                                res.send(categoryList);
 	                            }
 	                            db.close();
+	                        	});
 	                    } else {
 	                           collection.find({year:year},{sort:{$natural:-1}}).toArray(function(err,list) {
 	                            categoryList = list;
@@ -89,7 +90,7 @@ router.get('/:category?/:year?/:make?/:model?', function(req,res,next) {
 	                                res.send(categoryList);
 	                            }
 	                            db.close();
-	                        });             
+	                        	});             
                 		}
                     });
                 });
