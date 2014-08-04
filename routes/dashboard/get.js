@@ -49,15 +49,17 @@ router.post('/:category',function(req,res,next) {
 			    //save to db
 			    db.open(function(err) {
 		        	if (!err) {
-						db.collection('specials',function(err,collection) {
+						db.collection(category,function(err,collection) {
 							if (year != "" || year != null) {
 								collection.save({year:year,make:make,model:model,package:package,downPayment:downPayment,monthlyPayment:monthlyPayment,photos:photos} , function(err, result) {
 						        	console.log('special saved');
 						        	db.close();
 			     				});
+							} else {
+								console.log('empty field, record not created');
 							}
 		     				year = "";
-							res.redirect('/dashboard/specials');	
+							res.render('admin',{msg: err});	
 
 						});
 					} else {
