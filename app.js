@@ -8,29 +8,32 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var db = require('mongoskin');
 
-var app = express();
-
 var mongodb = require('mongodb');
 var db = new mongodb.Db('bliss', new mongodb.Server('127.0.0.1', 27017), {safe:true});
+
+
+//Route Files
+var routes = require('./routes/index');
+var admin = require('./routes/dashboard/admin');
+var tools = require('./routes/dashboard/tools');
+var getRoutes = require('./routes/dashboard/get');
+
+
+var app = express();
+
 
 
 app.use( require('express-force-domain')('http://www.blissautoleasing.com') );
 
 app.use(favicon());
 app.use(logger('dev'));
+app.use(bodyParser());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'static')));
 
 
-
-//Route Files
-var routes = require('./routes/index');
-
-var admin = require('./routes/dashboard/admin');
-var tools = require('./routes/dashboard/tools');
-var getRoutes = require('./routes/dashboard/get');
 
 
 

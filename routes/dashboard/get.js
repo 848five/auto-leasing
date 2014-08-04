@@ -3,11 +3,6 @@ var md5 = require('MD5');
 var mongodb = require('mongodb');
 var formidable = require('formidable');
 var router = express.Router();
-var bodyParser = require('body-parser');
-var app = express();
-
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded());
 
 
 var db = new mongodb.Db('bliss', new mongodb.Server('127.0.0.1', 27017), {safe:true});
