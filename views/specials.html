@@ -7,7 +7,7 @@
 
 {% for item in list %}
 {{ item.make }}
-{% for image in photos %}
+{% for image in item.photos %}
 <img src="{{image.path}}">
 {% endfor %}
 {% endfor %}
