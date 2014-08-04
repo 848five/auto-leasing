@@ -11,7 +11,7 @@
 	<pre>
 		{% for items in item.photos %}
 			{% for file in items %}
-				{{ file }}
+				{{ file.path }}
 			{% endfor %}
 		{% endfor %}
 	</pre>
