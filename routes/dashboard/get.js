@@ -15,7 +15,14 @@ router.post('/:category',function(req,res,next) {
     var activeSession = req.cookies._a;
     var category = req.params.category;
 
-  
+  	    	var year = req.body.year;
+		    var make = req.body.make;
+		    var model = req.body.model;
+		    var package = req.body.package;
+		    var downPayment = req.body.downPayment;
+		    var monthlyPayment = req.body.monthlyPayment;
+		    var desc = req.body.desc;
+		    var photos = [];
 
      if (activeSession == md5(hash.getDay()+'87155')) {
      	if (category) {
@@ -41,30 +48,22 @@ router.post('/:category',function(req,res,next) {
 
 			    //save to db
 			    db.open(function(err) {
-			    	var year = req.body.year;
-				    var make = req.body.make;
-				    var model = req.body.model;
-				    var package = req.body.package;
-				    var downPayment = req.body.downPayment;
-				    var monthlyPayment = req.body.monthlyPayment;
-				    var desc = req.body.desc;
-				    var photos = [];
-	        	if (!err) {
-					db.collection('specials',function(err,collection) {
-						if (year != "") {
-							collection.save({year:year,make:make,model:model,package:package,downPayment:downPayment,monthlyPayment:monthlyPayment,photos:photos} , function(err, result) {
-					        	console.log('special saved');
-					        	db.close();
-		     				});
-						}
-	     				year = "";
-						res.render('admin');	
+		        	if (!err) {
+						db.collection('specials',function(err,collection) {
+							if (year != "" || year != null) {
+								collection.save({year:year,make:make,model:model,package:package,downPayment:downPayment,monthlyPayment:monthlyPayment,photos:photos} , function(err, result) {
+						        	console.log('special saved');
+						        	db.close();
+			     				});
+							}
+		     				year = "";
+							res.redirect('/dashboard/specials');	
 
-					});
-				} else {
-					res.render('admin',{msg: err});
-				}
-			});
+						});
+					} else {
+						res.render('admin',{msg: err});
+					}
+				});
      	}
  	 } else {
         if (category) {
