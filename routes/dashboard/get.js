@@ -17,7 +17,7 @@ router.post('/:category',function(req,res,next) {
      		 var form = new formidable.IncomingForm(),
 			    files = [],
 			    fields = [];
-			    form.uploadDir = '/root/auto-leasing/static/uploads';
+			    form.uploadDir = '/root/auto-leasing/static/' + category + 'uploads';
 			    form.on('field', function(field, value) {
 			        fields.push([field, value]);
 			    })
@@ -60,7 +60,7 @@ router.get('/:category?/:year?/:make?/:model?', function(req,res,next) {
                                 if (categoryList.length == 0 || category == "admin") {
                                     res.send('nothing found');
                                 } else {
-                                    res.send(categoryList);
+                                    res.render('specials',categoryList);
                                 }
                                 db.close();
                                 });             
@@ -70,7 +70,7 @@ router.get('/:category?/:year?/:make?/:model?', function(req,res,next) {
                                 if (categoryList.length == 0 || category == "admin") {
                                     res.send('nothing found');
                                 } else {
-                                    res.send(categoryList);
+                                    res.render('specials',categoryList);
                                 }
                                 db.close();
                                 }); 
@@ -86,7 +86,7 @@ router.get('/:category?/:year?/:make?/:model?', function(req,res,next) {
                                 if (categoryList.length == 0 || category == "admin") {
                                     res.send('nothing found');
                                 } else {
-                                    res.send(categoryList);
+                                    res.render('specials',categoryList);
                                 }
                                 db.close();
                                 });             
@@ -96,7 +96,7 @@ router.get('/:category?/:year?/:make?/:model?', function(req,res,next) {
                                 if (categoryList.length == 0 || category == "admin") {
                                     res.send('nothing found');
                                 } else {
-                                    res.send(categoryList);
+                                    res.render('specials',categoryList);
                                 }
                                 db.close();
                                 });  
@@ -112,7 +112,7 @@ router.get('/:category?/:year?/:make?/:model?', function(req,res,next) {
 	                            if (categoryList.length == 0 || category == "admin") {
 	                                res.send('nothing found');
 	                            } else {
-	                                res.send(categoryList);
+	                                res.render('specials',categoryList);
 	                            }
 	                            db.close();
 	                        	});
@@ -122,7 +122,7 @@ router.get('/:category?/:year?/:make?/:model?', function(req,res,next) {
 	                            if (categoryList.length == 0 || category == "admin") {
 	                                res.send('nothing found');
 	                            } else {
-	                                res.send(categoryList);
+	                                res.render('specials',categoryList);
 	                            }
 	                            db.close();
 	                        	});             
@@ -137,7 +137,7 @@ router.get('/:category?/:year?/:make?/:model?', function(req,res,next) {
                             if (categoryList.length == 0 || category == "admin") {
                                 res.send('nothing found');
                             } else {
-                                res.send(categoryList);
+                                res.render('specials',categoryList);
                             }
                             db.close();
                         });             

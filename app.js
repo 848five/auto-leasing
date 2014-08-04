@@ -19,7 +19,6 @@ var routes = require('./routes/index');
 var admin = require('./routes/dashboard/admin');
 var tools = require('./routes/dashboard/tools');
 var getRoutes = require('./routes/dashboard/get');
-
 var app = express();
 
 // view engine setup
