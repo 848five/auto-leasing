@@ -59,7 +59,7 @@ router.post('/:category',function(req,res,next) {
 								console.log('empty field, record not created');
 							}
 		     				year = "";
-							res.render('admin',{msg: err});	
+							//res.render('admin',{msg: err});	
 
 						});
 					} else {
