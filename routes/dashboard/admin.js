@@ -1,10 +1,10 @@
 var express = require('express');
 var md5 = require('MD5');
-app.use(express.bodyParser());
 var router = express.Router();
 var user;
 var mongodb = require('mongodb');
 
+router.use(express.bodyParser());
 
 
 
