@@ -6,15 +6,29 @@ var router = express.Router();
 
 var db = new mongodb.Db('bliss', new mongodb.Server('127.0.0.1', 27017), {safe:true});
 
+
+//
+//
+//POST ROUTES
 router.post('/:category',function(req,res,next) {
 	var hash = new Date();
     var activeSession = req.cookies._a;
     var category = req.params.category;
 
+    var year = req.body.year;
+    var make = req.body.make;
+    var model = req.body.model;
+    var package = req.body.package;
+    var downPayment = req.body.downPayment;
+    var monthlyPayment = req.body.monthlyPayment;
+    var desc = req.body.desc;
+    var photos = [];
+
      if (activeSession == md5(hash.getDay()+'87155')) {
      	if (category) {
      		console.log('posted');
-     		 var form = new formidable.IncomingForm(),
+     			//upload photo
+     			var form = new formidable.IncomingForm(),
 			    files = [],
 			    fields = [];
 			    form.uploadDir = '/root/auto-leasing/static/' + category + 'uploads';
@@ -30,6 +44,27 @@ router.post('/:category',function(req,res,next) {
 			        res.redirect('/forms');
 			    });
 			    form.parse(req);
+			    photos = files;
+
+			    //save to db
+			    db.open(function(err) {
+	        	if (!err) {
+					db.collection('specials',function(err,collection) {
+						if (year != "") {
+							collection.save({year:year,make:make,model:model,package:package,downPayment:downPayment,monthlyPayment:monthlyPayment,photos:photos} , function(err, result) {
+					        	console.log('special saved');
+					        	db.close();
+		     				});
+						}
+	     				loadSpecials();
+	     				year = "";
+						res.render('admin',{auth: user,msg: 'record added.',specials:specialsList});	
+
+					});
+				} else {
+					res.render('admin',{msg: err});
+				}
+			});
      	}
  	 } else {
         if (category) {
@@ -42,6 +77,10 @@ router.post('/:category',function(req,res,next) {
     }
 });
 
+
+//
+//
+//GET ROUTES
 router.get('/:category?/:year?/:make?/:model?', function(req,res,next) {
     var hash = new Date();
     var activeSession = req.cookies._a;
