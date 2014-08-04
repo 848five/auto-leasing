@@ -8,6 +8,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var db = require('mongoskin');
 
+var app = express();
 
 var mongodb = require('mongodb');
 var db = new mongodb.Db('bliss', new mongodb.Server('127.0.0.1', 27017), {safe:true});
@@ -30,7 +31,7 @@ var routes = require('./routes/index');
 var admin = require('./routes/dashboard/admin');
 var tools = require('./routes/dashboard/tools');
 var getRoutes = require('./routes/dashboard/get');
-var app = express();
+
 
 
 
