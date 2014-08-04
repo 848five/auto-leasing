@@ -15,14 +15,7 @@ router.post('/:category',function(req,res,next) {
     var activeSession = req.cookies._a;
     var category = req.params.category;
 
-    var year = req.body.year;
-    var make = req.body.make;
-    var model = req.body.model;
-    var package = req.body.package;
-    var downPayment = req.body.downPayment;
-    var monthlyPayment = req.body.monthlyPayment;
-    var desc = req.body.desc;
-    var photos = [];
+  
 
      if (activeSession == md5(hash.getDay()+'87155')) {
      	if (category) {
@@ -48,6 +41,14 @@ router.post('/:category',function(req,res,next) {
 
 			    //save to db
 			    db.open(function(err) {
+			    	var year = req.body.year;
+				    var make = req.body.make;
+				    var model = req.body.model;
+				    var package = req.body.package;
+				    var downPayment = req.body.downPayment;
+				    var monthlyPayment = req.body.monthlyPayment;
+				    var desc = req.body.desc;
+				    var photos = [];
 	        	if (!err) {
 					db.collection('specials',function(err,collection) {
 						if (year != "") {
