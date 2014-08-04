@@ -16,7 +16,7 @@ var db = new mongodb.Db('bliss', new mongodb.Server('127.0.0.1', 27017), {safe:t
 //
 //
 //POST ROUTES
-router.post('/:category',function(req,res,next) {
+router.post('/:category',bodyParser, function(req,res,next) {
 	var hash = new Date();
     var activeSession = req.cookies._a;
     var category = req.params.category;
