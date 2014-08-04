@@ -2,7 +2,12 @@ var express = require('express');
 var md5 = require('MD5'); 
 var mongodb = require('mongodb');
 var formidable = require('formidable');
+var bodyParser = require('body-parser');
 var router = express.Router();
+
+router.use(bodyParser());
+router.use(bodyParser.json());
+router.use(bodyParser.urlencoded());
 
 
 var db = new mongodb.Db('bliss', new mongodb.Server('127.0.0.1', 27017), {safe:true});
@@ -38,7 +43,7 @@ router.post('/:category',function(req,res,next) {
 			    files = [],
 			    fields = [];
 			    form.uploadDir = '/root/auto-leasing/static/uploads';
-			    form.on('text', function(field, value) {
+			    form.on('field', function(field, value) {
 			        fields.push([field, value]);
 			    })
 			    form.on('file', function(field, file) {
