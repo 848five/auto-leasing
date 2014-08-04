@@ -30,7 +30,7 @@ app.use(express.static(path.join(__dirname, 'static')));
 
 app.use(multer({
  
-          dest: '/root/auto-leasing/static/uploads';
+          dest: "/root/auto-leasing/static/uploads"
  
 }));
 
