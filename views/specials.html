@@ -9,7 +9,9 @@
 
 {% block content %}
 
-
+{% if admin %}
+<p>logged in as admin</p>
+{% endif %}
 
 {% for item in list %}
 	<section class="listing">
