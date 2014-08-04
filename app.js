@@ -22,7 +22,7 @@ app.use( require('express-force-domain')('http://www.blissautoleasing.com') );
 
 app.use(favicon());
 app.use(logger('dev'));
-app.use(bodyParser());
+app.use(require('connect').bodyParser());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 app.use(cookieParser());

@@ -2,12 +2,7 @@ var express = require('express');
 var md5 = require('MD5'); 
 var mongodb = require('mongodb');
 var formidable = require('formidable');
-var bodyParser = require('body-parser');
 var router = express.Router();
-
-router.use(bodyParser());
-router.use(bodyParser.json());
-router.use(bodyParser.urlencoded());
 
 
 var db = new mongodb.Db('bliss', new mongodb.Server('127.0.0.1', 27017), {safe:true});
@@ -16,7 +11,7 @@ var db = new mongodb.Db('bliss', new mongodb.Server('127.0.0.1', 27017), {safe:t
 //
 //
 //POST ROUTES
-router.post('/:category',bodyParser, function(req,res,next) {
+router.post('/:category',function(req,res,next) {
 	var hash = new Date();
     var activeSession = req.cookies._a;
     var category = req.params.category;
