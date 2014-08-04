@@ -1,11 +1,11 @@
-.specials .listing {
+.listing {
   width: 768px;
   height: 200px; }
-  .specials .listing ul {
+  .listing ul {
     list-style-type: none; }
-    .specials .listing ul li {
+    .listing ul li {
       display: inline-block; }
-      .specials .listing ul li img {
+      .listing ul li img {
         display: block;
         width: 150px;
         height: 150px; }
