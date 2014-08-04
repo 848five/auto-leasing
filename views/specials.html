@@ -5,8 +5,8 @@
 
 {% block content %}
 
-
-{% for item in categoryList %}
+{{ categoryList }}
+{% for item in list %}
 {{ item.make }}
 {% endfor %}
 <p> {{ items }} </p>
