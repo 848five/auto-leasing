@@ -33,7 +33,7 @@
 		$('form').submit(function(e){
 			e.preventDefault();
 			$.ajax({
-			    url : "view/specials",
+			    url : "dashboard/view/specials",
 			    type: "POST",
 			    data : $('form').serialize(),
 			    success: function(data, textStatus, jqXHR)
