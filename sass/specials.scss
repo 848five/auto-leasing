@@ -1,19 +1,21 @@
-.listings {
-	width: 768px;
-	height: 200px;
+.specials {
+	.listing {
+		width: 768px;
+		height: 200px;
 
-	ul {
-		list-style-type: none;
+		ul {
+			list-style-type: none;
 
-		li {
-			display: inline-block;
+			li {
+				display: inline-block;
 
-			img {
-				display: block;
-				width: 150px;
-				height: 150px;
+				img {
+					display: block;
+					width: 150px;
+					height: 150px;
+				}
 			}
 		}
-	}
 
+	}
 }
