@@ -115,7 +115,7 @@ router.get('/:category?/:year?/:make?/:model?', function(req,res,next) {
                                 if (categoryList.length == 0 || category == "admin") {
                                     res.send('nothing found');
                                 } else {
-                                    res.render('specials',{list:categoryList});
+                                    res.render('specials',{list:categoryList,admin:true});
                                 }
                                 db.close();
                                 });             
@@ -125,7 +125,7 @@ router.get('/:category?/:year?/:make?/:model?', function(req,res,next) {
                                 if (categoryList.length == 0 || category == "admin") {
                                     res.send('nothing found');
                                 } else {
-                                    res.render('specials',{list:categoryList});
+                                    res.render('specials',{list:categoryList,admin:true});
                                 }
                                 db.close();
                                 }); 
@@ -141,7 +141,7 @@ router.get('/:category?/:year?/:make?/:model?', function(req,res,next) {
                                 if (categoryList.length == 0 || category == "admin") {
                                     res.send('nothing found');
                                 } else {
-                                    res.render('specials',{list:categoryList});
+                                    res.render('specials',{list:categoryList,admin:true});
                                 }
                                 db.close();
                                 });             
@@ -151,7 +151,7 @@ router.get('/:category?/:year?/:make?/:model?', function(req,res,next) {
                                 if (categoryList.length == 0 || category == "admin") {
                                     res.send('nothing found');
                                 } else {
-                                    res.render('specials',{list:categoryList});
+                                    res.render('specials',{list:categoryList,admin:true});
                                 }
                                 db.close();
                                 });  
@@ -167,7 +167,7 @@ router.get('/:category?/:year?/:make?/:model?', function(req,res,next) {
 	                            if (categoryList.length == 0 || category == "admin") {
 	                                res.send('nothing found');
 	                            } else {
-	                                res.render('specials',{list:categoryList});
+	                                res.render('specials',{list:categoryList,admin:true});
 	                            }
 	                            db.close();
 	                        	});
@@ -177,7 +177,7 @@ router.get('/:category?/:year?/:make?/:model?', function(req,res,next) {
 	                            if (categoryList.length == 0 || category == "admin") {
 	                                res.send('nothing found');
 	                            } else {
-	                                res.render('specials',{list:categoryList});
+	                                res.render('specials',{list:categoryList,admin:true});
 	                            }
 	                            db.close();
 	                        	});             
@@ -192,7 +192,7 @@ router.get('/:category?/:year?/:make?/:model?', function(req,res,next) {
                             if (categoryList.length == 0 || category == "admin") {
                                 res.send('nothing found');
                             } else {
-                                res.render('specials',{list:categoryList});
+                                res.render('specials',{list:categoryList,admin:true});
                             }
                             db.close();
                         });             
