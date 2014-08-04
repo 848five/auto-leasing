@@ -36,7 +36,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'static')));
 
 
-app.use('/dashboard',getRoutes);
+app.use('/dashboard/home',getRoutes);
 
 
 //Routes
