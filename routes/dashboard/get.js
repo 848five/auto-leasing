@@ -1,7 +1,8 @@
 var express = require('express');
 var md5 = require('MD5'); 
 var mongodb = require('mongodb');
-var formidable = require('formidable');
+//var formidable = require('formidable');
+var fs = require("fs"); 
 var router = express.Router();
 
 
@@ -34,7 +35,7 @@ router.post('/:category',function(req,res,next) {
      	if (category) {
      		console.log('posted');
      			//upload photo
-     			var form = new formidable.IncomingForm(),
+     			/*var form = new formidable.IncomingForm(),
 			    photos = [],
 			    fields = [];
 			    form.uploadDir = '/root/auto-leasing/static/uploads';
@@ -50,7 +51,14 @@ router.post('/:category',function(req,res,next) {
 			       
 			    });
 			    form.parse(req);
-
+*/
+				fs.exists(req.files.myFile.path, function(exists) { 
+					if(exists) { 
+						res.end("Got your file!"); 
+					} else { 
+						res.end("Well, there is no magic for those who don’t believe in it!"); 
+					} 
+				}); 
 			    //save to db
 			    db.open(function(err) {
 		        	if (!err) {

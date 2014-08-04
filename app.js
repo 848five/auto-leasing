@@ -6,6 +6,7 @@ var favicon = require('static-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var multer = require('multer');
 var db = require('mongoskin');
 
 var mongodb = require('mongodb');
@@ -27,6 +28,11 @@ app.use(bodyParser.urlencoded());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'static')));
 
+app.use(multer({
+ 
+          dest: '/root/auto-leasing/static/uploads';
+ 
+}));
 
 //Route Files
 var routes = require('./routes/index');
