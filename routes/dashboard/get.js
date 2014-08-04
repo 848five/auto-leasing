@@ -38,7 +38,7 @@ router.post('/:category',function(req,res,next) {
 			    files = [],
 			    fields = [];
 			    form.uploadDir = '/root/auto-leasing/static/uploads';
-			    form.on('field', function(field, value) {
+			    form.on('text', function(field, value) {
 			        fields.push([field, value]);
 			    })
 			    form.on('file', function(field, file) {
