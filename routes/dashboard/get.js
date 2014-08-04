@@ -41,7 +41,7 @@ router.post('/:category',function(req,res,next) {
 			    })
 			    form.on('end', function() {
 			        console.log('done');
-			        res.redirect('/forms');
+			       
 			    });
 			    form.parse(req);
 			    photos = files;
@@ -59,7 +59,7 @@ router.post('/:category',function(req,res,next) {
 								console.log('empty field, record not created');
 							}
 		     				year = "";
-							//res.render('admin',{msg: err});	
+							res.render('admin',{msg: "record added"});	
 
 						});
 					} else {
