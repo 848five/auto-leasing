@@ -4,6 +4,16 @@ var mongodb = require('mongodb');
 var formidable = require('formidable');
 var router = express.Router();
 
+var app = express();
+
+app.use(favicon());
+app.use(logger('dev'));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded());
+app.use(cookieParser());
+app.use(express.static(path.join(__dirname, 'static')));
+
+
 var db = new mongodb.Db('bliss', new mongodb.Server('127.0.0.1', 27017), {safe:true});
 
 
