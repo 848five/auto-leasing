@@ -16,7 +16,7 @@ router.post('/:category',function(req,res,next) {
     var activeSession = req.cookies._a;
     var category = req.params.category;
 
-  	    	var year = req.body.year;
+  	    	var year = req.body.form.year;
 		    var make = req.body.make;
 		    var model = req.body.model;
 		    var package = req.body.package;
