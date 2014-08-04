@@ -60,9 +60,9 @@ router.post('/:category',function(req,res,next) {
 					}
 					fs.exists(req.files.files.path, function(exists) { 
 						if(exists) { 
-							res.end("Got your file!"); 
+							console.log('got files');
 						} else { 
-							res.end("Well, there is no magic for those who don’t believe in it!"); 
+							console.log('file not uploaded');
 						} 
 					}); 
 				} 
