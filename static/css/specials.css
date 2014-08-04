@@ -13,17 +13,18 @@ section.listing {
   section.listing span.details {
     display: block;
     background-color: red;
-    padding: 5px;
+    padding: 5px 10px;
     float: right;
-    margin-right: 20px;
+    margin-right: 0px;
     margin-top: -30px;
     color: #ffffff; }
   section.listing span.title {
     display: block;
-    background-color: red;
-    padding: 5px;
-    font-size: 25px;
+    background-color: dimgrey;
+    padding: 5px 10px;
+    font-size: 17px;
     float: left;
-    margin-right: 20px;
+    margin-left: 0;
     margin-top: -30px;
-    color: #ffffff; }
+    color: #ffffff;
+    width: 68%; }
