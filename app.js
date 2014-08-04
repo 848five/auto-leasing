@@ -22,11 +22,11 @@ app.use( require('express-force-domain')('http://www.blissautoleasing.com') );
 
 app.use(favicon());
 app.use(logger('dev'));
-app.use(require('connect').bodyParser());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'static')));
+app.use(require('getRoutes').bodyParser());
 
 
 //Route Files
