@@ -2,7 +2,6 @@ var express = require('express');
 var md5 = require('MD5');
 var router = express.Router();
 var user;
-var specialsList;
 var mongodb = require('mongodb');
 
 
@@ -13,7 +12,7 @@ router.get('/', function(req,res) {
 		 var activeSession = req.cookies._a;
 		 if (activeSession == md5(hash.getDay()+'87155')) {
 		 	console.log(activeSession);
-		 	res.render('tools',{auth: user,specials:specialsList});
+		 	res.render('tools',"");
 		 } else {
          	res.render('admin',"");
 		 }
@@ -40,7 +39,7 @@ router.post('/', function(req,res) {
 							} else {
 								var hash = new Date();
 		                		res.cookie('_a', md5(hash.getDay()+'87155'), { expires: 0, httpOnly: true });
-		                		res.render('tools',{auth: user,specials:specialsList});
+		                		res.render('tools',"");
 							}
 
 					db.close();
