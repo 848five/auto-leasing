@@ -6,23 +6,18 @@
 {% block content %}
 
 {% for item in list %}
-{{ item.make }}
+	{{ item.make }}
 
-<pre>
-{% for items in item %}
-{{items}}
-{% endfor %}
-</pre>
-{% for file in item.photos %}
-{% for image in file.files %}
-<img src="{{image.path}}">
-{% endfor %}
-{% endfor %}
+	<pre>
+		{% for items in item %}
+			{% for photos in items %}
+				{{photos}}
+			{% endfor %}
+		{% endfor %}
+	</pre>
 {% endfor %}
 
-<pre>
-list: {{list}}
-</pre>
+
 
 {% endblock %}
 
