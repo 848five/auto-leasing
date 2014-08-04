@@ -24,15 +24,15 @@ app.use( require('express-force-domain')('http://www.blissautoleasing.com') );
 app.use(favicon());
 app.use(logger('dev'));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'static')));
 
-// app.use(multer({
+app.use(multer({
  
-//           dest: "/root/auto-leasing/static/uploads"
+          dest: "/root/auto-leasing/static/uploads"
  
-// }));
+}));
 
 //Route Files
 var routes = require('./routes/index');
