@@ -11,7 +11,7 @@
 	<pre>
 		{% for items in item.photos %}
 			{% for file in items %}
-				<img src="{% filter replace("/root/auto-leasing/static", "", "g") %}Hi. My name is Paul.{% endfilter %}{{ file.path }}">
+				<img src="{% filter replace("/root/auto-leasing/static", "", "g") %}{{ file.path }}{% endfilter %}">
 			{% endfor %}
 		{% endfor %}
 	</pre>
