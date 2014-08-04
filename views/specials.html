@@ -5,12 +5,12 @@
 
 {% block content %}
 
-{% for category in categoryList %}
-<p> {{ make }} </p>
-{% for item in items %}
+
+{% for item in categoryList %}
 {{ item.make }}
 {% endfor %}
 <p> {{ items }} </p>
 {% endfor %}
+
 {% endblock %}
 
