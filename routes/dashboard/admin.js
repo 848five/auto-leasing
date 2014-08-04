@@ -4,7 +4,6 @@ var router = express.Router();
 var user;
 var mongodb = require('mongodb');
 
-router.use(express.bodyParser());
 
 
 
