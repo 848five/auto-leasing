@@ -4,8 +4,10 @@ section.listing {
   section.listing ul {
     list-style-type: none; }
     section.listing ul li {
-      display: inline-block; }
+      display: inline-block;
+      width: 150px;
+      height: 150px; }
       section.listing ul li img {
         display: block;
-        width: 150px;
-        height: 150px; }
+        width: 100%;
+        height: 100%; }
