@@ -32,10 +32,12 @@
 	<script type="text/javascript">
 		$('form').submit(function(e){
 			e.preventDefault();
+
+			var formData = new FormData($(this)[0]);
 			$.ajax({
 			    url : "dashboard/view/specials",
 			    type: "POST",
-			    data : $('form').serialize(),
+			    data : formData,
 			    success: function(data, textStatus, jqXHR)
 			    {
 			        //data - response from server
