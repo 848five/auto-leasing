@@ -10,8 +10,8 @@
 
 	<pre>
 		{% for items in item %}
-			{% for photos in items.photos.files %}
-				{{photos}}
+			{% for file in items.photos.files %}
+				{{ file }}
 			{% endfor %}
 		{% endfor %}
 	</pre>
