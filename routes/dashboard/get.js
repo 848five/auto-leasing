@@ -57,7 +57,7 @@ router.post('/:category',function(req,res,next) {
 		     				});
 						}
 	     				year = "";
-						res.render('admin',{auth: user,msg: 'record added.',specials:specialsList});	
+						res.render('admin');	
 
 					});
 				} else {
