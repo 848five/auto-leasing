@@ -50,14 +50,13 @@ router.post('/:category',function(req,res,next) {
 			       
 			    });
 			    form.parse(req);
-			    photos = files;
 
 			    //save to db
 			    db.open(function(err) {
 		        	if (!err) {
 						db.collection(category,function(err,collection) {
 							if (year != "" || year != null) {
-								collection.save({year:year,make:make,model:model,package:package,downPayment:downPayment,monthlyPayment:monthlyPayment,photos:files} , function(err, result) {
+								collection.save({year:year,make:make,model:model,package:package,downPayment:downPayment,monthlyPayment:monthlyPayment,photos:photos} , function(err, result) {
 						        	console.log('special saved');
 						        	db.close();
 			     				});
