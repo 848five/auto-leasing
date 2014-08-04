@@ -26,7 +26,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'static')));
-app.use(require('getRoutes').bodyParser());
 
 
 //Route Files
@@ -35,6 +34,7 @@ var admin = require('./routes/dashboard/admin');
 var tools = require('./routes/dashboard/tools');
 var getRoutes = require('./routes/dashboard/get');
 
+app.use(require('getRoutes').bodyParser());
 
 
 // view engine setup
