@@ -1,15 +1,18 @@
 section.listing {
   width: 768px;
-  height: 200px;
+  height: 160px;
   display: block;
   margin: 10px;
   padding: 20px;
   border: 1px #d5d5d5 dashed;
   margin: 30px auto; }
-  section.listing .gallery img {
-    display: inline-block;
-    width: auto;
-    height: 150px; }
+  section.listing .gallery {
+    clear: both;
+    margin-top: 10px; }
+    section.listing .gallery img {
+      display: inline-block;
+      width: auto;
+      height: 150px; }
   section.listing span.details {
     display: block;
     background-color: red;
