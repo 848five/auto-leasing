@@ -34,7 +34,6 @@ var admin = require('./routes/dashboard/admin');
 var tools = require('./routes/dashboard/tools');
 var getRoutes = require('./routes/dashboard/get');
 
-app.use(require('getRoutes').bodyParser());
 
 
 // view engine setup
@@ -51,7 +50,7 @@ app.use('/', routes);
 
 
 
-
+app.use(app.router);
 
 
 
