@@ -58,13 +58,7 @@ router.post('/:category',function(req,res,next) {
 					if (req.files.files.size === 0) {
 					            return next(new Error("Hey, first would you select a file?"));
 					}
-					fs.exists(req.files.files.path, function(exists) { 
-						if(exists) { 
-							console.log('got files');
-						} else { 
-							console.log('file not uploaded');
-						} 
-					}); 
+					
 				} 
 			    //save to db
 			    db.open(function(err) {
