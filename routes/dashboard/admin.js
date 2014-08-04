@@ -14,6 +14,7 @@ router.get('/', function(req,res) {
 		 	console.log(activeSession);
 		 	res.render('tools',"");
 		 } else {
+		 	console.log(activeSession);
          	res.render('admin',"");
 		 }
 });
