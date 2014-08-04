@@ -13,13 +13,9 @@
 
 {% for item in list %}
 	<section class="listing">
-	<span>{{item.downPayment}} down / {{item.monthlyPayment}} per month</span>
-	<ul>
-		<li>{{ item.year }}</li>
-		<li>{{ item.make }}</li>
-		<li>{{ item.model }}</li>
-		<li>{{ item.package }}</li>
-	</ul>
+	<span class="details">{{item.downPayment}} down / {{item.monthlyPayment}} per month</span>
+	<span class="title">{{ item.year }}  {{ item.make }}  {{ item.model }}  {{ item.package }}</span>
+
 	<div class="gallery">
 		{% for items in item.photos %}
 			{% for file in items %}
