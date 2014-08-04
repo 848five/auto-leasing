@@ -18,8 +18,6 @@
 		<li>{{ item.make }}</li>
 		<li>{{ item.model }}</li>
 		<li>{{ item.package }}</li>
-		<li>{{ item.downPayment }}</li>
-		<li>{{ item.monthlyPayment }}</li>
 	</ul>
 	<div class="gallery">
 		{% for items in item.photos %}
@@ -28,6 +26,9 @@
 			{% endfor %}
 		{% endfor %}
 	</div>
+	<span class="down">{{ item.downPayment }} down</span>
+	<span class="monthly">{{ item.monthlyPayment }} per month</span>
+
 	</section>
 {% endfor %}
 

@@ -9,8 +9,19 @@ section.listing {
   section.listing ul {
     list-style-type: none; }
     section.listing ul li {
-      display: inline-block; }
+      display: inline-block;
+      display: inline-block;
+      margin: 0px 3px 10px;
+      font-size: 25px; }
   section.listing .gallery img {
     display: inline-block;
     width: auto;
     height: 150px; }
+  section.listing span.down {
+    float: left;
+    text-align: left;
+    padding: 0 20px; }
+  section.listing span.monthly {
+    float: right;
+    text-align: right;
+    padding: 0 20px; }

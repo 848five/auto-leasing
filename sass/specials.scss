@@ -12,7 +12,9 @@ section.listing{
 
 			li {
 				display: inline-block;
-
+				display: inline-block;
+				margin: 0px 3px 10px;
+				font-size: 25px;
 			}
 		}
 
@@ -21,6 +23,19 @@ section.listing{
 				display: inline-block;
 				width: auto;
 				height: 150px;
+			}
+		}
+
+		span {
+			&.down {
+				float: left;
+				text-align: left;
+				padding: 0 20px;
+			}
+			&.monthly {
+				float: right;
+				text-align: right;
+				padding: 0 20px;
 			}
 		}
 
