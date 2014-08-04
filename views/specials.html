@@ -8,12 +8,17 @@
 {% for item in list %}
 {{ item.make }}
 
+<pre>{{item}}</pre>
 {% for file in item.photos %}
 {% for image in file.files %}
 <img src="{{image.path}}">
 {% endfor %}
 {% endfor %}
 {% endfor %}
+
+<pre>
+list: {{list}}
+</pre>
 
 {% endblock %}
 
