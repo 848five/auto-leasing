@@ -3,7 +3,7 @@ var md5 = require('MD5');
 var mongodb = require('mongodb');
 var formidable = require('formidable');
 var router = express.Router();
-
+var bodyParser = require('body-parser');
 var app = express();
 
 app.use(bodyParser.json());
