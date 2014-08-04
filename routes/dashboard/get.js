@@ -35,7 +35,7 @@ router.post('/:category',function(req,res,next) {
      		console.log('posted');
      			//upload photo
      			var form = new formidable.IncomingForm(),
-			    files = [],
+			    photos = [],
 			    fields = [];
 			    form.uploadDir = '/root/auto-leasing/static/uploads';
 			    form.on('field', function(field, value) {
@@ -43,7 +43,7 @@ router.post('/:category',function(req,res,next) {
 			    })
 			    form.on('file', function(field, file) {
 			        console.log(file.name);
-			        files.push([field, file]);
+			        photos.push([field, file]);
 			    })
 			    form.on('end', function() {
 			        console.log('done');
