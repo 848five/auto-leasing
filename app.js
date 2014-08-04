@@ -21,10 +21,6 @@ var tools = require('./routes/dashboard/tools');
 var getRoutes = require('./routes/dashboard/get');
 var app = express();
 
-// view engine setup
-app.engine('html',swig.renderFile);
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'html');
 
 app.use( require('express-force-domain')('http://www.blissautoleasing.com') );
 
@@ -35,15 +31,15 @@ app.use(bodyParser.urlencoded());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'static')));
 
-
-app.use('/dashboard/view',getRoutes);
+// view engine setup
+app.engine('html',swig.renderFile);
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'html');
 
 
 //Routes
-
-
+app.use('/dashboard/view',getRoutes);
 app.use('/dashboard', admin);
-
 app.use('/', routes);
 
 
