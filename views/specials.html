@@ -8,7 +8,11 @@
 {% for item in list %}
 {{ item.make }}
 
-<pre>{{item}}</pre>
+<pre>
+{% for items in item %}
+{{items}}
+{% endfor %}
+</pre>
 {% for file in item.photos %}
 {% for image in file.files %}
 <img src="{{image.path}}">
