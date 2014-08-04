@@ -29,7 +29,6 @@ router.post('/:category',function(req,res,next) {
 		    console.log('year1->'+year);
 		    console.log('make->'+make);
 		    console.log('model->'+model);
-		    return;
 
      if (activeSession == md5(hash.getDay()+'87155')) {
      	if (category) {
