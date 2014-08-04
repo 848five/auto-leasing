@@ -10,7 +10,7 @@
 
 	<pre>
 		{% for items in item %}
-			{% for photos in items.photos %}
+			{% for photos in items.photos.files %}
 				{{photos}}
 			{% endfor %}
 		{% endfor %}
