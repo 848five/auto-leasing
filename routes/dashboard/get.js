@@ -56,7 +56,6 @@ router.post('/:category',function(req,res,next) {
 					        	db.close();
 		     				});
 						}
-	     				loadSpecials();
 	     				year = "";
 						res.render('admin',{auth: user,msg: 'record added.',specials:specialsList});	
 
