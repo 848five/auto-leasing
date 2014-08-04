@@ -13,6 +13,7 @@
 
 {% for item in list %}
 	<section class="listing">
+	<span>{{item.downPayment}} down / {{item.monthlyPayment}} per month</span>
 	<ul>
 		<li>{{ item.year }}</li>
 		<li>{{ item.make }}</li>
@@ -26,8 +27,6 @@
 			{% endfor %}
 		{% endfor %}
 	</div>
-	<span class="down">{{ item.downPayment }} down</span>
-	<span class="monthly">{{ item.monthlyPayment }} per month</span>
 
 	</section>
 {% endfor %}
