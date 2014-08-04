@@ -20,7 +20,9 @@ section.listing {
     float: right;
     margin-right: 0px;
     margin-top: -30px;
-    color: #ffffff; }
+    font-size: 17px;
+    color: #ffffff;
+    padding-left: 40px; }
   section.listing span.title {
     display: block;
     background-color: dimgrey;
@@ -30,4 +32,5 @@ section.listing {
     margin-left: 0;
     margin-top: -30px;
     color: #ffffff;
-    width: 68%; }
+    width: 66%;
+    border-top-right-radius: 70px; }
