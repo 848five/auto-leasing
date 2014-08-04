@@ -25,7 +25,7 @@ router.post('/:category',function(req,res,next) {
 		    var downPayment = req.body.downPayment;
 		    var monthlyPayment = req.body.monthlyPayment;
 		    var desc = req.body.desc;
-		    var photos = JSON.parse(feq.files);
+		    var photos = req.files;
 
 		    console.log(req.body);
 		    console.log('year1->'+year);
