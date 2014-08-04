@@ -12,11 +12,6 @@ var mongodb = require('mongodb');
 var db = new mongodb.Db('bliss', new mongodb.Server('127.0.0.1', 27017), {safe:true});
 
 
-//Route Files
-var routes = require('./routes/index');
-var admin = require('./routes/dashboard/admin');
-var tools = require('./routes/dashboard/tools');
-var getRoutes = require('./routes/dashboard/get');
 
 
 var app = express();
@@ -35,6 +30,11 @@ app.use(express.static(path.join(__dirname, 'static')));
 
 
 
+//Route Files
+var routes = require('./routes/index');
+var admin = require('./routes/dashboard/admin');
+var tools = require('./routes/dashboard/tools');
+var getRoutes = require('./routes/dashboard/get');
 
 
 
