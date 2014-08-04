@@ -24,6 +24,11 @@ router.post('/:category',function(req,res,next) {
 		    var desc = req.body.desc;
 		    var photos = [];
 
+		    console.log('year->'+year);
+		    console.log('make->'+make);
+		    console.log('model->'+model);
+		    return;
+
      if (activeSession == md5(hash.getDay()+'87155')) {
      	if (category) {
      		console.log('posted');
