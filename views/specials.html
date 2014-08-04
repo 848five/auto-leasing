@@ -9,8 +9,9 @@
 	{{ item.make }}
 
 	<pre>
+		{{ item.photos }}
 		{% for items in item %}
-			{% for file in items.photos.files %}
+			{% for file in items.photos %}
 				{{ file }}
 			{% endfor %}
 		{% endfor %}
