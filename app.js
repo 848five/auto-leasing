@@ -50,7 +50,6 @@ app.use('/', routes);
 
 
 
-app.use(app.router);
 
 
 
