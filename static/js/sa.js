@@ -3,13 +3,13 @@ window.onload = function() {
 	var editBtn = document.querySelector('.js-edit-btn');
 
 	if (addPhotoBtn) {
-		$(addPhotoBtn).addEventListener('click',function(e) {
+		$('addPhotoBtn').addEventListener('click',function(e) {
 			e.preventDefault();
 			alert($(this).attr('data-item'));
 		},false);
 	}
 
-	if (editBtn) {
+	if ('editBtn') {
 		$(editBtn).addEventListener('click',function(e) {
 			e.preventDefault();
 			alert($(this).attr('data-item'));
