@@ -8,7 +8,9 @@ window.onload = function() {
 		$('.js-remove-photo').click(function(e) {
 			e.preventDefault();
 			if (confirm('Are you sure you want to remove this photo?')) {
-			    removePhoto();
+				var element = this.parentNode().parentNode().parentNode();
+				var id = $('element').attr('data-id');
+			    removePhoto(id,this);
 			} else {
 			}
 		});
@@ -21,5 +23,6 @@ window.onload = function() {
 
 
 function removePhoto(id,photo) {
-	alert('removed');
+	console.log("id:->" + id);
+	console.log("photo:->" + photo);
 }
