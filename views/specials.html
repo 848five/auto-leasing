@@ -32,12 +32,11 @@
 		{% endfor %}
 	</div>
 
-	{{ item }}
 
 	{% if admin %}
 		{% for id in item._id  %}
-		     {% for listID in id.ObjectID %}
-			{{ listID.ObjectID }}
+		     {% for listID in id %}
+			{{ listID }}
 			{% endfor %}
 			<a href="#" class="js-edit-btn" data-item="">edit</a>
 			<a href="#" class="js-add-photo-btn">add photo</a>
