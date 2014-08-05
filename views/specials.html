@@ -35,9 +35,8 @@
 
 
 	{% if admin %}
-				id :{{ item._id.toHexString() }}
-			<a href="#" class="js-edit-btn" data-item="">edit</a>
-			<a href="#" class="js-add-photo-btn">add photo</a>
+			<a href="#" class="js-edit-btn" data-item="{{ item._id.toHexString() }}">edit</a>
+			<a href="#" class="js-add-photo-btn" data-item="{{ item._id.toHexString() }}">add photo</a>
 	{% endif %}
 	</section>
 {% endfor %}
