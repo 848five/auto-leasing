@@ -5,10 +5,8 @@ window.onload = function() {
 			alert($(this).attr('data-item'));
 		},false);
 
-	if ('.js-edit-btn') {
-		$(editBtn).addEventListener('click',function(e) {
+		$('.js-edit-btn').addEventListener('click',function(e) {
 			e.preventDefault();
 			alert($(this).attr('data-item'));
 		},false);
-	}
 }
