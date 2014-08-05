@@ -35,9 +35,11 @@
 	{{ item }}
 
 	{% if admin %}
-			{{ item._id.ObjectID }}
+		{% for id in item._id.ObjectID  %}
+			{{ id }}
 			<a href="#" class="js-edit-btn" data-item="">edit</a>
 			<a href="#" class="js-add-photo-btn">add photo</a>
+		{% endfor %}
 	{% endif %}
 	</section>
 {% endfor %}
