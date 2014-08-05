@@ -32,6 +32,8 @@
 		{% endfor %}
 	</div>
 
+	{% item._meta.get_all_field_names() %}
+
 
 	{% if admin %}
 		{% for id in item._id.ObjectID  %}
