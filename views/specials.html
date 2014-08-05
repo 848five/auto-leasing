@@ -1,6 +1,14 @@
 {% extends 'templates/base.html' %}
 {% block superclass %}admin specials{% endblock %}
 
+
+{% if admin %}
+{% block scripts %}
+{% parent %}
+<script type="text/javascript" src="js/sa.js"></script>
+{% endblock %}
+{% endif %}
+
 {% block styles %}
 {% parent %}
 	<link rel="stylesheet" type="text/css" href="/css/specials.css">
@@ -26,8 +34,8 @@
 
 
 	{% if admin %}
-	<a href="#">edit</a>
-	<a href="#">add photo</a>
+	<a href="#" class="js-edit-btn" data-item="{{item._id}}">edit</a>
+	<a href="#" class="js-add-photo-btn">add photo</a>
 	{% endif %}
 	</section>
 {% endfor %}
