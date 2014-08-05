@@ -34,9 +34,9 @@
 
 
 	{% if admin %}
-		{% for id in item %}
-			<pre>{{ id._id }}</pre>
-			<a href="#" class="js-edit-btn" data-item="{{ id }}">edit</a>
+		{% for id in item._id %}
+			<pre>{{ id }}</pre>
+			<a href="#" class="js-edit-btn" data-item="{{ id.ObjectID }}">edit</a>
 			<a href="#" class="js-add-photo-btn">add photo</a>
 		{% endfor %}
 	{% endif %}
