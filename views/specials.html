@@ -20,7 +20,7 @@
 
 
 {% for item in list %}
-	<section class="listing">
+	<section class="listing" data-id="{{ item._id.toHexString() }}">
 	<span class="details">{{item.downPayment}} down / {{item.monthlyPayment}} per month</span>
 	<span class="title">{{ item.year }}  {{ item.make }}  {{ item.model }}  {{ item.package }}</span>
 
@@ -28,7 +28,7 @@
 		{% for items in item.photos %}
 			{% for file in items %}
 				<li>
-					<span class="remove">X</span>
+					<span class="js-remove-photo">X</span>
 					<img src="{% filter replace("/root/auto-leasing/static", "", "g") %}{{ file.path }}{% endfilter %}">
 				</li>
 			{% endfor %}
