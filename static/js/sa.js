@@ -8,8 +8,7 @@ window.onload = function() {
 		$('.js-remove-photo').click(function(e) {
 			e.preventDefault();
 			if (confirm('Are you sure you want to remove this photo?')) {
-				var element = $(this).parentNode().parentNode().parentNode();
-				var id = $('element').attr('data-id');
+				var id = $(this).parent().parent().parent().attr('data-id');
 			    removePhoto(id,this);
 			} else {
 			}
