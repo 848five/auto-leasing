@@ -9,9 +9,7 @@
 
 {% block content %}
 
-{% if admin %}
-<p>logged in as admin</p>
-{% endif %}
+
 
 {% for item in list %}
 	<section class="listing">
@@ -26,6 +24,11 @@
 		{% endfor %}
 	</div>
 
+
+	{% if admin %}
+	<a href="#">edit</a>
+	<a href="#">add photo</a>
+	{% endif %}
 	</section>
 {% endfor %}
 
