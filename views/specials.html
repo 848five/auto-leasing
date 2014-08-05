@@ -34,8 +34,11 @@
 
 
 	{% if admin %}
-	<a href="#" class="js-edit-btn" data-item="{% for id in item._id %}{{ id.ObjectID }}{% endfor %}">edit</a>
-	<a href="#" class="js-add-photo-btn">add photo</a>
+		{% for id in item._id %}
+			<pre>{{ id }}</pre>
+			<a href="#" class="js-edit-btn" data-item="{{ id.ObjectID }}">edit</a>
+			<a href="#" class="js-add-photo-btn">add photo</a>
+		{% endfor %}
 	{% endif %}
 	</section>
 {% endfor %}
