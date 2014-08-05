@@ -35,11 +35,9 @@
 
 
 	{% if admin %}
-		{% for id in item._id %}
-				{{ id.toHexString() }}
+				{{ item_id.toHexString() }}
 			<a href="#" class="js-edit-btn" data-item="">edit</a>
 			<a href="#" class="js-add-photo-btn">add photo</a>
-		{% endfor %}
 	{% endif %}
 	</section>
 {% endfor %}
