@@ -35,7 +35,7 @@
 	{{ item }}
 
 	{% if admin %}
-		{% for id object item._id %}
+		{% for item._id object %}
 			{{ id}}
 			<a href="#" class="js-edit-btn" data-item="{{  }}">edit</a>
 			<a href="#" class="js-add-photo-btn">add photo</a>
