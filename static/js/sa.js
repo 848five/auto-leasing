@@ -9,6 +9,7 @@ window.onload = function() {
 			e.preventDefault();
 			if (confirm('Are you sure you want to remove this photo?')) {
 				var id = $(this).parent().parent().parent().attr('data-id');
+				var photo = $(this).next().attr('src');
 			    removePhoto(id,this);
 			} else {
 			}
