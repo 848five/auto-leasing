@@ -31,9 +31,8 @@ router.post('/:category',function(req,res,next) {
 
             fileKeys.forEach(function(key) {
                 console.log(key);
-                req.files[key].forEach(function(vals) {
-                    console.log('::::' + req.files[key][vals]);
-                });
+                    console.log('::::' + req.files[key]['path']);
+                
                 console.log('-----');
                 console.log(req.files[key]);
                 console.log('-----');
