@@ -25,7 +25,7 @@ router.post('/:category',function(req,res,next) {
 		    var downPayment = req.body.downPayment;
 		    var monthlyPayment = req.body.monthlyPayment;
 		    var desc = req.body.desc;
-		    var photos = req.files;
+		    var photos = Object.keys(req.files);
 
             for (image in req.files) {
                 console.log(util.inspect(image))
