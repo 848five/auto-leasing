@@ -28,7 +28,7 @@ router.post('/:category',function(req,res,next) {
 
             var photos = {};
             for (var i = 0; i < req.files.files.length; i++) {
-                photos.push('items':req.files.files[i].path);
+                photos.push({items:req.files.files[i].path});
             };
             
 		  
