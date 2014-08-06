@@ -29,7 +29,7 @@ router.post('/:category',function(req,res,next) {
             var fileKeys = Object.keys(req.files);
 
             var fileKey = Object.keys(req.files)[0];
-            var file = req.files['path'];
+            var file = req.files[fileKey]['path'];
             console.log(file);
             return;
 
