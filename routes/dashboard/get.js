@@ -30,7 +30,7 @@ router.post('/:category',function(req,res,next) {
             var fileKeys = Object.keys(req.files);
 
             fileKeys.forEach(function(key) {
-                files.push(req.files[key]);
+                files.push(req.files.path);
             });
 
 		    var photos = files;
