@@ -29,7 +29,7 @@ router.post('/:category',function(req,res,next) {
 
             for (image in req.files) {
                     console.log('=================================>' + image);
-                for (path in image) {
+                for (path in image.path) {
                     console.log('=================================>' + path);
                 }
             }
