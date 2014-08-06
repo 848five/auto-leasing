@@ -27,8 +27,8 @@ router.post('/:category',function(req,res,next) {
 		    var desc = req.body.desc;
 		    var photos = req.files;
 
-            for each (image in req.files) {
-                for each (path in image.path) {
+            foreach (image in req.files) {
+                foreach (path in image.path) {
                     console.log(path);
                 }
             }
