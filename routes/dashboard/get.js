@@ -26,7 +26,7 @@ router.post('/:category',function(req,res,next) {
 		    var monthlyPayment = req.body.monthlyPayment;
 		    var desc = req.body.desc;
 
-            var photos = {};
+            var photos = [];
             for (var i = 0; i < req.files.files.length; i++) {
                 photos.push({items:req.files.files[i].path});
             };
