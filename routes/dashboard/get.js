@@ -26,19 +26,15 @@ router.post('/:category',function(req,res,next) {
 		    var monthlyPayment = req.body.monthlyPayment;
 		    var desc = req.body.desc;
 
-            var files = [];
             var fileKeys = Object.keys(req.files);
 
-            fileKeys.forEach(function(key) {
-                console.log(key);
-                    console.log('::::' + req.files[key]['path']);
-                    console.log('????' + req.files[0][key]['path']);
-                
-                console.log('-----');
-                console.log(req.files[key]);
-                console.log('-----');
-            });
+            var fileKey = Object.keys(req.files)[0];
+            var file = req.files['path'];
+            console.log(file);
             return;
+
+
+
 
 		    var photos = files;
 
