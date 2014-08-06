@@ -26,17 +26,10 @@ router.post('/:category',function(req,res,next) {
 		    var monthlyPayment = req.body.monthlyPayment;
 		    var desc = req.body.desc;
 
-            var fileKeys = Object.keys(req.files);
-
-            var fileKey = Object.keys(req.files)[0];
-            var file = req.files[fileKey]['path'];
-            console.log(file);
+            
+		    var photos = req.files.images;
+            console.log(photos);
             return;
-
-
-
-
-		    var photos = files;
 
      if (activeSession == md5(hash.getDay()+'87155')) {
      	if (category) {
