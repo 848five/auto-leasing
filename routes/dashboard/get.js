@@ -29,6 +29,9 @@ router.post('/:category',function(req,res,next) {
             var files = [];
             var fileKeys = req.files;
 
+            console.log('=======');
+            console.log(req.files[0]);
+            return;
             for (var i = 0; i < fileKeys.length; i++) {
                 files.push(req.files[i].path);
             };
