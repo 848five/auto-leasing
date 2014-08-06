@@ -33,7 +33,6 @@ router.post('/:category',function(req,res,next) {
             
 		  
             console.log(photos);
-            return;
 
      if (activeSession == md5(hash.getDay()+'87155')) {
      	if (category) {
