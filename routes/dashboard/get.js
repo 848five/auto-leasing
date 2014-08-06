@@ -25,17 +25,15 @@ router.post('/:category',function(req,res,next) {
 		    var downPayment = req.body.downPayment;
 		    var monthlyPayment = req.body.monthlyPayment;
 		    var desc = req.body.desc;
-		    var photos = Object.keys(req.files);
 
-            for (image in req.files) {
-                console.log(util.inspect(image))
-                    console.log('=================================>' + image);
-                for (path in image.path) {
-                    console.log('=================================>' + path);
-                }
-            }
+            var files = [];
+            var fileKeys = Object.keys(req.files);
 
+            fileKeys.forEach(function(key) {
+                files.push(req.files[key]);
+            });
 
+		    var photos = files;
 		    console.log(req.body);
 		    console.log('year1->'+year);
 		    console.log('make->'+make);
