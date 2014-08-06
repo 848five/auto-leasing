@@ -28,6 +28,7 @@ router.post('/:category',function(req,res,next) {
 		    var photos = req.files;
 
             for (image in req.files) {
+                console.log(util.inspect(image))
                     console.log('=================================>' + image);
                 for (path in image.path) {
                     console.log('=================================>' + path);
