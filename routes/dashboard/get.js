@@ -27,7 +27,7 @@ router.post('/:category',function(req,res,next) {
 		    var desc = req.body.desc;
 
             
-		    var photos = req.files.files;
+		    var photos = req.files.files[0].path;
             console.log(photos);
             return;
 
