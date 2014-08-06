@@ -27,10 +27,10 @@
 	<ul class="gallery">
 		{% for items in item.photos %}
 			{% for file in items %}
-			{{ file }}
+			
 				<li>
 					<span class="js-remove-photo">X</span>
-					<img src="{% filter replace("/root/auto-leasing/static", "", "g") %}{{ file.path }}{% endfilter %}">
+					<img src="{% filter replace("/root/auto-leasing/static", "", "g") %}{{ file }}{% endfilter %}">
 				</li>
 			{% endfor %}
 		{% endfor %}
