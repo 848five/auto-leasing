@@ -29,15 +29,11 @@ router.post('/:category',function(req,res,next) {
             var files = [];
             var fileKeys = Object.keys(req.files);
 
-            fileKeys.forEach(function(key) {
-                console.log(key);
-            });
+            for (var i = 0; i < fileKeys.length; i++) {
+                files.push(req.files[i].path);
+            };
 
 		    var photos = files;
-		    console.log(req.body);
-		    console.log('year1->'+year);
-		    console.log('make->'+make);
-		    console.log('model->'+model);
 
      if (activeSession == md5(hash.getDay()+'87155')) {
      	if (category) {
