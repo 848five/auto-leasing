@@ -27,6 +27,12 @@ router.post('/:category',function(req,res,next) {
 		    var desc = req.body.desc;
 		    var photos = req.files;
 
+            for each (image in req.files) {
+                for each (path in image.path) {
+                    console.log(path);
+                }
+            }
+
 
 		    console.log(req.body);
 		    console.log('year1->'+year);
