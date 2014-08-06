@@ -61,7 +61,7 @@ router.post('/:category',function(req,res,next) {
 			    form.parse(req);
 */
 				if (req.files) { 
-					console.log(util.inspect(req.files));
+					//console.log(util.inspect(req.files));
 					if (req.files.files.size === 0) {
 					            return next(new Error("Hey, first would you select a file?"));
 					}
