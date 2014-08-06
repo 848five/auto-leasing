@@ -27,7 +27,7 @@ router.post('/:category',function(req,res,next) {
 		    var desc = req.body.desc;
 
             var files = [];
-            var fileKeys = req.files;
+            var fileKeys = Object.keys(req.files);
 
             fileKeys.forEach(function(key) {
                 console.log(key);
