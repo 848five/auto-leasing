@@ -35,7 +35,8 @@
 			<span class="label">create new special</span>
 			<input type="text" placeholder="postid" name="postid" />
 			<input type="file" name="files"/>
-			<input class="button" type="submit" name="submit" value="create" />
+			<input type="hidden" name="_method" value="PUT" >
+			<input class="button upload" type="submit" name="submit" value="create" />
 			{% if msg %}
 				<p>{{msg}}</p>
 			{% endif %}

@@ -71,7 +71,7 @@ router.delete('/photo/:category/:postid',function(req,res,next) {
       var hash = new Date();
     var activeSession = req.cookies._a;
     var category = req.params.category;
-    var postId = req.body.postid;
+    var postId = req.params.postid;
 
              var photo = [];
             for (var i = 0; i < req.files.files.length; i++) {
