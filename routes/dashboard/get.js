@@ -100,7 +100,7 @@ router.delete('/photo/:category/:postid',function(req,res,next) {
                                 });
                             } else {
                                 console.log('empty field, record not created');
-                                res.send({'status':0});  
+                                res.send({'status':0});   
                             }
                             photo = "";
 
