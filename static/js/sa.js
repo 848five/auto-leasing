@@ -28,7 +28,7 @@ function removePhoto(id,photo) {
 }
 
 
-/*
+/* delete
 $.ajax({
     url: 'http://www.blissautoleasing.com/dashboard/view/photo/specials/53e1ad2edfbea44b651fdb4c',
     type: 'DELETE',
@@ -36,5 +36,34 @@ $.ajax({
     success: function(result) {
         console.log(result);
     }
+});
+*/
+
+
+/* add photo
+$('.upload').click(function(e){
+e.preventDefault()
+    var formData = new FormData($('#testform'));
+    $.ajax({
+        url: '/dashboard/view/photo/specials',  //Server script to process data
+        type: 'POST',
+        xhr: function() {  // Custom XMLHttpRequest
+            var myXhr = $.ajaxSettings.xhr();
+            if(myXhr.upload){ // Check if upload property exists
+                myXhr.upload.addEventListener('progress',progressHandlingFunction, false); // For handling the progress of the upload
+            }
+            return myXhr;
+        },
+        //Ajax events
+        beforeSend: complete,
+        success: complete,
+        error: complete,
+        // Form data
+        data: formData,
+        //Options to tell jQuery not to process data or worry about content-type.
+        cache: false,
+        contentType: false,
+        processData: false
+    });
 });
 */

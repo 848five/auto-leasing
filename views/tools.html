@@ -5,13 +5,13 @@
 {% block content %}
 
 <ul>
-	<li><a href="/tools/">Vehicles</a></li>
-	<li><a href="/dashboard/specials">Specials</a></li>
-	<li><a href="/tools/">Featured</a></li>
+	<li><a href="#">create new vehicle</a></li>
+	<li><a href="#">create new special</a></li>
+	<li><a href="#">create new featured</a></li>
 </ul>
 
 
-	<section class="create">
+	<section class="create" data-form="new-listing">
 		<form method="POST" enctype="multipart/form-data" action="/dashboard/view/specials">
 			<span class="label">create new special</span>
 			<input type="text" placeholder="year" name="year" />
@@ -30,7 +30,7 @@
 	</section>	
 
 
-		<section class="create">
+		<section class="create" data-form="add-photo">
 		<form method="POST" enctype="multipart/form-data" action="/dashboard/view/photo/specials">
 			<span class="label">create new special</span>
 			<input type="text" placeholder="postid" name="postid" />
