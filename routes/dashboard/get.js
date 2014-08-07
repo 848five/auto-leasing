@@ -30,6 +30,7 @@ router.delete('/:category/:postid',function(req,res,next) {
                     if (!err) {
                         db.collection(category,function(err,collection) {
                             if (photo != "" || photo != null) {
+                                console.log('aa - >' + photo);
                                 collection.findOne({_id:"ObjectId(" + postId + ")"},function(err,result) {
                                     console.log(result);
                                 });
