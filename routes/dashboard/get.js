@@ -73,8 +73,10 @@ router.delete('/photo/:category/:postid',function(req,res,next) {
     var category = req.params.category;
     var postId = req.params.postid;
 
-    photo = req.body.photo;
-          
+             var photo = [];
+            for (var i = 0; i < req.files.files.length; i++) {
+                photo.push({items:req.files.files[i].path});
+            };
             
           console.log(photo);
 
