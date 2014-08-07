@@ -17,7 +17,10 @@ router.post('/photo/:category',function(req,res,next) {
     var category = req.params.category;
     var postId = req.params.postid;
 
-    photo = req.body.photo;
+     var photo = [];
+            for (var i = 0; i < req.files.files.length; i++) {
+                photo.push({items:req.files.files[i].path});
+            };
           
             
           console.log(photo);
@@ -65,7 +68,7 @@ router.post('/photo/:category',function(req,res,next) {
         }
     }
 });
-
+ 
 
 router.delete('/photo/:category/:postid',function(req,res,next) {
       var hash = new Date();
@@ -73,10 +76,7 @@ router.delete('/photo/:category/:postid',function(req,res,next) {
     var category = req.params.category;
     var postId = req.params.postid;
 
-             var photo = [];
-            for (var i = 0; i < req.files.files.length; i++) {
-                photo.push({items:req.files.files[i].path});
-            };
+            photo = req.body.photo;
             
           console.log(photo);
 
