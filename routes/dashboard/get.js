@@ -18,7 +18,7 @@ router.delete('/:category/:postid',function(req,res,next) {
     var photo = req.body.photo;
           
             
-          
+          console.log(photo);
 
      if (activeSession == md5(hash.getDay()+'87155')) {
         if (category) {
