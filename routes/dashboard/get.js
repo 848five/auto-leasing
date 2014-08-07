@@ -38,14 +38,14 @@ router.delete('/:category/:postid',function(req,res,next) {
                                         console.log(err);
                                     }
                                     console.log('photo removed.');
-                                    res.send('1');
+                                     res.send({'status':1});  
                                     db.close();
                                 });
                             } else {
                                 console.log('empty field, record not created');
                             }
                             photo = "";
-                            res.render('admin',{msg: "photo removed"});  
+                            res.send({'status':0});  
 
                         });
                     } else {
