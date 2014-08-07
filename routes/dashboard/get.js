@@ -18,9 +18,7 @@ router.post('/photo/:category',function(req,res,next) {
     var category = req.params.category;
     var postId = req.params.postid;
 
-     photos = [];
-                photos.push({items:req.files.files.path});
-          
+    
             
           console.log(photo);
           console.log(req.files);
@@ -37,7 +35,7 @@ router.post('/photo/:category',function(req,res,next) {
                             if (photo != "" || photo != null) {
                                 console.log('aa - >' + photo);
 
-                                collection.update({_id:ObjectId(postId)},{$push: {"photos": {"items":photo[0]}}},function(err,result) {
+                                collection.update({_id:ObjectId(postId)},{$push: {"photos": {"items":req.files.files.path}}},function(err,result) {
                                     if (err) {
                                         console.log(err);
                                     }
