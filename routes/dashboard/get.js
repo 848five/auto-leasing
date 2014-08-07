@@ -39,7 +39,6 @@ router.post('/remove/photo/:category/:postid/',function(req,res,next) {
                                 collection.update({_id:OnjectId(postId)},{$pull: {"photos": {"items":photo}}});
                                     console.log('photo removed. - >' + photo);
                                     db.close();
-                                });
                             } else {
                                 console.log('empty field, record not created');
                             }
