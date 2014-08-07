@@ -39,7 +39,7 @@ var routes = require('./routes/index');
 var admin = require('./routes/dashboard/admin');
 var tools = require('./routes/dashboard/tools');
 var getRoutes = require('./routes/dashboard/get');
-var deleteRoutes = require('./routes/dashboard/api/delete');
+var deleteRoutes = require('./routes/dashboard/delete');
 
 
 
