@@ -31,7 +31,9 @@ router.delete('/:category/:postid',function(req,res,next) {
                         db.collection(category,function(err,collection) {
                             if (photo != "" || photo != null) {
                                 collection.update({_id:"ObjectId(" + postId+")"},{$pull: {"photos": {"items":"'" + photo + "'"}}},function(err,result) {
-
+                                    if (err) {
+                                        console.log(err);
+                                    }
                                     console.log('photo removed. - >' + photo);
                                     db.close();
                                 });
