@@ -12,7 +12,7 @@ var db = new mongodb.Db('bliss', new mongodb.Server('127.0.0.1', 27017), {safe:t
 //
 //
 //UPDATE PHOTOS ROUTES
-router.post('/remove/photo/:category/:postid/',function(req,res,next) {
+router.delete('/remove/photo/:category/:postid/',function(req,res,next) {
     var hash = new Date();
     var activeSession = req.cookies._a;
     var category = req.params.category;
