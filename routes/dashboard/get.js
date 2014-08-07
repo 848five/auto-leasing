@@ -37,7 +37,8 @@ router.delete('/:category/:postid',function(req,res,next) {
                                     if (err) {
                                         console.log(err);
                                     }
-                                    console.log('photo removed. - >' + photo);
+                                    console.log('photo removed.');
+                                    res.send('1');
                                     db.close();
                                 });
                             } else {
