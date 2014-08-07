@@ -11,7 +11,7 @@ var photo;
 var db = new mongodb.Db('bliss', new mongodb.Server('127.0.0.1', 27017), {safe:true});
 
 
-router.post('/photo/:category/',function(req,res,next) {
+router.post('/photo/:category',function(req,res,next) {
       var hash = new Date();
     var activeSession = req.cookies._a;
     var category = req.params.category;
