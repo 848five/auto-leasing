@@ -21,7 +21,6 @@ router.delete('/photo/:category/:postid/',function(req,res,next) {
     var category = req.params.category;
     var postId = req.params.postid;
 
-            var updateId = req.body.id;
             var photo = req.body.photo;
           
             console.log("id: " + updateId + " , photo: " + photo);
