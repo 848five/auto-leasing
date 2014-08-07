@@ -50,7 +50,6 @@ app.set('view engine', 'html');
 
 
 //Routes
-app.use('/api/delete',deleteRoutes);
 app.use('/dashboard/view',getRoutes);
 app.use('/dashboard', admin);
 app.use('/', routes);
