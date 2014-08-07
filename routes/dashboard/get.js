@@ -18,17 +18,17 @@ router.post('/photo/:category',function(req,res,next) {
     var category = req.params.category;
     var postId = req.body.postid;
 
-     photos = [];
+    
+
+     if (activeSession == md5(hash.getDay()+'87155')) {
+        if (category && postId && photos) {
+            console.log('posted');
+         photos = [];
      photos.push({items:req.files.files.path});
           
             
           console.log(photos);
           console.log(req.files);
-
-     if (activeSession == md5(hash.getDay()+'87155')) {
-        if (category && postId && photos) {
-            console.log('posted');
-        
                
                 //save to db
                 db.open(function(err) {
