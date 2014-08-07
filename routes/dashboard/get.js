@@ -26,7 +26,7 @@ router.post('/photo/:category',function(req,res,next) {
           console.log(req.files);
 
      if (activeSession == md5(hash.getDay()+'87155')) {
-        if (category && postId && photo) {
+        if (category && postId && photos) {
             console.log('posted');
         
                
