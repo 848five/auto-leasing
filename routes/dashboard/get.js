@@ -53,6 +53,7 @@ router.post('/remove/photo/:category/:postid/',function(req,res,next) {
         }
      } else {
         if (category) {
+                console.log('no access');
                 var err = new Error('Not Found');
                 err.status = 404;
                 next(err);
