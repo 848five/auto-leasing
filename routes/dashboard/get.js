@@ -31,8 +31,8 @@ router.delete('/:category/:postid',function(req,res,next) {
                         db.collection(category,function(err,collection) {
                             if (photo != "" || photo != null) {
                                 console.log('aa - >' + photo);
-                                collection.findOne({_id:"ObjectId(" + postId + ")"},function(err,result) {
-                                    console.log(result);
+                                collection.find({_id:ObjectId(postId)}).toArray(function(err,list) {
+                                    console.log(list);
                                 });
                                 return;
                                 collection.update({_id:"ObjectId(" + postId+")"},{$pull: {"photos": {"items":photo}}},function(err,result) {
