@@ -17,7 +17,7 @@ router.delete('/:category',function(req,res,next) {
 
             var photo = req.body.photo;
           
-            console.log("id: " + updateId + " , photo: " + photo);
+            console.log("id: " + category + " , photo: " + photo);
           return;
             
           
