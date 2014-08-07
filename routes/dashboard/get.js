@@ -37,7 +37,7 @@ router.post('/photo/:category',function(req,res,next) {
                             if (photos != "" || photos != null) {
                                 console.log('aa - >' + photo);
 
-                                collection.update({_id:ObjectId(postId)},{$push: {"photos": {"items":items:req.files.files.path}}},function(err,result) {
+                                collection.update({_id:ObjectId(postId)},{$push: {"photos": {"items":req.files.files.path}}},function(err,result) {
                                     if (err) {
                                         console.log(err);
                                     }
