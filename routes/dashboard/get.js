@@ -16,7 +16,7 @@ router.post('/photo/:category',function(req,res,next) {
       var hash = new Date();
     var activeSession = req.cookies._a;
     var category = req.params.category;
-    var postId = req.params.postid;
+    var postId = req.body.postid;
 
      photos = [];
      photos.push({items:req.files.files.path});
