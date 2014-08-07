@@ -30,9 +30,11 @@ router.delete('/:category/:postid',function(req,res,next) {
                     if (!err) {
                         db.collection(category,function(err,collection) {
                             if (photo != "" || photo != null) {
-                                collection.update({_id:"ObjectId(" + postId+")"},{$pull: {"photos": {"items":photo}}},false,true);
+                                collection.update({_id:"ObjectId(" + postId+")"},{$pull: {"photos": {"items":photo}}},function(err,result) {
+                                    
                                     console.log('photo removed. - >' + photo);
                                     db.close();
+                                });
                             } else {
                                 console.log('empty field, record not created');
                             }
