@@ -18,7 +18,9 @@ router.post('/photo/:category',function(req,res,next) {
     var category = req.params.category;
     var postId = req.params.postid;
 
-    
+     photos = [];
+     photos.push({items:req.files.files.path});
+          
             
           console.log(photo);
           console.log(req.files);
@@ -32,7 +34,7 @@ router.post('/photo/:category',function(req,res,next) {
                 db.open(function(err) {
                     if (!err) {
                         db.collection(category,function(err,collection) {
-                            if (photo != "" || photo != null) {
+                            if (photos != "" || photos != null) {
                                 console.log('aa - >' + photo);
 
                                 collection.update({_id:ObjectId(postId)},{$push: {"photos": {"items":req.files.files.path}}},function(err,result) {
@@ -47,7 +49,7 @@ router.post('/photo/:category',function(req,res,next) {
                                 console.log('empty field, record not created');
                                 res.send({'status':0});  
                             }
-                            photo = "";
+                            photos = "";
 
                         });
                     } else {
