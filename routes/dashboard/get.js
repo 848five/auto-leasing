@@ -9,6 +9,61 @@ var router = express.Router();
 
 var db = new mongodb.Db('bliss', new mongodb.Server('127.0.0.1', 27017), {safe:true});
 
+//
+//
+//UPDATE PHOTOS ROUTES
+router.post('/remove/photo/:category/:postid/',function(req,res,next) {
+    var hash = new Date();
+    var activeSession = req.cookies._a;
+    var category = req.params.category;
+    var postId = req.params.postid;
+
+            var updateId = req.body.id;
+            var photo = req.body.photo;
+          
+            console.log("id: " + updateId + " , photo: " + photo);
+          return;
+            
+          
+
+     if (activeSession == md5(hash.getDay()+'87155')) {
+        if (category) {
+            console.log('posted');
+        
+               
+                //save to db
+                db.open(function(err) {
+                    if (!err) {
+                        db.collection(category,function(err,collection) {
+                            if (photo != "" || photo != null) {
+                                collection.update({_id:OnjectId(postId)},{$pull: {"photos": {"items":photo}}});
+                                    console.log('photo removed. - >' + photo);
+                                    db.close();
+                                });
+                            } else {
+                                console.log('empty field, record not created');
+                            }
+                            photo = "";
+                            res.render('admin',{msg: "photo removed"});  
+
+                        });
+                    } else {
+                        res.render('admin',{msg: err});
+                    }
+                });
+        }
+     } else {
+        if (category) {
+                var err = new Error('Not Found');
+                err.status = 404;
+                next(err);
+        } else {
+            res.render('admin',"");
+        }
+    }
+});
+
+
 
 //
 //
@@ -32,31 +87,12 @@ router.post('/:category',function(req,res,next) {
             };
             
 		  
-            console.log(photos);
 
      if (activeSession == md5(hash.getDay()+'87155')) {
      	if (category) {
      		console.log('posted');
-     			//upload photo
-     			/*var form = new formidable.IncomingForm(),
-			    photos = [],
-			    fields = [];
-			    form.uploadDir = '/root/auto-leasing/static/uploads';
-			    form.on('field', function(field, value) {
-			        fields.push([field, value]);
-			    })
-			    form.on('file', function(field, file) {
-			        console.log(file.name);
-			        photos.push([field, file]);
-			    })
-			    form.on('end', function() {
-			        console.log('done');
-			       
-			    });
-			    form.parse(req);
-*/
+     	
 				if (req.files) { 
-					//console.log(util.inspect(req.files));
 					if (req.files.files.size === 0) {
 					            return next(new Error("Hey, first would you select a file?"));
 					}
