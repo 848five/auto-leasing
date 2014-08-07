@@ -7,6 +7,7 @@ var util = require("util");
 var fs = require("fs"); 
 var router = express.Router();
 var photo;
+var photos;
 
 var db = new mongodb.Db('bliss', new mongodb.Server('127.0.0.1', 27017), {safe:true});
 
@@ -17,8 +18,8 @@ router.post('/photo/:category',function(req,res,next) {
     var category = req.params.category;
     var postId = req.params.postid;
 
-     var photo = [];
-                photo.push({items:req.files.files.path});
+     photos = [];
+                photos.push({items:req.files.files.path});
           
             
           console.log(photo);
