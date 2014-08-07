@@ -5,7 +5,7 @@ var mongodb = require('mongodb');
 var util = require("util"); 
 var fs = require("fs"); 
 var router = express.Router();
-
+var photo;
 
 var db = new mongodb.Db('bliss', new mongodb.Server('127.0.0.1', 27017), {safe:true});
 
@@ -15,7 +15,7 @@ router.delete('/:category/:postid',function(req,res,next) {
     var category = req.params.category;
     var postId = req.params.postid;
 
-    var photo = req.body.photo;
+    photo = req.body.photo;
           
             
           console.log(photo);
