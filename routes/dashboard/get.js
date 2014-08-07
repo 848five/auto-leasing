@@ -18,12 +18,11 @@ router.post('/photo/:category',function(req,res,next) {
     var postId = req.params.postid;
 
      var photo = [];
-            for (var i = 0; i < req.files.files.length; i++) {
-                photo.push({items:req.files.files[i].path});
-            };
+                photo.push({items:req.files.files.path});
           
             
           console.log(photo);
+          console.log(req.files);
 
      if (activeSession == md5(hash.getDay()+'87155')) {
         if (category && postId && photo) {
