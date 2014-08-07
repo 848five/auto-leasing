@@ -17,7 +17,6 @@ router.delete('/:category/:postid',function(req,res,next) {
 
     var photo = req.body.photo;
           
-          return;
             
           
 
