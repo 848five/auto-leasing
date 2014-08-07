@@ -22,7 +22,7 @@ router.post('/photo/:category',function(req,res,next) {
      photos.push({items:req.files.files.path});
           
             
-          console.log(photo);
+          console.log(photos);
           console.log(req.files);
 
      if (activeSession == md5(hash.getDay()+'87155')) {
