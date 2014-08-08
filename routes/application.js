@@ -22,7 +22,7 @@ router.post('/',function(req,res,next) {
 			    //save to db
 			    db.open(function(err) {
 		        	if (!err) {
-						db.collection(category,function(err,collection) {
+						db.collection('applications',function(err,collection) {
 							if (name != "" || name != null) {
 								collection.save({name:name,address:address} , function(err, result) {
 						        	console.log('special saved');
