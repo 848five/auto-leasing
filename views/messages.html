@@ -2,21 +2,11 @@
 	<link rel="stylesheet" type="text/css" href="/css/messages.css">
 {% endblock %}
 
-
 <section class="messages">
+{% for app in apps %}
 	<ul class="message">
-		<li class="">Subject: Application</li>
-		<li class="">Vehicle: BMW 325i </li>
-		<li class="">Phone: (323)555-1212 </li>
-		<li class="">From: test@user.com</li>
-		<li class="">Message: Application</li>
+		<li class="">{{app}}</li>
 	</ul>	
 
-	<ul class="message">
-		<li class="">Subject: Application</li>
-		<li class="">Vehicle: BMW 325i </li>
-		<li class="">Phone: (323)555-1212 </li>
-		<li class="">From: test@user.com</li>
-		<li class="">Message: Application </li>
-	</ul>	
+{% endfor %}
 </section>

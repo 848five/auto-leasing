@@ -7,3 +7,10 @@ section.messages {
   margin-left: 20px;
   position: relative;
   top: 30px; }
+  section.messages ul.message {
+    list-style-type: none;
+    margin: 0 0 20px;
+    display: block;
+    padding: 10px;
+    border-left: 10px #d5d5d5 solid;
+    border-bottom: 1px #d5d5d5 dashed; }

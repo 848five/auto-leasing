@@ -4,6 +4,7 @@ var router = express.Router();
 var user;
 var mongodb = require('mongodb');
 
+var db = new mongodb.Db('bliss', new mongodb.Server('127.0.0.1', 27017), {safe:true});
 
 
 
@@ -12,7 +13,18 @@ router.get('/', function(req,res) {
 		 var activeSession = req.cookies._a;
 		 if (activeSession == md5(hash.getDay()+'87155')) {
 		 	console.log(activeSession);
-		 	res.render('tools',"");
+
+		 	db.open(function(err) {
+			db.collection('applications',function(err,collection) {
+				collection.find({}).toArray(function(err,apps) {
+						res.render('tools',{apps:apps});
+					db.close();
+				});
+			});
+		});
+
+
+		 
 		 } else {
 		 	console.log(activeSession);
          	res.render('admin',"");
@@ -29,7 +41,6 @@ router.post('/', function(req,res) {
 		error = "enter a username and password.";
 		res.render('admin',{msg: error});
 	} else {
-		var db = new mongodb.Db('bliss', new mongodb.Server('127.0.0.1', 27017), {safe:true});
 		db.open(function(err) {
 			db.collection('admin',function(err,collection) {
 				collection.find({user:user,password:md5(pass)}).toArray(function(err,user) {
