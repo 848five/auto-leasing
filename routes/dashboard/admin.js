@@ -17,7 +17,7 @@ router.get('/', function(req,res) {
 		 	db.open(function(err) {
 			db.collection('applications',function(err,collection) {
 				collection.find({}).toArray(function(err,apps) {
-						res.render('tools',{apps:apps});
+						res.redirect('tools',{apps:apps});
 					db.close();
 				});
 			});
