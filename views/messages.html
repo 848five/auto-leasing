@@ -5,7 +5,9 @@
 <section class="messages">
 {% for app in apps %}
 	<ul class="message">
-		<li class="">{{app}}</li>
+		<li class="">Subject: {{app.subject}}</li>
+		<li class="">Name: {{app.name}}</li>
+		<li class="">Address: {{app.address}}</li>
 	</ul>	
 
 {% endfor %}
