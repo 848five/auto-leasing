@@ -34,6 +34,22 @@
 		"shouldRunBless": 0,
 		"useLibsass": 0
 		},
+	"\/messages.scss": {
+		"createSourceMap": 0,
+		"debugStyle": 0,
+		"decimalPrecision": 5,
+		"fileType": 4,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/messages.scss",
+		"outputAbbreviatedPath": "\/Users\/aramikg\/Desktop\/projects\/auto-leasing\/static\/css\/messages.css",
+		"outputPathIsOutsideProject": 1,
+		"outputPathIsSetByUser": 1,
+		"outputStyle": 0,
+		"shouldRunAutoprefixer": 0,
+		"shouldRunBless": 0,
+		"useLibsass": 0
+		},
 	"\/mixins.scss": {
 		"createSourceMap": 0,
 		"debugStyle": 0,
@@ -66,11 +82,11 @@
 		"shouldRunBless": 0,
 		"useLibsass": 0
 		},
-	"\/static\/css\/tools.css": {
+	"\/static\/css\/messages.css": {
 		"fileType": 16,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/static\/css\/tools.css",
+		"inputAbbreviatedPath": "\/static\/css\/messages.css",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0

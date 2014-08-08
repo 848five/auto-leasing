@@ -1,17 +1,21 @@
 ul.tools {
-  width: 200px;
   display: block;
-  position: fixed;
-  top: 70px;
-  left: 20px;
+  position: relative;
+  top: 30px;
+  left: 10px;
   border: 1px #d5d5d5 dashed;
   list-style-type: none;
-  text-align: center; }
+  text-align: center;
+  float: left;
+  padding: 2px 10px; }
   ul.tools li {
     height: 30px;
     line-height: 30px;
     background-color: whitesmoke; }
     ul.tools li a {
+      display: block;
+      width: 100%;
+      height: 100%;
       text-decoration: none;
       color: gray; }
       ul.tools li a:hover {
