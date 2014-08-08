@@ -40,7 +40,7 @@ var admin = require('./routes/dashboard/admin');
 var tools = require('./routes/dashboard/tools');
 var getRoutes = require('./routes/dashboard/get');
 var deleteRoutes = require('./routes/dashboard/delete');
-var applications = require('./routes/applications');
+var submitApp = require('./routes/submitApp');
 
 
 
@@ -53,7 +53,7 @@ app.set('view engine', 'html');
 //Routes
 app.use('/dashboard/view',getRoutes);
 app.use('/dashboard', admin);
-app.use('/application', applications);
+app.use('/application', submitApp);
 app.use('/', routes);
 
 
