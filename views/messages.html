@@ -4,7 +4,7 @@
 
 <section class="messages">
 {% for app in apps %}
-	<ul class="message">
+	<ul class="message" data-id="{{ app._id.toHexString() }}">
 		<li class="">Subject: {{app.subject}}</li>
 		<li class="">Name: {{app.name}}</li>
 		<li class="">Address: {{app.address}}</li>
