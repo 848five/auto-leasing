@@ -1,8 +1,10 @@
 ul.messages {
   width: 75%;
-  margin: 10px auto;
+  margin: 0px auto;
   list-style-type: none;
   border: 1px #d5d5d5 dashed;
   display: block;
   float: left;
-  margin-left: 20px; }
+  margin-left: 20px;
+  position: relative;
+  top: 30px; }
