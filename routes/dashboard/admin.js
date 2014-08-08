@@ -2,6 +2,7 @@ var express = require('express');
 var md5 = require('MD5');
 var router = express.Router();
 var user;
+var apps;
 var mongodb = require('mongodb');
 
 var db = new mongodb.Db('bliss', new mongodb.Server('127.0.0.1', 27017), {safe:true});
@@ -10,8 +11,8 @@ var db = new mongodb.Db('bliss', new mongodb.Server('127.0.0.1', 27017), {safe:t
 function getApplications() {
 	db.open(function(err) {
 			db.collection('applications',function(err,collection) {
-				collection.find({}).toArray(function(err,apps) {
-						return apps;
+				collection.find({}).toArray(function(err,applist) {
+						apps = applist;
 					db.close();
 				});
 			});
@@ -22,9 +23,9 @@ router.get('/', function(req,res) {
 		 var activeSession = req.cookies._a;
 		 if (activeSession == md5(hash.getDay()+'87155')) {
 		 	console.log(activeSession);
-
-		 	apps = getApplications();
-		 	res.render('tools',{apps:apps});
+			getApplications();
+		 	apps = applist;
+		 	res.render('tools',{applications:apps});
 		});
 
 
@@ -56,8 +57,8 @@ router.post('/', function(req,res) {
 								var hash = new Date();
 		                		res.cookie('_a', md5(hash.getDay()+'87155'), { expires: 0, httpOnly: true });
 		                		
-							 	apps = getApplications();
-							 	res.render('tools',{apps:apps});
+							 	getApplications();
+							 	res.render('tools',{applications:apps});
 							}
 
 					db.close();
