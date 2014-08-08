@@ -12,4 +12,12 @@ section.messages {
     display: block;
     padding: 10px;
     border-left: 10px #d5d5d5 solid;
-    border-bottom: 1px #d5d5d5 dashed; }
+    border-bottom: 1px #d5d5d5 dashed;
+    position: relative; }
+    section.messages ul.message .delete {
+      position: absolute;
+      right: 0px;
+      top: 0px;
+      padding: 2px 5px;
+      background-color: red;
+      color: red; }
