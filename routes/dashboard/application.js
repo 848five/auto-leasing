@@ -2,7 +2,6 @@ var express = require('express');
 var md5 = require('MD5'); 
 var mongodb = require('mongodb');
 var ObjectId = require('mongodb').ObjectID;
-//var formidable = require('formidable');
 var util = require("util"); 
 var fs = require("fs"); 
 var router = express.Router();
