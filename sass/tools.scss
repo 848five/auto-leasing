@@ -1,0 +1,24 @@
+ul.tools {
+	width: 200px;
+	display: block;
+	position: fixed;
+	top: 70px;
+	left: 20px;
+	border: 1px #d5d5d5 dashed;
+	list-style-type: none;
+	text-align: center;
+
+	li {
+		height: 30px;
+		line-height: 30px;
+		background-color: whitesmoke;
+
+		a {
+			text-decoration: none;
+			color: gray;
+			&:hover {
+				color:red;
+			}
+		}
+	}
+}

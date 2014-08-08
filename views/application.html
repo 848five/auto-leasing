@@ -1,0 +1,38 @@
+{% extends 'templates/base.html' %}
+{% block superclass %}application{% endblock %}
+
+
+{% block scripts %}
+{% parent %}
+<script type="text/javascript" src="/js/application.js"></script>
+{% endblock %}
+
+{% block styles %}
+{% parent %}
+	<link rel="stylesheet" type="text/css" href="/css/specials.css">
+{% endblock %}
+
+
+{% block content %}
+
+
+ <form class="application-form" method="POST" action="/application">
+ 	<ul>
+ 		<li class="field"><input type="text" placeholder="your full name" name="fname"></li>
+ 		<li class="field"><input type="text" placeholder="birthdate" name="bdate"></li>
+ 		<li class="field"><input type="text" placeholder="drivers license #" name="license"></li>
+ 		<li class="field"><input type="text" placeholder="social security number" name="ssn"></li>
+ 		<li class="field"><input type="text" placeholder="email address" name="email"></li>
+ 		<li class="field"><input type="text" placeholder="phone" name="phone"></li>
+ 		<li class="field"><input type="text" placeholder="street address" name="address"></li>
+ 		<li class="field"><input type="text" placeholder="city" name="city"></li>
+ 		<li class="field"><input type="text" placeholder="state" name="state"></li>
+ 		<li class="field"><input type="text" placeholder="zip" name="zip"></li>
+ 		<li class="field"><input type="text" placeholder="How many years at current address?" name="address-years"></li>
+ 		<li class="field"><input type="text" placeholder="street address" name="address2-years"></li>
+ 	</ul>
+ </form>
+ 
+
+{% endblock %}
+
