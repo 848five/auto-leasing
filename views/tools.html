@@ -1,10 +1,15 @@
 {% extends 'templates/base.html' %}
 {% block superclass %}admin{% endblock %}
 
+{% block styles %}
+{% parent %}
+	<link rel="stylesheet" type="text/css" href="/css/tools.css">
+{% endblock %}
+
 
 {% block content %}
 
-<ul>
+<ul class="menu">
 	<li><a href="#">create new vehicle</a></li>
 	<li><a href="#">create new special</a></li>
 	<li><a href="#">create new featured</a></li>

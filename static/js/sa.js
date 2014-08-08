@@ -1,4 +1,4 @@
-window.onload = function() {
+window.addEventListener('load',function() {
 
 		$('.js-add-photo-btn').click(function(e) {
 			e.preventDefault();
@@ -19,7 +19,7 @@ window.onload = function() {
 			e.preventDefault();
 			alert($(this).attr('data-item'));
 		});
-}
+});
 
 
 function removePhoto(id,photo) {
