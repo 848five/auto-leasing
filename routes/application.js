@@ -8,7 +8,6 @@ var router = express.Router();
 var photo;
 var photos;
 
-var db = new mongodb.Db('bliss', new mongodb.Server('127.0.0.1', 27017), {safe:true});
 
 
 
