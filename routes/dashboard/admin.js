@@ -59,6 +59,7 @@ router.post('/', function(req,res) {
 				});
 			});
 		});
+		console.log(auth);
 		if (auth) {
 			console.log('admin');
 			db.open(function(err) {
