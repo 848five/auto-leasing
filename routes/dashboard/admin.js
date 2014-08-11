@@ -59,7 +59,7 @@ router.post('/', function(req,res) {
 				});
 			});
 		});
-		console.log(_isAuthorized);
+		console.log("auth-" + _isAuthorized);
 		if (_isAuthorized) {
 			console.log('admin');
 			db.open(function(err) {
