@@ -51,15 +51,7 @@ router.post('/', function(req,res) {
 							} else {
 								var hash = new Date();
 		                		res.cookie('_a', md5(hash.getDay()+'87155'), { expires: 0, httpOnly: true });
-		                		db.close();
-		                		db.open(function(err) {
-									db.collection('applications',function(err,collection) {
-										collection.find({}).toArray(function(err,apps) {
-											db.close();
-											res.render('tools',{apps:apps});
-										});
-									});
-								});
+		                		loadAdmin();
 							}
 
 					db.close();
@@ -69,5 +61,16 @@ router.post('/', function(req,res) {
 	}
 });
 
+
+function loadAdmin() {
+		db.open(function(err) {
+		db.collection('applications',function(err,collection) {
+			collection.find({}).toArray(function(err,apps) {
+				db.close();
+				res.render('tools',{apps:apps});
+			});
+		});
+	});
+}
 
 module.exports = router;
