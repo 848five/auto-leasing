@@ -41,6 +41,7 @@ router.post('/', function(req,res) {
 		error = "enter a username and password.";
 		res.render('admin',{msg: error});
 	} else {
+		db.close();
 		db.open(function(err) {
 			db.collection('admin',function(err,collection) {
 				collection.find({user:user,password:md5(pass)}).toArray(function(err,user) {
