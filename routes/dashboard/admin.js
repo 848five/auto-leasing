@@ -5,6 +5,7 @@ var user;
 var mongodb = require('mongodb');
 
 var admindb = new mongodb.Db('bliss', new mongodb.Server('127.0.0.1', 27017), {safe:true});
+var db = new mongodb.Db('bliss', new mongodb.Server('127.0.0.1', 27017), {safe:true});
 
 
 
@@ -41,8 +42,8 @@ router.post('/', function(req,res) {
 		error = "enter a username and password.";
 		res.render('admin',{msg: error});
 	} else {
-		admindb.open(function(err) {
-			admindb.collection('admin',function(err,collection) {
+		db.open(function(err) {
+			db.collection('admin',function(err,collection) {
 				collection.find({user:user,password:md5(pass)}).toArray(function(err,user) {
 					console.log(md5(pass));
 							if (user.length == 0) {
@@ -51,8 +52,8 @@ router.post('/', function(req,res) {
 							} else {
 								var hash = new Date();
 		                		res.cookie('_a', md5(hash.getDay()+'87155'), { expires: 0, httpOnly: true });
-		                		admindb.open(function(err) {
-									admindb.collection('applications',function(err,collection) {
+		                		db.open(function(err) {
+									db.collection('applications',function(err,collection) {
 										collection.find({}).toArray(function(err,apps) {
 												res.render('tools',{apps:apps});
 										});
@@ -60,7 +61,7 @@ router.post('/', function(req,res) {
 								});
 							}
 
-					admindb.close();
+					db.close();
 				});
 			});
 		});
