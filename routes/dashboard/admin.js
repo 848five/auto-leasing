@@ -54,7 +54,7 @@ router.post('/', function(req,res) {
 		                		res.cookie('_a', md5(hash.getDay()+'87155'), { expires: 0, httpOnly: true });
 									db.collection('applications',function(err,collection) {
 									collection.find({}).toArray(function(err,apps) {
-										console.log(app);
+										console.log(apps);
 										res.render('tools',{apps:apps});
 										db.close();
 									});
