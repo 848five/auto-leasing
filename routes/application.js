@@ -34,6 +34,7 @@ router.post('/',function(req,res,next) {
 							res.send({status:'1'});
 
 						});
+						db.close();
 					} else {
 						res.send({status:'error'});
 					}
