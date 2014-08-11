@@ -19,7 +19,8 @@ router.post('/',function(req,res,next) {
 		    var address = req.body.address;
 
 			    //save to db
-
+			    db.open(function(err) {
+		        	if (!err) {
 						db.collection('applications',function(err,collection) {
 							if (name != "" || name != null) {
 								collection.save({name:name,address:address} , function(err, result) {
@@ -33,7 +34,10 @@ router.post('/',function(req,res,next) {
 							res.send({status:'1'});
 
 						});
-				
+					} else {
+						res.send({status:'error'});
+					}
+				});
  	
 });
 
