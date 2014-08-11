@@ -19,6 +19,7 @@ router.post('/',function(req,res,next) {
 		    var address = req.body.address;
 
 			    //save to db
+			    db.close();
 			    db.open(function(err) {
 		        	if (!err) {
 						db.collection('applications',function(err,collection) {
@@ -34,7 +35,6 @@ router.post('/',function(req,res,next) {
 							res.send({status:'1'});
 
 						});
-						db.close();
 					} else {
 						res.send({status:'error'});
 					}

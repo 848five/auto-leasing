@@ -55,7 +55,6 @@ router.post('/', function(req,res) {
 									db.collection('applications',function(err,collection) {
 										collection.find({}).toArray(function(err,apps) {
 												res.render('tools',{apps:apps});
-											db.close();
 										});
 									});
 								});
