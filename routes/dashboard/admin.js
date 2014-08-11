@@ -17,11 +17,11 @@ router.get('/', function(req,res) {
 		 	db.open(function(err) {
 				db.collection('applications',function(err,collection) {
 					collection.find({}).toArray(function(err,apps) {
+						db.close();
 						res.render('tools',{apps:apps});
 					});
 				});
 			});
-			db.close();
 
 
 		 
@@ -41,6 +41,7 @@ router.post('/', function(req,res) {
 		error = "enter a username and password.";
 		res.render('admin',{msg: error});
 	} else {
+		db.open(function(err) {
 			db.collection('admin',function(err,collection) {
 				collection.find({user:user,password:md5(pass)}).toArray(function(err,user) {
 					console.log(md5(pass));
@@ -50,6 +51,7 @@ router.post('/', function(req,res) {
 							} else {
 								var hash = new Date();
 		                		res.cookie('_a', md5(hash.getDay()+'87155'), { expires: 0, httpOnly: true });
+		                		db.close();
 		                		db.open(function(err) {
 									db.collection('applications',function(err,collection) {
 										collection.find({}).toArray(function(err,apps) {
@@ -63,6 +65,7 @@ router.post('/', function(req,res) {
 					db.close();
 				});
 			});
+		});
 	}
 });
 
