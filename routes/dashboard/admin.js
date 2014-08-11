@@ -4,7 +4,6 @@ var router = express.Router();
 var user;
 var mongodb = require('mongodb');
 
-var admindb = new mongodb.Db('bliss', new mongodb.Server('127.0.0.1', 27017), {safe:true});
 var db = new mongodb.Db('bliss', new mongodb.Server('127.0.0.1', 27017), {safe:true});
 
 
@@ -15,11 +14,11 @@ router.get('/', function(req,res) {
 		 if (activeSession == md5(hash.getDay()+'87155')) {
 		 	console.log(activeSession);
 
-		 	admindb.open(function(err) {
-				admindb.collection('applications',function(err,collection) {
+		 	db.open(function(err) {
+				db.collection('applications',function(err,collection) {
 					collection.find({}).toArray(function(err,apps) {
 							res.render('tools',{apps:apps});
-						admindb.close();
+						db.close();
 					});
 				});
 			});
@@ -56,6 +55,7 @@ router.post('/', function(req,res) {
 									db.collection('applications',function(err,collection) {
 										collection.find({}).toArray(function(err,apps) {
 												res.render('tools',{apps:apps});
+											db.close();
 										});
 									});
 								});
