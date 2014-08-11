@@ -52,7 +52,7 @@ router.post('/', function(req,res) {
 							} else {
 								var hash = new Date();
 		                		res.cookie('_a', md5(hash.getDay()+'87155'), { expires: 0, httpOnly: true });
-		                		auth = true;
+		                		auth = 1;
 							}
 
 					db.close();
