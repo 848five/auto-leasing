@@ -60,6 +60,7 @@ router.post('/', function(req,res) {
 			});
 		});
 		if (auth) {
+			console.log('admin');
 			db.open(function(err) {
 			db.collection('applications',function(err,collection) {
 			collection.find({}).toArray(function(err,apps) {
@@ -73,13 +74,5 @@ router.post('/', function(req,res) {
 });
 
 
-function loadAdmin() {
-		db.collection('applications',function(err,collection) {
-			collection.find({}).toArray(function(err,apps) {
-				res.render('tools',{apps:apps});
-				db.close();
-			});
-		});
-}
 
 module.exports = router;
