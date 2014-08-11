@@ -19,7 +19,6 @@ router.post('/',function(req,res,next) {
 		    var address = req.body.address;
 
 			    //save to db
-			    db.close();
 			    db.open(function(err) {
 		        	if (!err) {
 						db.collection('applications',function(err,collection) {
