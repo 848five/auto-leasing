@@ -54,12 +54,10 @@ router.post('/', function(req,res) {
 		                		res.cookie('_a', md5(hash.getDay()+'87155'), { expires: 0, httpOnly: true });
 		                		_isAuthorized = 1;
 								db.close();
-									db.open(function(err) {
 									db.collection('applications',function(err,collection) {
 									collection.find({}).toArray(function(err,apps) {
 										res.render('tools',{apps:apps});
 										db.close();
-									});
 									});
 									});
 							}
