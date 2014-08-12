@@ -39,7 +39,6 @@ router.post('/',function(req,res,next) {
 						    subject: 'Hello ✔', // Subject line
 						    text: message, // plaintext body
 						    html: message // html body
-						    console.log('message->' + message);
 						};
 
 						// send mail with defined transport object
