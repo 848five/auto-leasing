@@ -34,7 +34,7 @@ router.post('/',function(req,res,next) {
 
 						// setup e-mail data with unicode symbols
 						var mailOptions = {
-						    from: 'Fred Foo ✔ <foo@blurdybloop.com>', // sender address
+						    from: 'BLISS <hello@blissautoleasing.com>', // sender address
 						    to: 'aramik@whalerockindustries.com, a.mik@me.com', // list of receivers
 						    subject: 'Hello ✔', // Subject line
 						    text: 'Hello world ✔', // plaintext body
