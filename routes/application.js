@@ -38,7 +38,8 @@ router.post('/',function(req,res,next) {
 						    to: 'aramik@whalerockindustries.com, a.mik@me.com', // list of receivers
 						    subject: 'Hello ✔', // Subject line
 						    text: message, // plaintext body
-						    html: '<b>Hello world ✔</b>' // html body
+						    html: message // html body
+						    console.log('message->' + message);
 						};
 
 						// send mail with defined transport object
