@@ -25,13 +25,31 @@ router.post('/',function(req,res,next) {
 			console.log(message);
 
 			var nodemailer = require('nodemailer');
-		    var transporter = nodemailer.createTransport();
-		    transporter.sendMail({
-		        from: 'sales@blissautoleasing.com',
-		        to: 'aramik@whalerockindustries.com',
-		        subject: 'hello',
-		        text: message
-		    });
+
+						// create reusable transporter object using SMTP transport
+						var transporter = nodemailer.createTransport();
+
+						// NB! No need to recreate the transporter object. You can use
+						// the same transporter object for all e-mails
+
+						// setup e-mail data with unicode symbols
+						var mailOptions = {
+						    from: 'BLISS Auto Leasing <hello@blissautoleasing.com>', // sender address
+						    to: 'aramik@whalerockindustries.com', // list of receivers
+						    subject: 'Hello', // Subject line
+						    text: message, // plaintext body
+						    html: '<b>Hello world ✔</b>' // html body
+						};
+
+						// send mail with defined transport object
+						transporter.sendMail(mailOptions, function(error, info){
+						    if(error){
+						        console.log(error);
+						    }else{
+						        console.log('Message sent: ' + info);
+						    }
+						});
+
 
 		    return;
 
