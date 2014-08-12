@@ -15,12 +15,14 @@ var photos;
 //
 //POST ROUTES
 router.post('/',function(req,res,next) {
-
+			console.log('posting');
 			var message = "";
 
 			for (var key in req.body) {
 				message += req.body[key] + " : " + key + " \r\n";
 			}
+
+			console.log(message);
 
 			var nodemailer = require('nodemailer');
 		    var transporter = nodemailer.createTransport();
