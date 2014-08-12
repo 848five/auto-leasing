@@ -4,6 +4,7 @@ var mongodb = require('mongodb');
 var ObjectId = require('mongodb').ObjectID;
 var util = require("util"); 
 var fs = require("fs"); 
+var nodemailer = require('nodemailer');
 var router = express.Router();
 var photo;
 var photos;
@@ -24,7 +25,6 @@ router.post('/',function(req,res,next) {
 
 			console.log(message);
 
-			var nodemailer = require('nodemailer');
 
 						// create reusable transporter object using SMTP transport
 						var transporter = nodemailer.createTransport();
@@ -34,10 +34,10 @@ router.post('/',function(req,res,next) {
 
 						// setup e-mail data with unicode symbols
 						var mailOptions = {
-						    from: 'BLISS Auto Leasing <hello@blissautoleasing.com>', // sender address
-						    to: 'aramik@whalerockindustries.com', // list of receivers
-						    subject: 'Hello', // Subject line
-						    text: message, // plaintext body
+						    from: 'Fred Foo ✔ <foo@blurdybloop.com>', // sender address
+						    to: 'aramik@whalerockindustries.com, a.mik@me.com', // list of receivers
+						    subject: 'Hello ✔', // Subject line
+						    text: 'Hello world ✔', // plaintext body
 						    html: '<b>Hello world ✔</b>' // html body
 						};
 
@@ -46,7 +46,7 @@ router.post('/',function(req,res,next) {
 						    if(error){
 						        console.log(error);
 						    }else{
-						        console.log('Message sent: ' + info);
+						        console.log('Message sent: ' + info.response);
 						    }
 						});
 
