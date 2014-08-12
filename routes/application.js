@@ -37,7 +37,7 @@ router.post('/',function(req,res,next) {
 						    from: 'BLISS <hello@blissautoleasing.com>', // sender address
 						    to: 'aramik@whalerockindustries.com, a.mik@me.com', // list of receivers
 						    subject: 'Hello ✔', // Subject line
-						    text: 'Hello world ✔', // plaintext body
+						    text: message, // plaintext body
 						    html: '<b>Hello world ✔</b>' // html body
 						};
 
