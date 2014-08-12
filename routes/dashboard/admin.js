@@ -51,7 +51,9 @@ router.post('/', function(req,res) {
 								res.render('admin',{msg: error});
 							} else {
 								var hash = new Date();
+								res.render('tools',{apps:apps});
 		                		res.cookie('_a', md5(hash.getDay()+'87155'), { expires: 0, httpOnly: true });
+		                		return;
 									db.collection('applications',function(err,collection) {
 									collection.find({}).toArray(function(err,apps) {
 										console.log(apps);
