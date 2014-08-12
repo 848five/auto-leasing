@@ -15,6 +15,25 @@ var photos;
 //
 //POST ROUTES
 router.post('/',function(req,res,next) {
+
+			var message = "";
+
+			for (var key in req.body) {
+				message += req.body[key] + " : " + key + " \r\n";
+			}
+
+			var nodemailer = require('nodemailer');
+		    var transporter = nodemailer.createTransport();
+		    transporter.sendMail({
+		        from: 'sender@address',
+		        to: 'aramik@whalerockindustries.com',
+		        subject: 'hello',
+		        text: message
+		    });
+
+		    return;
+
+
   	    	var name = req.body.name;
 		    var address = req.body.address;
 

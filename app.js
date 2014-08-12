@@ -51,6 +51,7 @@ app.set('view engine', 'html');
 
 
 //Routes
+
 app.use('/dashboard/view',getRoutes);
 app.use('/dashboard', admin);
 app.use('/application', application);
