@@ -12,6 +12,12 @@ function GA() {
 	ga('send', 'pageview');
 }
 
+
+function loadBigVideo() {
+	var video = document.querySelector('#myVideo');
+	
+	video.play();
+}
 window.addEventListener('load',function() {
 	GA();
 });

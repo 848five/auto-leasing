@@ -83,6 +83,14 @@ body {
     max-width: 1000px;
     height: auto;
     margin: 0 auto; }
+    body .content-container #myVideo {
+      position: fixed;
+      top: 60px;
+      left: 0;
+      z-index: -1;
+      min-width: 100%;
+      min-height: 100%;
+      text-align: center; }
   body footer {
     display: block;
     width: 100%;
