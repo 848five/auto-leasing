@@ -16,16 +16,18 @@
 {% endblock %}
 
 {% block content %}
-<section>
+
 	
+
+
+<section class="ad">
+	<video id="myVideo" controls>
+	   <source src="media/lexus720.mp4" type="video/mp4">
+	   Your browser does not support the video element.
+	</video>	
 </section>
+<section class="carousel-container">
 	{% include 'templates/carousel.html' %}
-
-
-
-<video id="myVideo" controls>
-   <source src="media/lexus720.mp4" type="video/mp4">
-   Your browser does not support the video element.
-</video>
+</section>
 
 {% endblock %}
