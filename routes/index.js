@@ -107,12 +107,12 @@ router.get('/:category?/:year?/:make?/:model?', function(req,res,next) {
                         });             
                     });
                 });
-            } 
+            } else {
+                res.render('index',"");
+            }
         
 });
 
-router.get('/', function(req, res) {
-		res.render('index',"");
-});
+
 
 module.exports = router;
