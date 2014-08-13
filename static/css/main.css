@@ -29,7 +29,8 @@ body {
       text-align: center;
       line-height: 50px;
       padding: 5px;
-      top: 0px; }
+      top: 0px;
+      background-color: #ffffff; }
       body .nav-bar nav h1 {
         text-indent: -9999px;
         background: url(../images/site/logo-transparent.png) no-repeat top center;
