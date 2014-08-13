@@ -15,11 +15,11 @@ function GA() {
 
 function loadBigVideo() {
 	var video = document.querySelector('#myVideo');
-
+	video.style.marginLeft = -(video.offsetWidth / 2) + 'px';
 	video.play();
 	setTimeout(function() {
 		$('video').fadeOut('slow');
-	},15000);
+	},9000);
 }
 window.addEventListener('load',function() {
 	GA();
