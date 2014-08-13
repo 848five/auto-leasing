@@ -112,8 +112,7 @@ body {
     min-height: 100px;
     background-color: #181818;
     text-align: center;
-    position: relative;
-    bottom: 0px; }
+    position: relative; }
     body footer .footer-list {
       position: relative;
       list-style-type: none;
