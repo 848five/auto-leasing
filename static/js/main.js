@@ -15,9 +15,10 @@ function GA() {
 
 function loadBigVideo() {
 	var video = document.querySelector('#myVideo');
-	
+
 	video.play();
 }
 window.addEventListener('load',function() {
 	GA();
+	loadBigVideo();
 });
