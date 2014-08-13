@@ -106,37 +106,6 @@ body {
       min-width: 100%;
       min-height: 100%;
       text-align: center; }
-  body footer {
-    display: block;
-    width: 100%;
-    min-height: 100px;
-    background-color: #181818;
-    text-align: center;
-    position: relative; }
-    body footer .footer-list {
-      position: relative;
-      list-style-type: none;
-      display: inline-block;
-      padding: 10px;
-      vertical-align: top;
-      margin: 20px 50px; }
-      body footer .footer-list .footer-list-item-title {
-        font-size: 12px;
-        color: #ffffff;
-        font-weight: 500;
-        text-align: left;
-        text-transform: uppercase;
-        margin-bottom: 2px; }
-      body footer .footer-list .footer-list-item {
-        font-size: 12px;
-        color: #ffffff;
-        bottom: 0px;
-        text-align: left;
-        text-transform: uppercase;
-        line-height: 16px; }
-        body footer .footer-list .footer-list-item a {
-          color: #fff;
-          text-decoration: none; }
   body.admin .menu, body.admin .social-bar, body.admin footer {
     display: none; }
   body.admin .button {
