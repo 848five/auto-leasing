@@ -96,8 +96,8 @@ body {
 		}
 
 		#myVideo {
-			position: fixed;
-			top: 60px;
+			position: relative;
+			top: -5px;
 			left: 50%;
 			z-index: -1;
 			min-width: 100%;
