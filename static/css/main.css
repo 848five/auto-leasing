@@ -42,17 +42,17 @@ body {
         list-style-type: none; }
       body .nav-bar nav .menu {
         float: left;
-        width: 110px;
+        width: 100px;
         height: 30px;
         background-color: red;
         color: #ffffff;
-        text-align: right;
         padding: 5px;
-        padding-right: 15px;
         margin: 5px;
         font-size: 23px;
         line-height: 30px;
         cursor: pointer;
+        border-top-right-radius: 12px;
+        border-bottom-left-radius: 12px;
         -webkit-transition: all 0.3s linear;
         transition: all 0.3s linear; }
         body .nav-bar nav .menu:hover {
