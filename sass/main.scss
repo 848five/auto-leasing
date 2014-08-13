@@ -48,8 +48,8 @@ body {
 				cursor: pointer;
 				@include animate();
 				&:before {
-					content: '\2630';
-					padding-right: 15px;
+					//content: '\2630';
+					//padding-right: 15px;
 				}
 
 				&:hover {
