@@ -36,7 +36,8 @@ body {
       margin: 0 auto;
       text-align: center;
       line-height: 50px;
-      padding: 5px; }
+      padding: 5px;
+      z-index: 100; }
       body .nav-bar nav h1 {
         text-indent: -9999px;
         background: url(../images/site/logo-transparent.png) no-repeat top center;

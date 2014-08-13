@@ -19,6 +19,7 @@ function loadBigVideo() {
 	video.play();
 	setTimeout(function() {
 		$('video').fadeOut(2000);
+		$('.ad').animate({height:'0'});
 	},9000);
 }
 window.addEventListener('load',function() {
