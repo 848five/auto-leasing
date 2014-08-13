@@ -18,7 +18,7 @@ function loadBigVideo() {
 	video.style.marginLeft = -(video.offsetWidth / 2) + 'px';
 	video.play();
 	setTimeout(function() {
-		$('video').fadeOut('slow');
+		$('video').fadeOut(2000);
 	},9000);
 }
 window.addEventListener('load',function() {
