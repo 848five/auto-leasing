@@ -17,6 +17,9 @@ function loadBigVideo() {
 	var video = document.querySelector('#myVideo');
 
 	video.play();
+	setTimeout(function() {
+		$('video').fadeOut('slow');
+	},15000);
 }
 window.addEventListener('load',function() {
 	GA();
