@@ -22,13 +22,14 @@ body {
     height: 60px;
     border-bottom: 1px #eae9e9 solid; }
     body .nav-bar nav {
-      position: relative;
+      position: fixed;
       display: block;
       min-width: 768px;
       margin: 0 auto;
       text-align: center;
       line-height: 50px;
-      padding: 5px; }
+      padding: 5px;
+      top: 0px; }
       body .nav-bar nav h1 {
         text-indent: -9999px;
         background: url(../images/site/logo-transparent.png) no-repeat top center;

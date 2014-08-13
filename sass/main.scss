@@ -10,13 +10,14 @@ body {
 		border-bottom: 1px #eae9e9 solid;
 
 		nav {
-			position: relative;
+			position: fixed;
 			display: block;
 			min-width: 768px;
 			margin: 0 auto;
 			text-align: center;
 			line-height: 50px;
 			padding: 5px;
+			top: 0px;
 
 			h1 {
 				text-indent: -9999px;
