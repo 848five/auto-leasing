@@ -12,7 +12,6 @@ body {
 		nav {
 			position: relative;
 			display: block;
-			max-width: 1000px;
 			min-width: 768px;
 			margin: 0 auto;
 			text-align: center;
@@ -233,5 +232,34 @@ body {
 
 
 
+}
+
+
+
+@media screen and (max-width: 768px) {
+		ul {
+			list-style-type: none;
+			}
+			.menu {
+				float: none;
+				clear: both;
+				width: 100%;
+				height: 40px;
+				background-color: red;
+				color: #ffffff;
+				padding: 5px;
+				margin: 14px 5px;
+				font-size: 18px;
+				line-height: 40px;
+				cursor: pointer;
+				border-top-right-radius: 12px;
+				border-bottom-left-radius: 12px;
+				@include animate();
+
+
+				&:hover {
+					box-shadow: 0px 0px 15px gray;
+				}
+			}
 }
 
