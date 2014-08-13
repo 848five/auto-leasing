@@ -186,4 +186,8 @@ body {
 
 @media screen and (max-width: 1000px) {
   body .nav-bar nav h1 {
-    background: url(../images/site/logo-transparent.png) no-repeat top right; } }
+    text-indent: -9999px;
+    background: url(../images/site/logo-transparent.png) no-repeat top right;
+    background-size: 150px auto;
+    font-size: 40px;
+    margin-top: 5px; } }
