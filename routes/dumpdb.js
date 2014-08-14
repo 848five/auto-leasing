@@ -6,7 +6,9 @@ var status ="";
 router.get('/', function(req,res,next) {
 console.log('attempting to dump db');
 db.open(function(err) {
-
+if (err) {
+  console.log(err);
+}
 //dump all new makes
 var request = require('request');
 request('https://api.edmunds.com/api/vehicle/v2/makes?state=new&fmt=json&api_key=vve9rc8s95q77kat7cc9h54m', function (error, response, body) {
@@ -15,7 +17,7 @@ request('https://api.edmunds.com/api/vehicle/v2/makes?state=new&fmt=json&api_key
   if (!error && response.statusCode == 200) {
      var data = JSON.parse(body);
     console.log(data.makes.models);
-    db.collection('makes',function(err,collection) {
+    db.collection('vehicles.makes',function(err,collection) {
     collection.save({makes:data.makes},function(err, result) {
     		if (!err) {
     			status += "||| all makes dumped ";
