@@ -2,9 +2,9 @@ var express = require('express');
 var mongodb = require('mongodb');
 var router = express.Router();
 var db = new mongodb.Db('bliss', new mongodb.Server('127.0.0.1', 27017), {safe:true});
-
+var status ="";
 router.get('/', function(req,res,next) {
-
+console.log('attempting to dump db');
 db.open(function(err) {
 
 //dump all new makes
@@ -16,9 +16,9 @@ request('https://api.edmunds.com/api/vehicle/v2/makes?state=new&fmt=json&api_key
     db.collection('vehicles.makes',function(err,collection) {
     collection.save({makes:data.makes},function(err, result) {
     		if (!err) {
-    			console.log('all makes saved!');
+    			status += "||| all makes dumped ";
     		} else {
-    			console.log('error -> makes');
+    			status += "||| makes NOT dumped, error! ";
     		}
     	});
 	});
@@ -28,7 +28,8 @@ request('https://api.edmunds.com/api/vehicle/v2/makes?state=new&fmt=json&api_key
 });
 db.close();
 
-        
+res.send(status);
+console.log('dumpm finished');     
 });
 
 
