@@ -12,12 +12,12 @@ console.log('db open');
 var request = require('request');
 request('https://api.edmunds.com/api/vehicle/v2/makes?state=new&fmt=json&api_key=vve9rc8s95q77kat7cc9h54m', function (error, response, body) {
  
-  console.log(body + '<---');
   if (!error && response.statusCode == 200) {
      var data = JSON.parse(body);
 
      for (make in data.makes) {
       console.log(make);
+      console.log(make.name);
      }
 
     return;
