@@ -42,7 +42,7 @@
 		<ul>
 			{% for records in makes %}
 					<li>{{ records.name }}</li>
-					{% for model in models %}
+					{% for model in records.models %}
 						<li>{{ model }}</li>
 					{% endfor %}
 			{% endfor %}
