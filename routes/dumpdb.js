@@ -25,13 +25,14 @@ request('https://api.edmunds.com/api/vehicle/v2/makes?state=new&fmt=json&api_key
     			status += "||| makes NOT dumped, error! ";
           console.log('error');
     		}
+        db.close();
     	});
 	});
   }
 });
 
 });
-db.close();
+
 
 res.send('done');
 console.log('dumpm finished');     
