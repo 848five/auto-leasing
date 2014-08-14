@@ -119,7 +119,7 @@ router.get('/:category?/:year?/:make?/:model?', function(req,res,next) {
                     console.log(data.responseJSON);
                     console.log(data.makes);
                     console.log(data.name);
-                    res.render('index',{makes:JSON.parse(body)});
+                    res.render('index',{makes:data.makes,models:data.makes.models});
                   }
                 });
 
