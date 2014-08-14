@@ -16,8 +16,7 @@ request('https://api.edmunds.com/api/vehicle/v2/makes?state=new&fmt=json&api_key
      var data = JSON.parse(body);
 
      for (make in data.makes) {
-      console.log(make);
-      console.log(make.name);
+      console.log(data.makes[make]);
      }
 
     return;
