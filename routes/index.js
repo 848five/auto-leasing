@@ -126,7 +126,6 @@ router.get('/:category?/:year?/:make?/:model?', function(req,res,next) {
                 }
 
 
-            }
         
 });
 
