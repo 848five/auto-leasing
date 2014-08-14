@@ -36,3 +36,6 @@ window.addEventListener('load',function() {
 	GA();
 	//loadBigVideo();
 });
+
+
+// get style id info :  https://api.edmunds.com/api/vehicle/v2/lexus/rx350/2011?fmt=json&api_key=vve9rc8s95q77kat7cc9h54m
