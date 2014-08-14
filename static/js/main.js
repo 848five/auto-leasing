@@ -23,5 +23,5 @@ function loadBigVideo() {
 }
 window.addEventListener('load',function() {
 	GA();
-	loadBigVideo();
+	//loadBigVideo();
 });

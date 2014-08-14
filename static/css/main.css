@@ -167,6 +167,13 @@ body {
       margin: -22px auto;
       color: white; }
 
+.logo-toyota {
+  display: inline-block;
+  width: 92px;
+  height: 92px;
+  overflow: hidden;
+  background: url(../images/site/vehicles/all-logos.jpg) no-repeat 22px 15px; }
+
 @media screen and (max-width: 1000px) {
   body .nav-bar nav h1 {
     text-indent: -9999px;
