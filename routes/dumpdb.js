@@ -6,9 +6,7 @@ var status ="";
 router.get('/', function(req,res,next) {
 console.log('attempting to dump db');
 db.open(function(err) {
-if (err) {
-  console.log(err);
-}
+console.log('db open');
 //dump all new makes
 var request = require('request');
 request('https://api.edmunds.com/api/vehicle/v2/makes?state=new&fmt=json&api_key=vve9rc8s95q77kat7cc9h54m', function (error, response, body) {
