@@ -19,7 +19,7 @@ function loadBigVideo() {
 	video.play();
 	setTimeout(function() {
 		$('.ad').animate({top:'-100%'}).animate({height:'0'});
-	},9000);
+	},11000);
 }
 window.addEventListener('load',function() {
 	GA();
