@@ -20,8 +20,8 @@ request('https://api.edmunds.com/api/vehicle/v2/makes?state=new&fmt=json&api_key
       var models = [];
       makes.push(data.makes[make].name);
       models.push(data.makes[make].models);
-      raw = data.makes[make];
       console.log(data.makes[make].name);
+      var raw = data.makes[make];
        db.collection('vehicles',function(err,collection) {
         collection.save({make:makes,models:models,raw:raw},function(err, result) {
               if (!err) {
@@ -31,6 +31,7 @@ request('https://api.edmunds.com/api/vehicle/v2/makes?state=new&fmt=json&api_key
                 status += "||| makes NOT dumped, error! ";
                 console.log('error');
               }
+              db.close();
             });
         });
      }
@@ -40,7 +41,7 @@ request('https://api.edmunds.com/api/vehicle/v2/makes?state=new&fmt=json&api_key
 
   }
 });
-   db.close();
+
 });
 
 
