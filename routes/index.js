@@ -116,8 +116,7 @@ router.get('/:category?/:year?/:make?/:model?', function(req,res,next) {
                     console.log(JSON.parse(body));
                     console.log('----------------');
                     test = JSON.parse(body);
-                    console.log(test.name);
-                    console.log(test[0].name);
+                    console.log(test);
                     res.render('index',{makes:JSON.parse(body)});
                   }
                 });
