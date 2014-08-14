@@ -114,11 +114,7 @@ router.get('/:category?/:year?/:make?/:model?', function(req,res,next) {
                 request('https://api.edmunds.com/api/vehicle/v2/makes?state=new&fmt=json&api_key=vve9rc8s95q77kat7cc9h54m', function (error, response, body) {
                   if (!error && response.statusCode == 200) {
                      var data = JSON.parse(body);
-                    console.log(data);
-                    console.log('-----');
-                    console.log(data.responseJSON);
-                    console.log(data.makes);
-                    console.log(data.name);
+                    console.log(data.makes.models);
                     res.render('index',{makes:data.makes,models:data.makes.models});
                   }
                 });
