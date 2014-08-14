@@ -1,4 +1,6 @@
+var express = require('express');
 var mongodb = require('mongodb');
+var router = express.Router();
 var db = new mongodb.Db('bliss', new mongodb.Server('127.0.0.1', 27017), {safe:true});
 
 router.get('/', function(req,res,next) {
