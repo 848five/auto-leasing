@@ -21,6 +21,17 @@ function loadBigVideo() {
 		$('.ad').animate({top:'-100%'}).animate({height:'0'});
 	},11000);
 }
+
+
+function getAllNewCarMakes() {
+	return $.ajax({
+        url: "https://api.edmunds.com/api/vehicle/v2/makes?state=new&fmt=json&api_key=vve9rc8s95q77kat7cc9h54m",
+ 		type: 'GET'
+	});
+}
+
+
+
 window.addEventListener('load',function() {
 	GA();
 	//loadBigVideo();

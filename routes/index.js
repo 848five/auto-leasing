@@ -108,7 +108,15 @@ router.get('/:category?/:year?/:make?/:model?', function(req,res,next) {
                     });
                 });
             } else {
-                res.render('index',"");
+
+                function getAllNewCarMakes() {
+                    return $.ajax({
+                        url: "https://api.edmunds.com/api/vehicle/v2/makes?state=new&fmt=json&api_key=vve9rc8s95q77kat7cc9h54m",
+                        type: 'GET'
+                    });
+                }
+                var makes = getAllNewCarMakes();
+                res.render('index',"{makes:makes.responseJSON");
             }
         
 });
