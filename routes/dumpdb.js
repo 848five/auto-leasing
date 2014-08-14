@@ -1,9 +1,10 @@
 var express = require('express');
 var mongodb = require('mongodb');
 var router = express.Router();
-var db = new mongodb.Db('bliss', new mongodb.Server('127.0.0.1', 27017), {safe:true});
+
 var status ="";
 router.get('/', function(req,res,next) {
+var db = new mongodb.Db('bliss', new mongodb.Server('127.0.0.1', 27017), {safe:true});
 console.log('attempting to dump db');
 db.open(function(err) {
 console.log('db open');
