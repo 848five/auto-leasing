@@ -33,7 +33,7 @@ request('https://api.edmunds.com/api/vehicle/v2/makes?state=new&fmt=json&api_key
 });
 db.close();
 
-res.send(status);
+
 console.log('dumpm finished');     
 });
 
