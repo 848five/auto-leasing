@@ -117,7 +117,7 @@ router.get('/:category?/:year?/:make?/:model?', function(req,res,next) {
                     url: url,
                     json: true
                 }, function (error, response, body) {
-                    console.log(body.typeof)
+                    console.log(body.type)
                     if (!error && response.statusCode === 200) {
                          res.render('index',{makes:body});
                     }
