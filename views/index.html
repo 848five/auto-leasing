@@ -41,7 +41,7 @@
 	<div class="vehicles-1" data-page="1">
 		<ul>
 			{% for records in makes %}
-					<li>{{ records|length }}</li>
+					<li>{{ loop.index }}</li>
 			{% endfor %}
 		</ul>
 	</div>
