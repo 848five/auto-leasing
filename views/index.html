@@ -40,9 +40,10 @@
 <section class="vehicles">
 	<div class="vehicles-1" data-page="1">
 		<ul>
-			{% for make in makes.responseJSON %}
-
-			<li class="logo-toyota" data-make="toyota">{{ make }}</li>
+			{% for makeResponse in makes %}
+				{% for make in makeResponse %}
+					<li>{{ make.makes }}</li>
+				{% endfor %}
 			{% endfor %}
 		</ul>
 	</div>
