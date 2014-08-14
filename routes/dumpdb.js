@@ -20,9 +20,10 @@ request('https://api.edmunds.com/api/vehicle/v2/makes?state=new&fmt=json&api_key
       var models = [];
       makes.push(data.makes[make].name);
       models.push(data.makes[make].models);
+      raw = data.makes[make];
       console.log(data.makes[make].name);
        db.collection('vehicles',function(err,collection) {
-        collection.save({make:makes,models:models,raw:data.makes[make]},function(err, result) {
+        collection.save({make:makes,models:models,raw:raw},function(err, result) {
               if (!err) {
                 status += "||| all makes dumped ";
                 console.log('makes dumped...');
