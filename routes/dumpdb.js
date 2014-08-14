@@ -17,8 +17,10 @@ request('https://api.edmunds.com/api/vehicle/v2/makes?state=new&fmt=json&api_key
     collection.save({makes:data.makes},function(err, result) {
     		if (!err) {
     			status += "||| all makes dumped ";
+          console.log('makes dumped...');
     		} else {
     			status += "||| makes NOT dumped, error! ";
+          console.log('error');
     		}
     	});
 	});
