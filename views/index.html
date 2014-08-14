@@ -40,10 +40,8 @@
 <section class="vehicles">
 	<div class="vehicles-1" data-page="1">
 		<ul>
-			{% for makeResponse in makes %}
-				{% for make in makeResponse %}
-					<li>{{ make.makes }}</li>
-				{% endfor %}
+			{% for make in makes %}
+					<li>{{ make.responseJSON }}</li>
 			{% endfor %}
 		</ul>
 	</div>
