@@ -15,7 +15,12 @@ request('https://api.edmunds.com/api/vehicle/v2/makes?state=new&fmt=json&api_key
   console.log(body + '<---');
   if (!error && response.statusCode == 200) {
      var data = JSON.parse(body);
-    console.log(data.makes.models);
+
+     for (make in data.makes) {
+      console.log(make);
+     }
+
+    return;
     db.collection('vehicles.makes',function(err,collection) {
     collection.save({makes:data.makes},function(err, result) {
     		if (!err) {
