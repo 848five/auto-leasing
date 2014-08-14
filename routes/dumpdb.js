@@ -10,6 +10,8 @@ db.open(function(err) {
 //dump all new makes
 var request = require('request');
 request('https://api.edmunds.com/api/vehicle/v2/makes?state=new&fmt=json&api_key=vve9rc8s95q77kat7cc9h54m', function (error, response, body) {
+ 
+  console.log(body + '<---');
   if (!error && response.statusCode == 200) {
      var data = JSON.parse(body);
     console.log(data.makes.models);
