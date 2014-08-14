@@ -41,6 +41,7 @@ var tools = require('./routes/dashboard/tools');
 var getRoutes = require('./routes/dashboard/get');
 var deleteRoutes = require('./routes/dashboard/delete');
 var application = require('./routes/application');
+var dumpdb = require('./routes/dumpdb');
 
 
 
@@ -51,7 +52,7 @@ app.set('view engine', 'html');
 
 
 //Routes
-
+app.use('/refresh/db',dumpdb);
 app.use('/dashboard/view',getRoutes);
 app.use('/dashboard', admin);
 app.use('/application', application);
