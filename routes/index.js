@@ -113,6 +113,10 @@ router.get('/:category?/:year?/:make?/:model?', function(req,res,next) {
                 var request = require('request');
                 request('https://api.edmunds.com/api/vehicle/v2/makes?state=new&fmt=json&api_key=vve9rc8s95q77kat7cc9h54m', function (error, response, body) {
                   if (!error && response.statusCode == 200) {
+                    records = JSON.parse(body);
+                    console.log(records);
+                    console.log('-----------');
+                    console.log(records.responseJSON);
                     res.render('index',{makes:JSON.parse(body)});
                   }
                 });
